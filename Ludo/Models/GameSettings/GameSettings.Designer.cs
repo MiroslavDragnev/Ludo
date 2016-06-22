@@ -1,6 +1,6 @@
 ﻿namespace Ludo
 {
-    partial class Form1
+    partial class GameSettings
     {
         /// <summary>
         /// Required designer variable.

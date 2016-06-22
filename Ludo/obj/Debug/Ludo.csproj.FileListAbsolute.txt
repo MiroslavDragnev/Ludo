@@ -1,1 +1,8 @@
 D:\Projects\Ludo\Ludo\bin\Debug\Ludo.exe.config
+D:\Projects\Ludo\Ludo\bin\Debug\Ludo.exe
+D:\Projects\Ludo\Ludo\bin\Debug\Ludo.pdb
+D:\Projects\Ludo\Ludo\obj\Debug\Ludo.csprojResolveAssemblyReference.cache
+D:\Projects\Ludo\Ludo\obj\Debug\Ludo.Properties.Resources.resources
+D:\Projects\Ludo\Ludo\obj\Debug\Ludo.csproj.GenerateResource.Cache
+D:\Projects\Ludo\Ludo\obj\Debug\Ludo.exe
+D:\Projects\Ludo\Ludo\obj\Debug\Ludo.pdb

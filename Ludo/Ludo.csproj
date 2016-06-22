@@ -46,12 +46,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Constants\PlaygroundConstants.cs" />
+    <Compile Include="Enumerations\ColorType.cs" />
+    <Compile Include="Enumerations\FieldType.cs" />
+    <Compile Include="Enumerations\WheelType.cs" />
+    <Compile Include="Models\Field.cs" />
+    <Compile Include="Models\GameSettings\GameSettings.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Models\GameSettings\GameSettings.Designer.cs">
+      <DependentUpon>GameSettings.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Player.cs" />
+    <Compile Include="Models\Playground.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -75,6 +82,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Abstract\" />
+    <Folder Include="Interfaces\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
