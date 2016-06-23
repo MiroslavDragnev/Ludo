@@ -19,3 +19,10 @@ D:\GitHub\Ludo\Ludo\obj\Debug\Ludo.Properties.Resources.resources
 D:\GitHub\Ludo\Ludo\obj\Debug\Ludo.csproj.GenerateResource.Cache
 D:\GitHub\Ludo\Ludo\obj\Debug\Ludo.Models.About.About.resources
 D:\GitHub\Ludo\Ludo\obj\Debug\Ludo.GameSettings.resources
+F:\Ludo\Ludo\bin\Debug\Ludo.exe
+F:\Ludo\Ludo\bin\Debug\Ludo.pdb
+F:\Ludo\Ludo\obj\Debug\Ludo.csprojResolveAssemblyReference.cache
+F:\Ludo\Ludo\obj\Debug\Ludo.Models.About.About.resources
+F:\Ludo\Ludo\obj\Debug\Ludo.GameSettings.resources
+F:\Ludo\Ludo\obj\Debug\Ludo.Properties.Resources.resources
+F:\Ludo\Ludo\obj\Debug\Ludo.csproj.GenerateResource.Cache

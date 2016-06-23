@@ -81,5 +81,10 @@ namespace Ludo
             about.FormBorderStyle = FormBorderStyle.FixedSingle;
             about.Show();
         }
+
+        private void plrTwoText_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
