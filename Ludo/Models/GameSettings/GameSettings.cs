@@ -56,6 +56,7 @@ namespace Ludo
             {
                 //lblWarning.Location = new System.Drawing.Point(17, 169);
                 lblWarning.Text = "At least two players have to be checked.";
+                lblWarning.ForeColor = Color.Red;
             }
 
             if(emptyName)
