@@ -2,6 +2,7 @@
 {
     using Ludo.Enumerations;
     using Ludo.Constants;
+
     public class Pawn
     {
         public Pawn(ColorType color)

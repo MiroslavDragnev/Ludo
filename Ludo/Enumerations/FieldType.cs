@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Ludo.Enumerations
+﻿namespace Ludo.Enumerations
 {
     public enum FieldType
     {
@@ -15,6 +9,7 @@ namespace Ludo.Enumerations
         Sleep = 4,
         Final = 5,
         Nine = 6,
-        Start = 7
+        Start = 7,
+        HomeField = 8
     }
 }

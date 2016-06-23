@@ -54,14 +54,12 @@ namespace Ludo
 
             if(players < 2)
             {
-                //lblWarning.Location = new System.Drawing.Point(17, 169);
                 lblWarning.Text = "At least two players have to be checked.";
                 lblWarning.ForeColor = Color.Red;
             }
 
             if(emptyName)
             {
-                //lblWarning.Location = new System.Drawing.Point(17, 169);
                 lblWarning.Text = "Please, don't leave empty name spaces.";
             }
         }
@@ -81,11 +79,6 @@ namespace Ludo
             var about = new About();
             about.FormBorderStyle = FormBorderStyle.FixedSingle;
             about.Show();
-        }
-
-        private void plrTwoText_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
