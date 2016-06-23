@@ -17,3 +17,5 @@ D:\GitHub\Ludo\Ludo\bin\Debug\Ludo.pdb
 D:\GitHub\Ludo\Ludo\obj\Debug\Ludo.csprojResolveAssemblyReference.cache
 D:\GitHub\Ludo\Ludo\obj\Debug\Ludo.Properties.Resources.resources
 D:\GitHub\Ludo\Ludo\obj\Debug\Ludo.csproj.GenerateResource.Cache
+D:\GitHub\Ludo\Ludo\obj\Debug\Ludo.Models.About.About.resources
+D:\GitHub\Ludo\Ludo\obj\Debug\Ludo.GameSettings.resources

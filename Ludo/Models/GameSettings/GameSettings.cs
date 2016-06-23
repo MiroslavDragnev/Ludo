@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Ludo.Models.About;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -72,6 +73,13 @@ namespace Ludo
         private void btnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btnAbout_Click(object sender, EventArgs e)
+        {
+            var about = new About();
+            about.FormBorderStyle = FormBorderStyle.FixedSingle;
+            about.Show();
         }
     }
 }

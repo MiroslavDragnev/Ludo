@@ -16,7 +16,9 @@ namespace Ludo
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new GameSettings());
+            var startup = new GameSettings();
+            startup.FormBorderStyle = FormBorderStyle.FixedSingle;
+            Application.Run(startup);
         }
     }
 }

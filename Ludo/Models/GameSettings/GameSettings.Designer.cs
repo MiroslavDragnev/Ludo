@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GameSettings));
             this.plrOneCheck = new System.Windows.Forms.CheckBox();
             this.plrTwoCheck = new System.Windows.Forms.CheckBox();
             this.plrThreeCheck = new System.Windows.Forms.CheckBox();
@@ -160,18 +161,20 @@
             // 
             // btnAbout
             // 
+            this.btnAbout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnAbout.Location = new System.Drawing.Point(12, 146);
             this.btnAbout.Name = "btnAbout";
-            this.btnAbout.Size = new System.Drawing.Size(66, 20);
+            this.btnAbout.Size = new System.Drawing.Size(66, 22);
             this.btnAbout.TabIndex = 13;
             this.btnAbout.Text = "About";
             this.btnAbout.UseVisualStyleBackColor = true;
+            this.btnAbout.Click += new System.EventHandler(this.btnAbout_Click);
             // 
             // btnStart
             // 
             this.btnStart.Location = new System.Drawing.Point(82, 146);
             this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(69, 20);
+            this.btnStart.Size = new System.Drawing.Size(69, 22);
             this.btnStart.TabIndex = 14;
             this.btnStart.Text = "Start game";
             this.btnStart.UseVisualStyleBackColor = true;
@@ -181,7 +184,7 @@
             // 
             this.btnExit.Location = new System.Drawing.Point(156, 146);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(66, 20);
+            this.btnExit.Size = new System.Drawing.Size(66, 22);
             this.btnExit.TabIndex = 15;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = true;
@@ -190,17 +193,16 @@
             // lblWarning
             // 
             this.lblWarning.AutoSize = true;
-            this.lblWarning.Location = new System.Drawing.Point(17, 169);
+            this.lblWarning.Location = new System.Drawing.Point(17, 172);
             this.lblWarning.Name = "lblWarning";
-            this.lblWarning.Size = new System.Drawing.Size(36, 13);
+            this.lblWarning.Size = new System.Drawing.Size(0, 13);
             this.lblWarning.TabIndex = 16;
-            this.lblWarning.Text = "";
             // 
             // GameSettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(234, 189);
+            this.ClientSize = new System.Drawing.Size(234, 193);
             this.Controls.Add(this.lblWarning);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnStart);
@@ -217,6 +219,7 @@
             this.Controls.Add(this.plrThreeCheck);
             this.Controls.Add(this.plrTwoCheck);
             this.Controls.Add(this.plrOneCheck);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "GameSettings";
             this.Text = "Select player count";
             this.Load += new System.EventHandler(this.GameSettings_Load);
