@@ -57,6 +57,7 @@
     <Compile Include="Models\GameSettings\GameSettings.Designer.cs">
       <DependentUpon>GameSettings.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Pawn.cs" />
     <Compile Include="Models\Player.cs" />
     <Compile Include="Models\Playground.cs" />
     <Compile Include="Program.cs" />
