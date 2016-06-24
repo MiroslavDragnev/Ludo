@@ -46,6 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Constants\HomeConstants.cs" />
+    <Compile Include="Constants\PlayerConstants.cs" />
     <Compile Include="Constants\PlaygroundConstants.cs" />
     <Compile Include="Enumerations\ColorType.cs" />
     <Compile Include="Enumerations\FieldType.cs" />
@@ -63,6 +65,7 @@
     <Compile Include="Models\GameSettings\GameSettings.Designer.cs">
       <DependentUpon>GameSettings.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Home.cs" />
     <Compile Include="Models\Pawn.cs" />
     <Compile Include="Models\Player.cs" />
     <Compile Include="Models\Playground.cs" />
@@ -82,6 +85,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -98,7 +102,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Abstract\" />
-    <Folder Include="Interfaces\" />
+    <Folder Include="Contracts\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\About-button.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
