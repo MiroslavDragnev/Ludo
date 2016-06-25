@@ -16,7 +16,41 @@ namespace Ludo
         public GameSettings()
         {
             InitializeComponent();
+            btnStart.MouseEnter += new EventHandler(btnStart_MouseEnter);
+            btnStart.MouseLeave += new EventHandler(btnStart_MouseLeave);
+            btnExit.MouseEnter += new EventHandler(btnExit_MouseEnter);
+            btnExit.MouseLeave += new EventHandler(btnExit_MouseLeave);
+            btnAbout.MouseEnter += new EventHandler(btnAbout_MouseEnter);
+            btnAbout.MouseLeave += new EventHandler(btnAbout_MouseLeave);
         }
+
+        private void btnStart_MouseLeave(object sender, EventArgs e)
+        {
+            this.btnStart.BackgroundImage = Properties.Resources.BtnStart;
+        }
+        private void btnStart_MouseEnter(object sender, EventArgs e)
+        {
+            this.btnStart.BackgroundImage = Properties.Resources.BtnStartGlow;
+        }
+
+        private void btnExit_MouseLeave(object sender, EventArgs e)
+        {
+            this.btnExit.BackgroundImage = Properties.Resources.BtnExit;
+        }
+        private void btnExit_MouseEnter(object sender, EventArgs e)
+        {
+            this.btnExit.BackgroundImage = Properties.Resources.BtnExitGlow;
+        }
+
+        private void btnAbout_MouseLeave(object sender, EventArgs e)
+        {
+            this.btnAbout.BackgroundImage = Properties.Resources.BtnAbout;
+        }
+        private void btnAbout_MouseEnter(object sender, EventArgs e)
+        {
+            this.btnAbout.BackgroundImage = Properties.Resources.BtnAboutGlow;
+        }
+
 
         private void btnStart_Click(object sender, EventArgs e)
         {

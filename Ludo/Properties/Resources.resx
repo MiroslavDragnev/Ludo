@@ -118,7 +118,31 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="BtnAbout" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\BtnAbout.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BtnStart" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\BtnStart.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BtnStartGlow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\BtnStartGlow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="About-button" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\About-button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BtnAboutGlow1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\BtnAboutGlow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BtnExit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\BtnExit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BtnAboutGlow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\BtnAboutGlow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BtnExitGlow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\BtnExitGlow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BtnAbout1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\BtnAbout.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

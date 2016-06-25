@@ -107,6 +107,18 @@
   <ItemGroup>
     <None Include="Resources\About-button.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\BtnAboutGlow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\BtnAbout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\BtnExit.png" />
+    <None Include="Images\BtnExitGlow.png" />
+    <None Include="Images\BtnStartGlow.png" />
+    <None Include="Images\BtnStart.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
