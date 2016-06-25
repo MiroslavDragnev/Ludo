@@ -114,5 +114,10 @@ namespace Ludo
             about.FormBorderStyle = FormBorderStyle.FixedSingle;
             about.Show();
         }
+
+        private void plrOneCheck_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

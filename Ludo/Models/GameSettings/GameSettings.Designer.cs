@@ -64,6 +64,7 @@ namespace Ludo
             this.plrOneCheck.TabIndex = 1;
             this.plrOneCheck.Text = "Player 1";
             this.plrOneCheck.UseVisualStyleBackColor = true;
+            this.plrOneCheck.CheckedChanged += new System.EventHandler(this.plrOneCheck_CheckedChanged);
             // 
             // plrTwoCheck
             // 
@@ -161,6 +162,7 @@ namespace Ludo
             this.btnExit.TabIndex = 15;
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            this.btnExit.FlatAppearance.MouseDownBackColor = Color.Red;
             // 
             // btnStart
             // 
@@ -176,6 +178,7 @@ namespace Ludo
             this.btnStart.TabIndex = 14;
             this.btnStart.UseVisualStyleBackColor = false;
             this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
+            this.btnStart.FlatAppearance.MouseDownBackColor = Color.Green;
             // 
             // btnAbout
             // 
@@ -191,6 +194,7 @@ namespace Ludo
             this.btnAbout.TabIndex = 13;
             this.btnAbout.UseVisualStyleBackColor = false;
             this.btnAbout.Click += new System.EventHandler(this.btnAbout_Click);
+            this.btnAbout.FlatAppearance.MouseDownBackColor = Color.Gray;
             // 
             // pictureBox4
             // 
