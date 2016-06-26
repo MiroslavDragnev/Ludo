@@ -5,6 +5,9 @@
 
     public class Pawn
     {
+        // In order to get the current position of any pawn by X and Y coordinates we need XPos and YPos Fields
+        //TODO: currentXPos + property
+        //TODO: currentYPos + property
         public Pawn(ColorType color)
         {
             Color = color;

@@ -12,11 +12,14 @@
 
         public Home(ColorType color)
         {
-            this.fields = new List<Field>();
-            this.originX = HomeConstants.HomeOriginX[(int)color];
-            this.originY = HomeConstants.HomeOriginY[(int)color];
-            this.InitializeHome();
+            fields = new List<Field>();
+            originX = HomeConstants.HomeOriginX[(int)color];
+            originY = HomeConstants.HomeOriginY[(int)color];
+            InitializeHome();
         }
+
+        //PROPERTY ColorType to assosiate with pawn
+        public ColorType Color { get; private set; }
 
         private void InitializeHome()
         {

@@ -52,12 +52,16 @@
     <Compile Include="Enumerations\ColorType.cs" />
     <Compile Include="Enumerations\FieldType.cs" />
     <Compile Include="Enumerations\WheelType.cs" />
+    <Compile Include="Abstract\Token.cs" />
+    <Compile Include="Interfaces\IActionable.cs" />
     <Compile Include="Models\About\About.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Models\About\About.Designer.cs">
       <DependentUpon>About.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\BombToken.cs" />
+    <Compile Include="Models\CatapultToken.cs" />
     <Compile Include="Models\Field.cs" />
     <Compile Include="Models\GameSettings\GameSettings.cs">
       <SubType>Form</SubType>
@@ -69,6 +73,7 @@
     <Compile Include="Models\Pawn.cs" />
     <Compile Include="Models\Player.cs" />
     <Compile Include="Models\Playground.cs" />
+    <Compile Include="Models\SleepToken.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Models\About\About.resx">
@@ -101,7 +106,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Abstract\" />
     <Folder Include="Contracts\" />
   </ItemGroup>
   <ItemGroup>
