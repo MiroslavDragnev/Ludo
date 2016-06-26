@@ -7,10 +7,10 @@
     {
         public Pawn(ColorType color)
         {
-            this.Color = color;
-            this.OnGameField = false;
-            this.Escaped = false;
-            this.SetStartAndEndPossitions();
+            Color = color;
+            OnGameField = false;
+            Escaped = false;
+            SetStartAndEndPossitions();
         }
 
         public int StartPossition { get; private set; }
