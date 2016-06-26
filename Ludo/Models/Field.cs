@@ -11,10 +11,10 @@
 
         public Field(FieldType type, int x, int y)
         {
-            this.Type = type;
-            this.XPos = x;
-            this.YPos = y;
-            this.HasPawn = false;
+            Type = type;
+            XPos = x;
+            YPos = y;
+            HasPawn = false;
         }
     }
 }
