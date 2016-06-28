@@ -5,25 +5,22 @@ namespace Ludo.Constants
 {
     public static class HomeConstants
     {
-        // THESE VALUES ARE PLACEHOLDERS
-        // I HAVEN'T MADE THE CALCULATIONS YET
-
-        public static readonly int OffsetFromOrigin = 25;
+        public static readonly int OffsetFromOrigin = 33;
 
         public static readonly int[] HomeOriginX =
         {
-            5, //red
-            5, //green
-            5, //yellow
-            5  //blue
+            509, //red
+            211, //green
+            211, //yellow
+            509  //blue
         };
 
         public static readonly int[] HomeOriginY =
         {
-            5, //red
-            5, //green
-            5, //yellow
-            5  //blue
+            88, //red
+            88, //green
+            387, //yellow
+            387  //blue
         };
     }
 }

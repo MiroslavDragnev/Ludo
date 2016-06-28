@@ -12,6 +12,21 @@
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -46,12 +61,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Constants\ColorConstants.cs" />
     <Compile Include="Constants\HomeConstants.cs" />
+    <Compile Include="Constants\PawnConstants.cs" />
     <Compile Include="Constants\PlayerConstants.cs" />
     <Compile Include="Constants\PlaygroundConstants.cs" />
     <Compile Include="Enumerations\ColorType.cs" />
     <Compile Include="Enumerations\FieldType.cs" />
     <Compile Include="Enumerations\WheelType.cs" />
+    <Compile Include="Extensions\HomeExtensions.cs" />
+    <Compile Include="Extensions\PawnExtensions.cs" />
     <Compile Include="Models\About\About.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,6 +84,15 @@
     <Compile Include="Models\GameSettings\GameSettings.Designer.cs">
       <DependentUpon>GameSettings.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Game\Game.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Models\Game\Game.Designer.cs">
+      <DependentUpon>Game.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Game\GameUtils.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Models\Home.cs" />
     <Compile Include="Models\Pawn.cs" />
     <Compile Include="Models\Player.cs" />
@@ -77,20 +105,23 @@
     <EmbeddedResource Include="Models\GameSettings\GameSettings.resx">
       <DependentUpon>GameSettings.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Models\Game\Game.resx">
+      <DependentUpon>Game.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -118,6 +149,57 @@
     <None Include="Images\BtnExitGlow.png" />
     <None Include="Images\BtnStartGlow.png" />
     <None Include="Images\BtnStart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PlayGround.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pawn-Red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PawnRed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pawn.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Standart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BigMama.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Catapult.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Nine.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Wheel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CatapultDis.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NineDis.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StandartDis.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BigMamaDis.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

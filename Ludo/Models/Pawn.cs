@@ -2,60 +2,70 @@
 {
     using Ludo.Enumerations;
     using Ludo.Constants;
+    using Ludo.Models;
+    using Ludo.Models.Game;
+    using System;
+    using System.Collections.Generic;
+    using System.Threading;
+
+    public delegate void PawnChangedPos(object sender, EventArgs e);
 
     public class Pawn
     {
-        public Pawn(ColorType color)
+        public event PawnChangedPos OnPawnChange;
+        private Field currentField;
+        public ColorType Color { get; private set; }
+        public bool IsAtHome { get; set; }
+        public string PawnName { get; private set; }
+        public int PawnPos { get; set; }
+
+        public Pawn(ColorType color, int number)
         {
             this.Color = color;
-            this.OnGameField = false;
-            this.Escaped = false;
-            this.SetStartAndEndPossitions();
+            this.PawnName = $"{PawnConstants.PawnNames[(int)color]}{number}";
+            this.IsAtHome = true;
+            this.PawnPos = PlaygroundConstants.PlayerStartPos[(int)color];
         }
 
-        public int StartPossition { get; private set; }
-        public int EntryToFinish { get; private set; }
-        public int Possition { get; private set; }
-        public bool OnGameField { get; set; }
-        public bool Escaped { get; set; }
-        public ColorType Color { get; set; }
-        
-        //Move Pawn
-        public void Move(int diceNumber)
+        public Field CurrentField
         {
-            this.Possition += diceNumber;
-            if (this.Color != ColorType.Red && this.Possition >= PlaygroundConstants.PLAYGROUND_SIZE)
+            get
             {
-                this.Possition %= PlaygroundConstants.PLAYGROUND_SIZE;
+                return this.currentField;
             }
-
-            //TODO (escaping the playground)
-            //TODO (reseting possition when send home)
+            set
+            {
+                this.currentField = value;
+                this.TriggerChange();
+            }
         }
 
-        //Generate initial possitions
-        private void SetStartAndEndPossitions()
+        private void TriggerChange()
         {
-            if (this.Color == ColorType.Red)
+            if (this.OnPawnChange != null)
             {
-                this.StartPossition = PlaygroundConstants.RED_START_INDEX;
-                this.EntryToFinish = PlaygroundConstants.RED_ENTRY_TO_FINISH;
-            }
-            else if (this.Color == ColorType.Green)
-            {
-                this.StartPossition = PlaygroundConstants.GREEN_START_INDEX;
-                this.EntryToFinish = PlaygroundConstants.GREEN_ENTRY_TO_FINISH;
-            }
-            else if (this.Color == ColorType.Yellow)
-            {
-                this.StartPossition = PlaygroundConstants.YELLOW_START_INDEX;
-                this.EntryToFinish = PlaygroundConstants.YELLOW_ENTRY_TO_FINISH;
-            }
-            else if (this.Color == ColorType.Blue)
-            {
-                this.StartPossition = PlaygroundConstants.BLUE_START_INDEX;
-                this.EntryToFinish = PlaygroundConstants.BLUE_ENTRY_TO_FINISH;
+                this.OnPawnChange(this, EventArgs.Empty);
             }
         }
+
+        //public static void Move(this Pawn p, List<Field> playground)
+        //{
+        //    if(p.IsAtHome)
+        //    {
+        //        p.IsAtHome = false;
+        //        p.CurrentField = playground[p.PawnPos];
+
+        //        return;
+        //    }
+
+        //    p.PawnPos += 1;
+            
+        //    if(p.PawnPos >= PlaygroundConstants.PlaygroundSize)
+        //    {
+        //        p.PawnPos = 0;
+        //    }
+
+        //    p.CurrentField = playground[p.PawnPos];
+        //}
     }
 }

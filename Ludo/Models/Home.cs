@@ -6,38 +6,22 @@
 
     public class Home
     {
-        private List<Field> fields;
+        public List<Field> Fields { get; private set; }
         private int originX;
         private int originY;
 
         public Home(ColorType color)
         {
-            this.fields = new List<Field>();
             this.originX = HomeConstants.HomeOriginX[(int)color];
             this.originY = HomeConstants.HomeOriginY[(int)color];
-            this.InitializeHome();
-        }
 
-        private void InitializeHome()
-        {
-            fields.Add(new Field(FieldType.HomeField, this.originX - HomeConstants.OffsetFromOrigin, this.originY));
-            fields.Add(new Field(FieldType.HomeField, this.originX + HomeConstants.OffsetFromOrigin, this.originY));
-            fields.Add(new Field(FieldType.HomeField, this.originX, this.originY - HomeConstants.OffsetFromOrigin));
-            fields.Add(new Field(FieldType.HomeField, this.originX, this.originY + HomeConstants.OffsetFromOrigin));
-        }
-
-        public Field FindEmptyHomeField()
-        {
-            foreach(var field in fields)
+            this.Fields = new List<Field>()
             {
-                if (field.HasPawn)
-                    continue;
-
-                field.HasPawn = true;
-                return field;
-            }
-
-            return fields[0];
+                new Field(FieldType.HomeField, this.originX - HomeConstants.OffsetFromOrigin, this.originY),
+                new Field(FieldType.HomeField, this.originX + HomeConstants.OffsetFromOrigin, this.originY),
+                new Field(FieldType.HomeField, this.originX, this.originY - HomeConstants.OffsetFromOrigin),
+                new Field(FieldType.HomeField, this.originX, this.originY + HomeConstants.OffsetFromOrigin)
+            };
         }
     }
 }

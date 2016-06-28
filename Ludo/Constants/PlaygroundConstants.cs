@@ -1,18 +1,26 @@
-﻿namespace Ludo.Constants
+﻿using System.Collections.Generic;
+
+namespace Ludo.Constants
 {
     public static class PlaygroundConstants
     {
-        public const int RED_START_INDEX = 0;
-        public const int GREEN_START_INDEX = 14;
-        public const int YELLOW_START_INDEX = 28;
-        public const int BLUE_START_INDEX = 42;
+        public static readonly int[] PlayerStartPos =
+        {
+            0,
+            14,
+            28,
+            42
+        };
 
-        public const int RED_ENTRY_TO_FINISH = 55;
-        public const int GREEN_ENTRY_TO_FINISH = 13;
-        public const int YELLOW_ENTRY_TO_FINISH = 27;
-        public const int BLUE_ENTRY_TO_FINISH = 41;
+        public static readonly int[] PlayerEntryToFinish =
+        {
+            55,
+            13,
+            27,
+            41
+        };
 
-        public const int PLAYGROUND_SIZE = 56;
-        public const int FINISH_SIZE = 5;
+        public const int PlaygroundSize = 56;
+        public const int FinishSize = 5;
     }
 }

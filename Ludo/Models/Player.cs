@@ -2,28 +2,29 @@
 {
     using Ludo.Enumerations;
     using Ludo.Constants;
-
+    using System.Collections.Generic;
     public class Player
     {
-        private string name;
-        private ColorType color;
-
-        //let's leave those as automatic properties for now
-        //private int pawnsAtHome;
-        //private int pawnsEscaped;
-        //private int stepsLeft;
-
-        public Player(string name, ColorType color)
-        {
-            this.name = name;
-            this.color = color;
-            this.PawnsAtHome = PlayerConstants.InitPawnsAtHome;
-            this.PawnsEscaped = PlayerConstants.InitPawnsEscaped;
-            this.StepsLeft = 0;
-        }
-
+        public string Name { get; set; }
         public int PawnsAtHome { get; set; }
         public int PawnsEscaped { get; set; }
         public int StepsLeft { get; set; }
+        public List<Pawn> Pawns{ get; set; }
+        public Home Home { get; set; }
+        public ColorType Color { get; set; }
+
+        public Player(string name, ColorType color)
+        {
+            this.Name = name;
+            this.Color = color;
+            this.PawnsAtHome = PlayerConstants.InitPawnsAtHome;
+            this.PawnsEscaped = PlayerConstants.InitPawnsEscaped;
+            this.StepsLeft = 0;
+            this.Home = new Home(color);
+            this.Pawns = new List<Pawn>();
+
+            for (int i = 0; i < 4; i++)
+                Pawns.Add(new Pawn(Color, i));
+        }
     }
 }

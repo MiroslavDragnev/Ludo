@@ -1,4 +1,7 @@
-﻿using Ludo.Models.About;
+﻿using Ludo.Enumerations;
+using Ludo.Models;
+using Ludo.Models.About;
+using Ludo.Models.Game;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -56,6 +59,8 @@ namespace Ludo
         {
             int players = 0;
             bool emptyName = false;
+            var list = new List<Player>();
+            var dict = new Dictionary<ColorType, string>();
 
             if (plrOneCheck.Checked)
             {
@@ -90,12 +95,50 @@ namespace Ludo
             {
                 lblWarning.Text = "At least two players have to be checked.";
                 lblWarning.ForeColor = Color.Red;
+                return;
             }
 
             if(emptyName)
             {
                 lblWarning.Text = "Please, don't leave empty name spaces.";
+                return;
             }
+
+            if (plrOneCheck.Checked)
+            {
+                dict.Add(ColorType.Red, plrOneText.Text);
+            }
+
+            if (plrTwoCheck.Checked)
+            {
+                dict.Add(ColorType.Green, plrTwoText.Text);
+            }
+
+            if (plrThreeCheck.Checked)
+            {
+                dict.Add(ColorType.Yellow, plrThreeText.Text);
+            }
+
+            if (plrFourCheck.Checked)
+            {
+                dict.Add(ColorType.Blue, plrFourText.Text);
+            }
+
+            if (plrOneCheck.Checked)
+                list.Add(new Player(plrOneText.Text, ColorType.Red));
+
+            if (plrTwoCheck.Checked)
+                list.Add(new Player(plrTwoText.Text, ColorType.Green));
+
+            if (plrThreeCheck.Checked)
+                list.Add(new Player(plrThreeText.Text, ColorType.Yellow));
+
+            if (plrFourCheck.Checked)
+                list.Add(new Player(plrFourText.Text, ColorType.Blue));
+
+            var game = new Game(dict);
+            game.FormBorderStyle = FormBorderStyle.FixedSingle;
+            game.Show();
         }
 
         private void GameSettings_Load(object sender, EventArgs e)
