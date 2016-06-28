@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\Dices.cs" />
     <Compile Include="Constants\HomeConstants.cs" />
     <Compile Include="Constants\PlayerConstants.cs" />
     <Compile Include="Constants\PlaygroundConstants.cs" />
@@ -74,6 +75,7 @@
     <Compile Include="Models\Player.cs" />
     <Compile Include="Models\Playground.cs" />
     <Compile Include="Models\SleepToken.cs" />
+    <Compile Include="Models\Wheel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Models\About\About.resx">
