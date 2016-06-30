@@ -12,6 +12,7 @@
         public List<Pawn> Pawns{ get; set; }
         public Home Home { get; set; }
         public ColorType Color { get; set; }
+        public int SelectedPawn { get; set; }
 
         public Player(string name, ColorType color)
         {
@@ -23,7 +24,7 @@
             this.Home = new Home(color);
             this.Pawns = new List<Pawn>();
 
-            for (int i = 0; i < 4; i++)
+            for (int i = 0; i < PlayerConstants.PawnsPerPlayer; i++)
                 Pawns.Add(new Pawn(Color, i));
         }
     }

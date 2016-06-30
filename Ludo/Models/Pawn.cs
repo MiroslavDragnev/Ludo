@@ -7,10 +7,10 @@
     using System;
     using System.Collections.Generic;
     using System.Threading;
-
+    using Contracts;
     public delegate void PawnChangedPos(object sender, EventArgs e);
 
-    public class Pawn
+    public class Pawn : IPawn
     {
         public event PawnChangedPos OnPawnChange;
         private Field currentField;
@@ -48,24 +48,24 @@
             }
         }
 
-        //public static void Move(this Pawn p, List<Field> playground)
-        //{
-        //    if(p.IsAtHome)
-        //    {
-        //        p.IsAtHome = false;
-        //        p.CurrentField = playground[p.PawnPos];
+        public void Move(IList<Field> playground, int steps)
+        {
+            if (this.IsAtHome)
+            {
+                this.IsAtHome = false;
+                this.CurrentField = playground[this.PawnPos];
 
-        //        return;
-        //    }
+                return;
+            }
 
-        //    p.PawnPos += 1;
-            
-        //    if(p.PawnPos >= PlaygroundConstants.PlaygroundSize)
-        //    {
-        //        p.PawnPos = 0;
-        //    }
+            this.PawnPos += 1;
 
-        //    p.CurrentField = playground[p.PawnPos];
-        //}
+            if (this.PawnPos >= PlaygroundConstants.PlaygroundSize)
+            {
+                this.PawnPos = 0;
+            }
+
+            this.CurrentField = playground[this.PawnPos];
+        }
     }
 }

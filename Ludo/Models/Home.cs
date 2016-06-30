@@ -6,7 +6,7 @@
 
     public class Home
     {
-        public List<Field> Fields { get; private set; }
+        public IList<Field> Fields { get; private set; }
         private int originX;
         private int originY;
 

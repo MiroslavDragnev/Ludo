@@ -18,9 +18,11 @@ namespace Ludo.Models.Game
     public partial class Game : Form
     {
         private List<Player> players;
-        private List<Field> playground;
+        private IList<Field> playground;
         private int turn;
         private int playerCount;
+        public event GameStateChanged OnStateChanged;
+        private GameStateType gameState;
 
         public Game(Dictionary<ColorType, string> dict)
         {
@@ -28,6 +30,7 @@ namespace Ludo.Models.Game
             
             this.players = new List<Player>();
             this.playground = Playground.GetPlayground();
+            this.OnStateChanged += GameStateHub;
 
             for (int i = 0; i < 4; i++)
                 if (dict.ContainsKey((ColorType)i))
@@ -36,16 +39,14 @@ namespace Ludo.Models.Game
             this.playerCount = players.Count;
             this.turn = 0;
 
-            UpdateLabel(players[turn]);
-
             this.players.ForEach(x =>
             {
                 x.Pawns.ForEach(y => y.OnPawnChange += DisplayNewPawnPos);
             });
-
+            
             this.players.ForEach(x => x.Pawns.ForEach(f => f.CurrentField = x.Home.FindEmptyHomeField()));
 
-            InitializePlayerTurn(players[turn]);
+            this.GameState = GameStateType.InitPlayerTurn;
         }
     }
 }

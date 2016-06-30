@@ -11,7 +11,7 @@ namespace Ludo.Models
 {
     public static class Playground
     {
-        private static List<Field> playground;
+        private static IList<Field> playground;
 
         static Playground()
         {
@@ -46,8 +46,8 @@ namespace Ludo.Models
                 playground.Add(new Field((FieldType)fParams[0], fParams[1], fParams[2]));
             }
         }
-
-        public static List<Field> GetPlayground()
+        
+        public static IList<Field> GetPlayground()
         {
             return playground;
         }

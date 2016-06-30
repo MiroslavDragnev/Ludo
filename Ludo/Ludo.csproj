@@ -66,17 +66,20 @@
     <Compile Include="Constants\PawnConstants.cs" />
     <Compile Include="Constants\PlayerConstants.cs" />
     <Compile Include="Constants\PlaygroundConstants.cs" />
+    <Compile Include="Contracts\IDice.cs" />
+    <Compile Include="Contracts\IPawn.cs" />
     <Compile Include="Enumerations\ColorType.cs" />
     <Compile Include="Enumerations\FieldType.cs" />
+    <Compile Include="Enumerations\GameStateType.cs" />
     <Compile Include="Enumerations\WheelType.cs" />
     <Compile Include="Extensions\HomeExtensions.cs" />
-    <Compile Include="Extensions\PawnExtensions.cs" />
     <Compile Include="Models\About\About.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Models\About\About.Designer.cs">
       <DependentUpon>About.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Dice.cs" />
     <Compile Include="Models\Field.cs" />
     <Compile Include="Models\GameSettings\GameSettings.cs">
       <SubType>Form</SubType>
@@ -89,6 +92,12 @@
     </Compile>
     <Compile Include="Models\Game\Game.Designer.cs">
       <DependentUpon>Game.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Game\GameState.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Models\Game\GameStateMethods.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Models\Game\GameUtils.cs">
       <SubType>Form</SubType>
@@ -133,7 +142,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Abstract\" />
-    <Folder Include="Contracts\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\About-button.png" />
@@ -200,6 +208,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\BigMamaDis.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WheelDis.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

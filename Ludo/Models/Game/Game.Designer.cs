@@ -321,6 +321,7 @@ namespace Ludo.Models.Game
             this.diceNine.Size = new System.Drawing.Size(70, 70);
             this.diceNine.TabIndex = 23;
             this.diceNine.UseVisualStyleBackColor = true;
+            this.diceNine.EnabledChanged += new System.EventHandler(this.DiceEnabledChanged);
             // 
             // diceCatapult
             // 
@@ -333,6 +334,7 @@ namespace Ludo.Models.Game
             this.diceCatapult.Size = new System.Drawing.Size(70, 70);
             this.diceCatapult.TabIndex = 22;
             this.diceCatapult.UseVisualStyleBackColor = true;
+            this.diceCatapult.EnabledChanged += new System.EventHandler(this.DiceEnabledChanged);
             // 
             // diceMama
             // 
@@ -358,6 +360,7 @@ namespace Ludo.Models.Game
             this.diceStandart.Size = new System.Drawing.Size(70, 70);
             this.diceStandart.TabIndex = 20;
             this.diceStandart.UseVisualStyleBackColor = true;
+            this.diceStandart.EnabledChanged += new System.EventHandler(this.DiceEnabledChanged);
             // 
             // pictureBox1
             // 

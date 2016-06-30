@@ -1,4 +1,5 @@
 ﻿using Ludo.Constants;
+using Ludo.Enumerations;
 using Ludo.Extensions;
 using System;
 using System.Collections.Generic;
@@ -30,6 +31,22 @@ namespace Ludo.Models.Game
             }
         }
 
+        //public void NewPawnPos(Pawn p)
+        //{
+        //    foreach (Control C in this.Controls)
+        //    {
+        //        if (C is Button //C.GetType() == typeof(Button)
+        //            && C.Name == p.PawnName)
+        //        {
+        //            //Point location = C.Location;
+        //            //location.X = p.CurrentField.XPos;
+        //            //location.Y = p.CurrentField.YPos;
+        //            //C.Location = location;
+        //            C.Location = new Point(p.CurrentField.XPos, p.CurrentField.YPos);
+        //        }
+        //    }
+        //}
+
         private void HandlePawnClick(object sender, EventArgs e)
         {
             Button b = sender as Button;
@@ -44,7 +61,10 @@ namespace Ludo.Models.Game
                     {
                         if (players[i].Pawns[j].PawnName == name)
                         {
-                            players[i].Pawns[j].Move(playground, players[i].StepsLeft);
+                            //players[i].Pawns[j].Move(playground, players[i].StepsLeft);
+                            players[i].SelectedPawn = j;
+                            players[i].StepsLeft = 5;
+                            this.GameState = GameStateType.MovePawn;
                         }
                     }
                 }
@@ -54,6 +74,9 @@ namespace Ludo.Models.Game
         private void DiceEnabledChanged(object sender, EventArgs e)
         {
             Button b = sender as Button;
+
+            if (b == null)
+                return;
 
             switch(b.Name)
             {
@@ -90,23 +113,49 @@ namespace Ludo.Models.Game
                             global::Ludo.Properties.Resources.CatapultDis;
                         break;
                     }
+                case "wheel":
+                    {
+                        b.BackgroundImage =
+                            b.Enabled == true ?
+                            global::Ludo.Properties.Resources.Wheel :
+                            global::Ludo.Properties.Resources.WheelDis;
+                        break;
+                    }
             }
         }
 
-        public void UpdateLabel(Player p)
+        public void UpdateControls(bool standart, bool mama, bool nine, bool catapult, bool wheel)
         {
-            this.btnTurn.Text = p.Name;
-            this.btnTurn.BackColor = ColorConstants.Colors[(int)p.Color];
+            this.diceNine.Enabled = nine;
+            this.diceCatapult.Enabled = catapult;
+            this.diceMama.Enabled = mama;
+            this.diceStandart.Enabled = standart;
+            this.wheel.Enabled = wheel;
         }
 
-        public void InitializePlayerTurn(Player P)
+        public void UpdatePawns(bool curPlayerPawnsEnabled)
         {
-            this.diceNine.Enabled = false;
-            this.diceCatapult.Enabled = false;
-            this.diceMama.Enabled = false;
-            this.diceStandart.Enabled = true;
+            bool enable = false;
 
+            foreach (Control C in this.Controls)
+            {
+                if (C is Button)
+                {
+                    foreach(var plr in this.players)
+                    {
+                        enable = plr == this.players[turn] ? true : false;
+                        if (!curPlayerPawnsEnabled) enable = false;
 
+                        foreach(var p in plr.Pawns)
+                        {
+                            if(C.Name == p.PawnName)
+                            {
+                                C.Enabled = enable;
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }
