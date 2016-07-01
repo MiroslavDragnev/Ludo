@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Ludo.Models
 {
-    public class Dice : IDice
+    public abstract class Dice : IDice
     {
         public int MinNum { get; private set; }
         public int MaxNum { get; private set; }

@@ -61,7 +61,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\Dice.cs" />
     <Compile Include="Constants\ColorConstants.cs" />
+    <Compile Include="Constants\DiceConstants.cs" />
     <Compile Include="Constants\HomeConstants.cs" />
     <Compile Include="Constants\PawnConstants.cs" />
     <Compile Include="Constants\PlayerConstants.cs" />
@@ -79,7 +81,10 @@
     <Compile Include="Models\About\About.Designer.cs">
       <DependentUpon>About.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\Dice.cs" />
+    <Compile Include="Models\Dices\DiceCatapult.cs" />
+    <Compile Include="Models\Dices\DiceMama.cs" />
+    <Compile Include="Models\Dices\DiceNine.cs" />
+    <Compile Include="Models\Dices\DiceStandart.cs" />
     <Compile Include="Models\Field.cs" />
     <Compile Include="Models\GameSettings\GameSettings.cs">
       <SubType>Form</SubType>
@@ -140,9 +145,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Abstract\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\About-button.png" />
   </ItemGroup>
