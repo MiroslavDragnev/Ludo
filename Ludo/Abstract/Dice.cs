@@ -18,9 +18,9 @@ namespace Ludo.Models
             this.MaxNum = max;
         }
 
-        public int Throw()
+        public int Throw(Random rnd)
         {
-            throw new NotImplementedException();
+            return rnd.Next(this.MinNum, this.MaxNum + 1);
         }
     }
 }

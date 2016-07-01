@@ -49,7 +49,7 @@ namespace Ludo.Models.Game
             bool atHome = pawn.IsAtHome;
 
             pawn.Move(this.playground, p.StepsLeft);
-
+            this.btnDiceMama.Text = $"{p.StepsLeft}";
             if(!atHome)
                 await Task.Delay(p.StepsLeft * PawnConstants.DisplayDelay);
 

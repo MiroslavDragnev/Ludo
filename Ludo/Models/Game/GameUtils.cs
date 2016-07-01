@@ -42,7 +42,6 @@ namespace Ludo.Models.Game
                         if (players[i].Pawns[j].PawnName == name)
                         {
                             players[i].SelectedPawn = j;
-                            players[i].StepsLeft = 5;
                             this.GameState = GameStateType.MovePawn;
                         }
                     }
@@ -59,9 +58,10 @@ namespace Ludo.Models.Game
 
             switch(b.Name)
             {
-                case "diceStandart":
+                case "btnDiceStandart":
                     {
-                        this.players[turn].StepsLeft = 5;
+                        this.players[turn].StepsLeft =
+                            this.diceStandart.Throw(rnd);
                         this.GameState = GameStateType.SelectPawn;
                         break;
                     }
@@ -77,7 +77,7 @@ namespace Ludo.Models.Game
 
             switch(b.Name)
             {
-                case "diceMama":
+                case "btnDiceMama":
                     {
                         b.BackgroundImage =
                             b.Enabled == true ?
@@ -86,7 +86,7 @@ namespace Ludo.Models.Game
 
                         break;
                     }
-                case "diceNine":
+                case "btnDiceNine":
                     {
                         b.BackgroundImage =
                             b.Enabled == true ?
@@ -94,7 +94,7 @@ namespace Ludo.Models.Game
                             global::Ludo.Properties.Resources.NineDis;
                         break;
                     }
-                case "diceStandart":
+                case "btnDiceStandart":
                     {
                         b.BackgroundImage =
                             b.Enabled == true ?
@@ -102,7 +102,7 @@ namespace Ludo.Models.Game
                             global::Ludo.Properties.Resources.StandartDis;
                         break;
                     }
-                case "diceCatapult":
+                case "btnDiceCatapult":
                     {
                         b.BackgroundImage =
                             b.Enabled == true ?
@@ -110,7 +110,7 @@ namespace Ludo.Models.Game
                             global::Ludo.Properties.Resources.CatapultDis;
                         break;
                     }
-                case "wheel":
+                case "btnWheel":
                     {
                         b.BackgroundImage =
                             b.Enabled == true ?
@@ -123,11 +123,11 @@ namespace Ludo.Models.Game
 
         public void UpdateControls(bool standart, bool mama, bool nine, bool catapult, bool wheel)
         {
-            this.diceNine.Enabled = nine;
-            this.diceCatapult.Enabled = catapult;
-            this.diceMama.Enabled = mama;
-            this.diceStandart.Enabled = standart;
-            this.wheel.Enabled = wheel;
+            this.btnDiceNine.Enabled = nine;
+            this.btnDiceCatapult.Enabled = catapult;
+            this.btnDiceMama.Enabled = mama;
+            this.btnDiceStandart.Enabled = standart;
+            this.btnWheel.Enabled = wheel;
         }
 
         public void UpdatePawns(bool curPlayerPawnsEnabled)

@@ -12,6 +12,8 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Ludo.Models.Dices;
+using Ludo.Contracts;
 
 namespace Ludo.Models.Game
 {
@@ -23,6 +25,11 @@ namespace Ludo.Models.Game
         private int playerCount;
         public event GameStateChanged OnStateChanged;
         private GameStateType gameState;
+        private IDice diceStandart;
+        private IDice diceNine;
+        private IDice diceMama;
+        private IDice diceCatapult;
+        private Random rnd;
 
         public Game(Dictionary<ColorType, string> dict)
         {
@@ -31,6 +38,11 @@ namespace Ludo.Models.Game
             this.players = new List<Player>();
             this.playground = Playground.GetPlayground();
             this.OnStateChanged += GameStateHub;
+            this.diceStandart = new DiceStandart();
+            this.diceMama = new DiceMama();
+            this.diceNine = new DiceNine();
+            this.diceCatapult = new DiceCatapult();
+            this.rnd = new Random();
 
             for (int i = 0; i < PlayerConstants.MaxPlayers; i++)
             {

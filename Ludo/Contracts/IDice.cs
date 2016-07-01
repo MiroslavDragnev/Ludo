@@ -11,6 +11,6 @@ namespace Ludo.Contracts
         int MinNum { get; }
         int MaxNum { get; }
 
-        int Throw();
+        int Throw(Random rnd);
     }
 }

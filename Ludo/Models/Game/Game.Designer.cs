@@ -48,11 +48,11 @@ namespace Ludo.Models.Game
             this.bluePawn1 = new System.Windows.Forms.Button();
             this.bluePawn0 = new System.Windows.Forms.Button();
             this.bluePawn2 = new System.Windows.Forms.Button();
-            this.wheel = new System.Windows.Forms.Button();
-            this.diceNine = new System.Windows.Forms.Button();
-            this.diceCatapult = new System.Windows.Forms.Button();
-            this.diceMama = new System.Windows.Forms.Button();
-            this.diceStandart = new System.Windows.Forms.Button();
+            this.btnWheel = new System.Windows.Forms.Button();
+            this.btnDiceNine = new System.Windows.Forms.Button();
+            this.btnDiceCatapult = new System.Windows.Forms.Button();
+            this.btnDiceMama = new System.Windows.Forms.Button();
+            this.btnDiceStandart = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnTurn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -298,73 +298,73 @@ namespace Ludo.Models.Game
             this.bluePawn2.UseVisualStyleBackColor = false;
             this.bluePawn2.Click += new System.EventHandler(this.HandlePawnClick);
             // 
-            // wheel
+            // btnWheel
             // 
-            this.wheel.BackgroundImage = global::Ludo.Properties.Resources.Wheel;
-            this.wheel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.wheel.FlatAppearance.BorderSize = 0;
-            this.wheel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.wheel.Location = new System.Drawing.Point(12, 380);
-            this.wheel.Name = "wheel";
-            this.wheel.Size = new System.Drawing.Size(100, 100);
-            this.wheel.TabIndex = 24;
-            this.wheel.UseVisualStyleBackColor = true;
+            this.btnWheel.BackgroundImage = global::Ludo.Properties.Resources.Wheel;
+            this.btnWheel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnWheel.FlatAppearance.BorderSize = 0;
+            this.btnWheel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnWheel.Location = new System.Drawing.Point(12, 380);
+            this.btnWheel.Name = "btnWheel";
+            this.btnWheel.Size = new System.Drawing.Size(100, 100);
+            this.btnWheel.TabIndex = 24;
+            this.btnWheel.UseVisualStyleBackColor = true;
             // 
-            // diceNine
+            // btnDiceNine
             // 
-            this.diceNine.BackgroundImage = global::Ludo.Properties.Resources.Nine;
-            this.diceNine.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.diceNine.FlatAppearance.BorderSize = 0;
-            this.diceNine.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.diceNine.Location = new System.Drawing.Point(23, 290);
-            this.diceNine.Name = "diceNine";
-            this.diceNine.Size = new System.Drawing.Size(70, 70);
-            this.diceNine.TabIndex = 23;
-            this.diceNine.UseVisualStyleBackColor = true;
-            this.diceNine.EnabledChanged += new System.EventHandler(this.DiceEnabledChanged);
-            this.diceNine.Click += new System.EventHandler(this.HandleDiceClick);
+            this.btnDiceNine.BackgroundImage = global::Ludo.Properties.Resources.Nine;
+            this.btnDiceNine.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnDiceNine.FlatAppearance.BorderSize = 0;
+            this.btnDiceNine.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDiceNine.Location = new System.Drawing.Point(23, 290);
+            this.btnDiceNine.Name = "btnDiceNine";
+            this.btnDiceNine.Size = new System.Drawing.Size(70, 70);
+            this.btnDiceNine.TabIndex = 23;
+            this.btnDiceNine.UseVisualStyleBackColor = true;
+            this.btnDiceNine.EnabledChanged += new System.EventHandler(this.DiceEnabledChanged);
+            this.btnDiceNine.Click += new System.EventHandler(this.HandleDiceClick);
             // 
-            // diceCatapult
+            // btnDiceCatapult
             // 
-            this.diceCatapult.BackgroundImage = global::Ludo.Properties.Resources.Catapult;
-            this.diceCatapult.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.diceCatapult.FlatAppearance.BorderSize = 0;
-            this.diceCatapult.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.diceCatapult.Location = new System.Drawing.Point(23, 214);
-            this.diceCatapult.Name = "diceCatapult";
-            this.diceCatapult.Size = new System.Drawing.Size(70, 70);
-            this.diceCatapult.TabIndex = 22;
-            this.diceCatapult.UseVisualStyleBackColor = true;
-            this.diceCatapult.EnabledChanged += new System.EventHandler(this.DiceEnabledChanged);
-            this.diceCatapult.Click += new System.EventHandler(this.HandleDiceClick);
+            this.btnDiceCatapult.BackgroundImage = global::Ludo.Properties.Resources.Catapult;
+            this.btnDiceCatapult.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnDiceCatapult.FlatAppearance.BorderSize = 0;
+            this.btnDiceCatapult.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDiceCatapult.Location = new System.Drawing.Point(23, 214);
+            this.btnDiceCatapult.Name = "btnDiceCatapult";
+            this.btnDiceCatapult.Size = new System.Drawing.Size(70, 70);
+            this.btnDiceCatapult.TabIndex = 22;
+            this.btnDiceCatapult.UseVisualStyleBackColor = true;
+            this.btnDiceCatapult.EnabledChanged += new System.EventHandler(this.DiceEnabledChanged);
+            this.btnDiceCatapult.Click += new System.EventHandler(this.HandleDiceClick);
             // 
-            // diceMama
+            // btnDiceMama
             // 
-            this.diceMama.BackgroundImage = global::Ludo.Properties.Resources.BigMama;
-            this.diceMama.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.diceMama.FlatAppearance.BorderSize = 0;
-            this.diceMama.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.diceMama.Location = new System.Drawing.Point(23, 129);
-            this.diceMama.Name = "diceMama";
-            this.diceMama.Size = new System.Drawing.Size(70, 70);
-            this.diceMama.TabIndex = 21;
-            this.diceMama.UseVisualStyleBackColor = true;
-            this.diceMama.EnabledChanged += new System.EventHandler(this.DiceEnabledChanged);
-            this.diceMama.Click += new System.EventHandler(this.HandleDiceClick);
+            this.btnDiceMama.BackgroundImage = global::Ludo.Properties.Resources.BigMama;
+            this.btnDiceMama.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnDiceMama.FlatAppearance.BorderSize = 0;
+            this.btnDiceMama.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDiceMama.Location = new System.Drawing.Point(23, 129);
+            this.btnDiceMama.Name = "btnDiceMama";
+            this.btnDiceMama.Size = new System.Drawing.Size(70, 70);
+            this.btnDiceMama.TabIndex = 21;
+            this.btnDiceMama.UseVisualStyleBackColor = true;
+            this.btnDiceMama.EnabledChanged += new System.EventHandler(this.DiceEnabledChanged);
+            this.btnDiceMama.Click += new System.EventHandler(this.HandleDiceClick);
             // 
-            // diceStandart
+            // btnDiceStandart
             // 
-            this.diceStandart.BackgroundImage = global::Ludo.Properties.Resources.Standart;
-            this.diceStandart.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.diceStandart.FlatAppearance.BorderSize = 0;
-            this.diceStandart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.diceStandart.Location = new System.Drawing.Point(23, 53);
-            this.diceStandart.Name = "diceStandart";
-            this.diceStandart.Size = new System.Drawing.Size(70, 70);
-            this.diceStandart.TabIndex = 20;
-            this.diceStandart.UseVisualStyleBackColor = true;
-            this.diceStandart.EnabledChanged += new System.EventHandler(this.DiceEnabledChanged);
-            this.diceStandart.Click += new System.EventHandler(this.HandleDiceClick);
+            this.btnDiceStandart.BackgroundImage = global::Ludo.Properties.Resources.Standart;
+            this.btnDiceStandart.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnDiceStandart.FlatAppearance.BorderSize = 0;
+            this.btnDiceStandart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDiceStandart.Location = new System.Drawing.Point(23, 53);
+            this.btnDiceStandart.Name = "btnDiceStandart";
+            this.btnDiceStandart.Size = new System.Drawing.Size(70, 70);
+            this.btnDiceStandart.TabIndex = 20;
+            this.btnDiceStandart.UseVisualStyleBackColor = true;
+            this.btnDiceStandart.EnabledChanged += new System.EventHandler(this.DiceEnabledChanged);
+            this.btnDiceStandart.Click += new System.EventHandler(this.HandleDiceClick);
             // 
             // pictureBox1
             // 
@@ -400,11 +400,11 @@ namespace Ludo.Models.Game
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(622, 500);
             this.Controls.Add(this.btnTurn);
-            this.Controls.Add(this.wheel);
-            this.Controls.Add(this.diceNine);
-            this.Controls.Add(this.diceCatapult);
-            this.Controls.Add(this.diceMama);
-            this.Controls.Add(this.diceStandart);
+            this.Controls.Add(this.btnWheel);
+            this.Controls.Add(this.btnDiceNine);
+            this.Controls.Add(this.btnDiceCatapult);
+            this.Controls.Add(this.btnDiceMama);
+            this.Controls.Add(this.btnDiceStandart);
             this.Controls.Add(this.bluePawn3);
             this.Controls.Add(this.bluePawn1);
             this.Controls.Add(this.bluePawn0);
@@ -449,11 +449,11 @@ namespace Ludo.Models.Game
         private System.Windows.Forms.Button bluePawn1;
         private System.Windows.Forms.Button bluePawn0;
         private System.Windows.Forms.Button bluePawn2;
-        private System.Windows.Forms.Button diceStandart;
-        private System.Windows.Forms.Button diceMama;
-        private System.Windows.Forms.Button diceCatapult;
-        private System.Windows.Forms.Button diceNine;
-        private System.Windows.Forms.Button wheel;
+        private System.Windows.Forms.Button btnDiceStandart;
+        private System.Windows.Forms.Button btnDiceMama;
+        private System.Windows.Forms.Button btnDiceCatapult;
+        private System.Windows.Forms.Button btnDiceNine;
+        private System.Windows.Forms.Button btnWheel;
         private System.Windows.Forms.Button btnTurn;
     }
 }
