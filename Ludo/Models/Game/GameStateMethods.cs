@@ -18,7 +18,7 @@ namespace Ludo.Models.Game
             this.btnTurn.Text = this.players[turn].Name;
             this.btnTurn.BackColor = ColorConstants.Colors[(int)this.players[turn].Color];
 
-            this.UpdateControls(true, false, false, false, false);
+            this.UpdateControls(false, false, false, false, false);
             this.UpdatePawns(false);
 
             this.GameState = GameStateType.ThrowNormal;
@@ -33,7 +33,13 @@ namespace Ludo.Models.Game
                 this.turn = 0;
             }
 
-            this.DoInitPlayerTurn();
+            this.GameState = GameStateType.InitPlayerTurn;
+        }
+
+        private void DoSelectPawn(Player p)
+        {
+            this.UpdateControls(false, false, false, false, false);
+            this.UpdatePawns(true);
         }
 
         private void DoMovePawn(Player p)
@@ -56,6 +62,18 @@ namespace Ludo.Models.Game
         {
             this.UpdateControls(false, true, false, false, false);
             this.UpdatePawns(false);
+        }
+
+        private void DoThrowCatapult()
+        {
+            this.UpdateControls(false, false, false, true, false);
+            this.UpdatePawns(false);
+        }
+
+        private void DoThrowNine()
+        {
+            this.UpdateControls(false, false, true, false, false);
+            this.UpdatePawns(true);
         }
     }
 }

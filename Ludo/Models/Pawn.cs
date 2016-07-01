@@ -58,7 +58,7 @@
                 return;
             }
 
-            this.PawnPos += 1;
+            this.PawnPos += steps;
 
             if (this.PawnPos >= PlaygroundConstants.PlaygroundSize)
             {

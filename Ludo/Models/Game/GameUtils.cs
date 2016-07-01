@@ -31,22 +31,6 @@ namespace Ludo.Models.Game
             }
         }
 
-        //public void NewPawnPos(Pawn p)
-        //{
-        //    foreach (Control C in this.Controls)
-        //    {
-        //        if (C is Button //C.GetType() == typeof(Button)
-        //            && C.Name == p.PawnName)
-        //        {
-        //            //Point location = C.Location;
-        //            //location.X = p.CurrentField.XPos;
-        //            //location.Y = p.CurrentField.YPos;
-        //            //C.Location = location;
-        //            C.Location = new Point(p.CurrentField.XPos, p.CurrentField.YPos);
-        //        }
-        //    }
-        //}
-
         private void HandlePawnClick(object sender, EventArgs e)
         {
             Button b = sender as Button;
@@ -68,6 +52,24 @@ namespace Ludo.Models.Game
                         }
                     }
                 }
+            }
+        }
+
+        private void HandleDiceClick(object sender, EventArgs e)
+        {
+            Button b = sender as Button;
+
+            if (b == null)
+                return;
+
+            switch(b.Name)
+            {
+                case "diceStandart":
+                    {
+                        this.players[turn].StepsLeft = 5;
+                        this.GameState = GameStateType.SelectPawn;
+                        break;
+                    }
             }
         }
 

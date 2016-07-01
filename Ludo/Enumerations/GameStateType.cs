@@ -12,6 +12,7 @@ namespace Ludo.Enumerations
         ThrowMama,
         ThrowNine,
         ThrowCatapult,
+        SelectPawn,
         MovePawn,
         RotateWheel,
         InitPlayerTurn,
