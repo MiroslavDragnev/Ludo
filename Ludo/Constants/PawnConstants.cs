@@ -8,6 +8,8 @@ namespace Ludo.Constants
 {
     public static class PawnConstants
     {
+        public const int DisplayDelay = 150;
+
         public static readonly string[] PawnNames =
         {
             "redPawn",

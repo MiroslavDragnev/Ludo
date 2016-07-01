@@ -8,6 +8,7 @@
     using System.Collections.Generic;
     using System.Threading;
     using Contracts;
+    using System.Threading.Tasks;
     public delegate void PawnChangedPos(object sender, EventArgs e);
 
     public class Pawn : IPawn
@@ -19,13 +20,19 @@
         public string PawnName { get; private set; }
         public int PawnPos { get; set; }
 
+        //Experimental
+        private Thread pawnThread;
+
         public Pawn(ColorType color, int number)
         {
             this.Color = color;
             this.PawnName = $"{PawnConstants.PawnNames[(int)color]}{number}";
             this.IsAtHome = true;
             this.PawnPos = PlaygroundConstants.PlayerStartPos[(int)color];
+            //this.pawnThread = new Thread(new ThreadStart(Dummy));
         }
+
+        private void Dummy() { }
 
         public Field CurrentField
         {
@@ -48,7 +55,7 @@
             }
         }
 
-        public void Move(IList<Field> playground, int steps)
+        public async void Move(IList<Field> playground, int steps)
         {
             if (this.IsAtHome)
             {
@@ -58,14 +65,19 @@
                 return;
             }
 
-            this.PawnPos += steps;
-
-            if (this.PawnPos >= PlaygroundConstants.PlaygroundSize)
+            for(int i = 0; i < steps; i++)
             {
-                this.PawnPos = 0;
-            }
+                this.PawnPos++;
 
-            this.CurrentField = playground[this.PawnPos];
+                if (this.PawnPos >= PlaygroundConstants.PlaygroundSize)
+                {
+                    this.PawnPos = 0;
+                }
+
+                this.CurrentField = playground[this.PawnPos];
+
+                await Task.Delay(PawnConstants.DisplayDelay);
+            }
         }
     }
 }

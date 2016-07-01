@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -19,13 +20,8 @@ namespace Ludo.Models.Game
 
             foreach (Control C in this.Controls)
             {
-                if (C is Button //C.GetType() == typeof(Button)
-                    && C.Name == p.PawnName)
+                if (C is Button && C.Name == p.PawnName)
                 {
-                    //Point location = C.Location;
-                    //location.X = p.CurrentField.XPos;
-                    //location.Y = p.CurrentField.YPos;
-                    //C.Location = location;
                     C.Location = new Point(p.CurrentField.XPos, p.CurrentField.YPos);
                 }
             }
@@ -45,7 +41,6 @@ namespace Ludo.Models.Game
                     {
                         if (players[i].Pawns[j].PawnName == name)
                         {
-                            //players[i].Pawns[j].Move(playground, players[i].StepsLeft);
                             players[i].SelectedPawn = j;
                             players[i].StepsLeft = 5;
                             this.GameState = GameStateType.MovePawn;
@@ -154,6 +149,23 @@ namespace Ludo.Models.Game
                             {
                                 C.Enabled = enable;
                             }
+                        }
+                    }
+                }
+            }
+        }
+
+        public void HideUnusedPawns(ColorType color)
+        {
+            foreach (Control C in this.Controls)
+            {
+                if (C is Button)
+                {
+                    for (int i = 0; i < PlayerConstants.PawnsPerPlayer; i++)
+                    {
+                        if (C.Name == $"{PawnConstants.PawnNames[(int)color]}{i}")
+                        {
+                            C.Location = new Point(9999, 9999);
                         }
                     }
                 }

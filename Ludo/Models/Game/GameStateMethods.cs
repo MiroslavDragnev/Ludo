@@ -42,13 +42,18 @@ namespace Ludo.Models.Game
             this.UpdatePawns(true);
         }
 
-        private void DoMovePawn(Player p)
+        private async void DoMovePawn(Player p)
         {
             Pawn pawn = p.Pawns[p.SelectedPawn];
-            
-            pawn.Move(this.playground, p.StepsLeft);
-            p.StepsLeft = 0;
 
+            bool atHome = pawn.IsAtHome;
+
+            pawn.Move(this.playground, p.StepsLeft);
+
+            if(!atHome)
+                await Task.Delay(p.StepsLeft * PawnConstants.DisplayDelay);
+
+            p.StepsLeft = 0;
             this.GameState = GameStateType.ChangePlayerTurn;
         }
 

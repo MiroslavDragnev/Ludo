@@ -32,9 +32,17 @@ namespace Ludo.Models.Game
             this.playground = Playground.GetPlayground();
             this.OnStateChanged += GameStateHub;
 
-            for (int i = 0; i < 4; i++)
+            for (int i = 0; i < PlayerConstants.MaxPlayers; i++)
+            {
                 if (dict.ContainsKey((ColorType)i))
+                {
                     players.Add(new Player(dict[(ColorType)i], (ColorType)i));
+                }
+                else
+                {
+                    this.HideUnusedPawns((ColorType)i);
+                }
+            }
 
             this.playerCount = players.Count;
             this.turn = 0;
