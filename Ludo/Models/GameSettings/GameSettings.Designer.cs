@@ -187,6 +187,8 @@ namespace Ludo
             // pictureBox4
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.Blue;
+            this.pictureBox4.BackgroundImage = global::Ludo.Properties.Resources.PawnBlue;
+            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox4.Location = new System.Drawing.Point(201, 110);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(20, 20);
@@ -196,6 +198,8 @@ namespace Ludo
             // pictureBox3
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.Yellow;
+            this.pictureBox3.BackgroundImage = global::Ludo.Properties.Resources.PawnYellow;
+            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox3.Location = new System.Drawing.Point(201, 77);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(20, 20);
@@ -205,6 +209,8 @@ namespace Ludo
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Lime;
+            this.pictureBox2.BackgroundImage = global::Ludo.Properties.Resources.PawnGreen;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox2.Location = new System.Drawing.Point(201, 43);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(20, 20);
@@ -214,6 +220,8 @@ namespace Ludo
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Red;
+            this.pictureBox1.BackgroundImage = global::Ludo.Properties.Resources.PawnRed;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox1.Location = new System.Drawing.Point(201, 9);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(20, 20);

@@ -11,10 +11,15 @@ namespace Ludo.Constants
     {
         public static readonly Color[] Colors =
         {
-            Color.DarkRed,
-            Color.DarkGreen,
-            Color.DarkGoldenrod,
-            Color.DarkSlateBlue
+            ColorTranslator.FromHtml("#DA251C"),
+            ColorTranslator.FromHtml("#83C326"),
+            ColorTranslator.FromHtml("#FFF500"),
+            ColorTranslator.FromHtml("#0094DE")
+
+            //Color.DarkRed,
+            //Color.DarkGreen,
+            //Color.DarkGoldenrod,
+            //Color.DarkSlateBlue
         };
     }
 }

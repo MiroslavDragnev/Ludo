@@ -15,8 +15,10 @@ namespace Ludo.Models.Game
     {
         private void DoInitPlayerTurn()
         {
-            this.btnTurn.Text = this.players[turn].Name;
-            this.btnTurn.BackColor = ColorConstants.Colors[(int)this.players[turn].Color];
+            this.currentPlayer = this.players[turn];
+
+            this.btnTurn.Text = this.currentPlayer.Name;
+            this.btnTurn.BackColor = ColorConstants.Colors[(int)this.currentPlayer.Color];
 
             this.UpdateControls(false, false, false, false, false);
             this.UpdatePawns(false);
@@ -49,7 +51,7 @@ namespace Ludo.Models.Game
             bool atHome = pawn.IsAtHome;
 
             pawn.Move(this.playground, p.StepsLeft);
-            this.btnDiceMama.Text = $"{p.StepsLeft}";
+
             if(!atHome)
                 await Task.Delay(p.StepsLeft * PawnConstants.DisplayDelay);
 

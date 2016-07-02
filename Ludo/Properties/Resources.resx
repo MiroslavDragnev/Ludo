@@ -139,15 +139,6 @@
   <data name="BtnAbout" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\BtnAbout.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="PawnRed" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\PawnRed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Pawn" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Pawn.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="About-button" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\About-button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="BtnExitGlow" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\BtnExitGlow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -183,5 +174,17 @@
   </data>
   <data name="WheelDis" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\WheelDis.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PawnBlue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PawnBlue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PawnGreen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PawnGreen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PawnRed" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PawnRed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PawnYellow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PawnYellow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

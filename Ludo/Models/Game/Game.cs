@@ -20,6 +20,7 @@ namespace Ludo.Models.Game
     public partial class Game : Form
     {
         private List<Player> players;
+        private Player currentPlayer;
         private IList<Field> playground;
         private int turn;
         private int playerCount;

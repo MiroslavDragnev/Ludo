@@ -63,16 +63,6 @@ namespace Ludo.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap About_button {
-            get {
-                object obj = ResourceManager.GetObject("About-button", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap BigMama {
             get {
                 object obj = ResourceManager.GetObject("BigMama", resourceCulture);
@@ -213,9 +203,19 @@ namespace Ludo.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Pawn {
+        internal static System.Drawing.Bitmap PawnBlue {
             get {
-                object obj = ResourceManager.GetObject("Pawn", resourceCulture);
+                object obj = ResourceManager.GetObject("PawnBlue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PawnGreen {
+            get {
+                object obj = ResourceManager.GetObject("PawnGreen", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -226,6 +226,16 @@ namespace Ludo.Properties {
         internal static System.Drawing.Bitmap PawnRed {
             get {
                 object obj = ResourceManager.GetObject("PawnRed", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PawnYellow {
+            get {
+                object obj = ResourceManager.GetObject("PawnYellow", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

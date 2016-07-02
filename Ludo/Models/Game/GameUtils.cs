@@ -33,19 +33,23 @@ namespace Ludo.Models.Game
 
             if (b != null)
             {
-                var name = b.Name;
+                this.currentPlayer.SelectedPawn =
+                    this.currentPlayer.Pawns.IndexOf(
+                    (from pawn in this.currentPlayer.Pawns
+                     where pawn.PawnName == b.Name
+                     select pawn).First());
 
-                for (int i = 0; i < players.Count; i++)
-                {
-                    for (int j = 0; j < 4; j++)
-                    {
-                        if (players[i].Pawns[j].PawnName == name)
-                        {
-                            players[i].SelectedPawn = j;
-                            this.GameState = GameStateType.MovePawn;
-                        }
-                    }
-                }
+                //less ugly option
+                //for (int i = 0; i < PlayerConstants.PawnsPerPlayer; i++)
+                //{
+                //    if(this.currentPlayer.Pawns[i].PawnName == b.Name)
+                //    {
+                //        this.currentPlayer.SelectedPawn = i;
+                //        break;
+                //    }
+                //}
+
+                this.GameState = GameStateType.MovePawn;
             }
         }
 
@@ -56,7 +60,7 @@ namespace Ludo.Models.Game
             if (b == null)
                 return;
 
-            switch(b.Name)
+            switch (b.Name)
             {
                 case "btnDiceStandart":
                     {
@@ -75,7 +79,7 @@ namespace Ludo.Models.Game
             if (b == null)
                 return;
 
-            switch(b.Name)
+            switch (b.Name)
             {
                 case "btnDiceMama":
                     {
@@ -138,14 +142,13 @@ namespace Ludo.Models.Game
             {
                 if (C is Button)
                 {
-                    foreach(var plr in this.players)
+                    foreach (var plr in this.players)
                     {
-                        enable = plr == this.players[turn] ? true : false;
-                        if (!curPlayerPawnsEnabled) enable = false;
+                        enable = (plr == currentPlayer && curPlayerPawnsEnabled);
 
-                        foreach(var p in plr.Pawns)
+                        foreach (var p in plr.Pawns)
                         {
-                            if(C.Name == p.PawnName)
+                            if (C.Name == p.PawnName)
                             {
                                 C.Enabled = enable;
                             }
@@ -165,7 +168,8 @@ namespace Ludo.Models.Game
                     {
                         if (C.Name == $"{PawnConstants.PawnNames[(int)color]}{i}")
                         {
-                            C.Location = new Point(9999, 9999);
+                            C.Hide();
+                            //C.Location = new Point(9999, 9999);
                         }
                     }
                 }
