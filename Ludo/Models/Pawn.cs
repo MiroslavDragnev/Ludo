@@ -59,8 +59,12 @@
         {
             if (this.IsAtHome)
             {
-                this.IsAtHome = false;
-                this.CurrentField = playground[this.PawnPos];
+                if (steps==6)
+                {
+                    this.IsAtHome = false;
+                    this.CurrentField = playground[this.PawnPos];
+                }
+                
 
                 return;
             }
