@@ -73,7 +73,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(100, 13);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Team \'Noob Saibot\'";
+            this.label1.Text = "Team ]'Noob Saibot\'";
             // 
             // label3
             // 

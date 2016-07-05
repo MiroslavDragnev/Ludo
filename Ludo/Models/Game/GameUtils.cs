@@ -48,8 +48,17 @@ namespace Ludo.Models.Game
                 //        break;
                 //    }
                 //}
+                this.currentPlayer.PawnsAtHome = this.currentPlayer.Pawns.Where(x => x.IsAtHome).Select(x => x).ToList().Count;
+                if (this.currentPlayer.Pawns[this.currentPlayer.SelectedPawn].IsAtHome && this.currentPlayer.StepsLeft < 6 && this.currentPlayer.PawnsAtHome<4)
+                {
+                    this.GameState = Enumerations.GameStateType.SelectPawn;
+                    
+                }
+                else
+                {
+                    this.GameState = GameStateType.MovePawn;
+                }
 
-                this.GameState = GameStateType.MovePawn;
             }
         }
 

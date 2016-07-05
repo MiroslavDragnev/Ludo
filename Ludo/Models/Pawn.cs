@@ -63,7 +63,7 @@
                 {
                     this.IsAtHome = false;
                     this.CurrentField = playground[this.PawnPos];
-                }
+                }              
                 
 
                 return;

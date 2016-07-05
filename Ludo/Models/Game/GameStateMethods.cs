@@ -49,9 +49,10 @@ namespace Ludo.Models.Game
             Pawn pawn = p.Pawns[p.SelectedPawn];
 
             bool atHome = pawn.IsAtHome;
-
+            
+            
             pawn.Move(this.playground, p.StepsLeft);
-
+            
             if(!atHome)
                 await Task.Delay(p.StepsLeft * PawnConstants.DisplayDelay);
 
