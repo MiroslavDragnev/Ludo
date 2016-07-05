@@ -68,6 +68,7 @@
     <Compile Include="Constants\PawnConstants.cs" />
     <Compile Include="Constants\PlayerConstants.cs" />
     <Compile Include="Constants\PlaygroundConstants.cs" />
+    <Compile Include="Constants\WheelConstants.cs" />
     <Compile Include="Contracts\IDice.cs" />
     <Compile Include="Contracts\IPawn.cs" />
     <Compile Include="Enumerations\ColorType.cs" />
@@ -111,6 +112,7 @@
     <Compile Include="Models\Pawn.cs" />
     <Compile Include="Models\Player.cs" />
     <Compile Include="Models\Playground.cs" />
+    <Compile Include="Models\Wheel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Models\About\About.resx">
@@ -222,6 +224,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\PawnGreen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WheelTurn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WheelBomb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WheelCatapult.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WheelMama.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WheelMiss.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WheelSleep.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WheelSwitch.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

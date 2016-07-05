@@ -17,8 +17,8 @@ namespace Ludo.Models.Game
         {
             this.currentPlayer = this.players[turn];
 
-            this.btnTurn.Text = this.currentPlayer.Name;
-            this.btnTurn.BackColor = ColorConstants.Colors[(int)this.currentPlayer.Color];
+            this.lblTurn.Text = this.currentPlayer.Name;
+            this.lblTurn.BackColor = ColorConstants.Colors[(int)this.currentPlayer.Color];
 
             this.UpdateControls(false, false, false, false, false);
             this.UpdatePawns(false);

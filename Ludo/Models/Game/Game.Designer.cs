@@ -48,13 +48,13 @@ namespace Ludo.Models.Game
             this.bluePawn1 = new System.Windows.Forms.Button();
             this.bluePawn0 = new System.Windows.Forms.Button();
             this.bluePawn2 = new System.Windows.Forms.Button();
-            this.btnTurn = new System.Windows.Forms.Button();
             this.btnWheel = new System.Windows.Forms.Button();
             this.btnDiceNine = new System.Windows.Forms.Button();
             this.btnDiceCatapult = new System.Windows.Forms.Button();
             this.btnDiceMama = new System.Windows.Forms.Button();
             this.btnDiceStandart = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblTurn = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -298,22 +298,6 @@ namespace Ludo.Models.Game
             this.bluePawn2.UseVisualStyleBackColor = false;
             this.bluePawn2.Click += new System.EventHandler(this.HandlePawnClick);
             // 
-            // btnTurn
-            // 
-            this.btnTurn.Enabled = false;
-            this.btnTurn.FlatAppearance.BorderSize = 0;
-            this.btnTurn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnTurn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnTurn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTurn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTurn.ForeColor = System.Drawing.Color.White;
-            this.btnTurn.Location = new System.Drawing.Point(0, 0);
-            this.btnTurn.Name = "btnTurn";
-            this.btnTurn.Size = new System.Drawing.Size(122, 30);
-            this.btnTurn.TabIndex = 25;
-            this.btnTurn.Text = "button1";
-            this.btnTurn.UseVisualStyleBackColor = true;
-            // 
             // btnWheel
             // 
             this.btnWheel.BackgroundImage = global::Ludo.Properties.Resources.Wheel;
@@ -395,13 +379,25 @@ namespace Ludo.Models.Game
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // lblTurn
+            // 
+            this.lblTurn.BackColor = System.Drawing.Color.White;
+            this.lblTurn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTurn.ForeColor = System.Drawing.Color.Black;
+            this.lblTurn.Location = new System.Drawing.Point(0, 0);
+            this.lblTurn.Name = "lblTurn";
+            this.lblTurn.Size = new System.Drawing.Size(122, 30);
+            this.lblTurn.TabIndex = 26;
+            this.lblTurn.Text = "lblTurn";
+            this.lblTurn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(622, 500);
-            this.Controls.Add(this.btnTurn);
+            this.Controls.Add(this.lblTurn);
             this.Controls.Add(this.btnWheel);
             this.Controls.Add(this.btnDiceNine);
             this.Controls.Add(this.btnDiceCatapult);
@@ -456,6 +452,6 @@ namespace Ludo.Models.Game
         private System.Windows.Forms.Button btnDiceCatapult;
         private System.Windows.Forms.Button btnDiceNine;
         private System.Windows.Forms.Button btnWheel;
-        private System.Windows.Forms.Button btnTurn;
+        private System.Windows.Forms.Label lblTurn;
     }
 }

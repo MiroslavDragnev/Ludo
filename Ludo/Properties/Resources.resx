@@ -187,4 +187,22 @@
   <data name="PawnYellow" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PawnYellow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="WheelBomb" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\WheelBomb.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WheelCatapult" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\WheelCatapult.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WheelMama" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\WheelMama.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WheelMiss" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\WheelMiss.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WheelSleep" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\WheelSleep.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WheelSwitch" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\WheelSwitch.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>
