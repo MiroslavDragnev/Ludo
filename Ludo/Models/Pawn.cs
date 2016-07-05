@@ -21,9 +21,6 @@
         public int PawnPos { get; set; }
         public bool PawnFinished { get; set; }
 
-        //Experimental
-        private Thread pawnThread;
-
         public Pawn(ColorType color, int number)
         {
             this.Color = color;
@@ -31,10 +28,7 @@
             this.IsAtHome = true;
             this.PawnFinished = false;
             this.PawnPos = PlaygroundConstants.PlayerStartPos[(int)color];
-            //this.pawnThread = new Thread(new ThreadStart(Dummy));
         }
-
-        private void Dummy() { }
 
         public Field CurrentField
         {
@@ -61,13 +55,12 @@
         {
             if (this.IsAtHome)
             {
-                if (steps==6)
+                if (steps == DiceConstants.MaxStandart)
                 {
                     this.IsAtHome = false;
                     this.CurrentField = playground[this.PawnPos];
                 }              
                 
-
                 return;
             }
 

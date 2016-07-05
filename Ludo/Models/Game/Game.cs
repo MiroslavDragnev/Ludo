@@ -31,6 +31,7 @@ namespace Ludo.Models.Game
         private IDice diceMama;
         private IDice diceCatapult;
         private Random rnd;
+        private int curPlayerInitialThrows;
 
         public Game(Dictionary<ColorType, string> dict)
         {
@@ -44,6 +45,11 @@ namespace Ludo.Models.Game
             this.diceNine = new DiceNine();
             this.diceCatapult = new DiceCatapult();
             this.rnd = new Random();
+            this.lblStandart.Text = "";
+            this.lblCatapult.Text = "";
+            this.lblNine.Text = "";
+            this.lblMama.Text = "";
+            this.curPlayerInitialThrows = 0;
 
             for (int i = 0; i < PlayerConstants.MaxPlayers; i++)
             {

@@ -15,36 +15,6 @@ namespace Ludo.Models.Game
 {
     public partial class Game : Form
     {
-        //public static Image RotateImage(Image img, float rotationAngle)
-        //{
-        //    //create an empty Bitmap image
-        //    Bitmap bmp = new Bitmap(img.Width, img.Height);
-
-        //    //turn the Bitmap into a Graphics object
-        //    Graphics gfx = Graphics.FromImage(bmp);
-
-        //    //now we set the rotation point to the center of our image
-        //    gfx.TranslateTransform((float)bmp.Width / 2, (float)bmp.Height / 2);
-
-        //    //now rotate the image
-        //    gfx.RotateTransform(rotationAngle);
-
-        //    gfx.TranslateTransform(-(float)bmp.Width / 2, -(float)bmp.Height / 2);
-
-        //    //set the InterpolationMode to HighQualityBicubic so to ensure a high
-        //    //quality image once it is transformed to the specified size
-        //    gfx.InterpolationMode = InterpolationMode.HighQualityBicubic;
-
-        //    //now draw our new image onto the graphics object
-        //    gfx.DrawImage(img, new Point(0, 0));
-
-        //    //dispose of our Graphics object
-        //    gfx.Dispose();
-
-        //    //return the image
-        //    return bmp;
-        //}
-
         public void DisplayNewPawnPos(object sender, EventArgs e)
         {
             Pawn p = sender as Pawn;
@@ -70,20 +40,15 @@ namespace Ludo.Models.Game
                      where pawn.PawnName == b.Name
                      select pawn).First());
 
-                //less ugly option
-                //for (int i = 0; i < PlayerConstants.PawnsPerPlayer; i++)
-                //{
-                //    if(this.currentPlayer.Pawns[i].PawnName == b.Name)
-                //    {
-                //        this.currentPlayer.SelectedPawn = i;
-                //        break;
-                //    }
-                //}
-                this.currentPlayer.PawnsAtHome = this.currentPlayer.Pawns.Where(x => x.IsAtHome).Select(x => x).ToList().Count;
-                if (this.currentPlayer.Pawns[this.currentPlayer.SelectedPawn].IsAtHome && this.currentPlayer.StepsLeft < 6 && this.currentPlayer.PawnsAtHome<4)
+                this.currentPlayer.PawnsAtHome = 
+                    this.currentPlayer.Pawns.Where(x => x.IsAtHome)
+                    .Select(x => x).ToList().Count;
+
+                if (this.currentPlayer.Pawns[this.currentPlayer.SelectedPawn].IsAtHome 
+                    && this.currentPlayer.StepsLeft < DiceConstants.MaxStandart 
+                    && this.currentPlayer.PawnsAtHome < PlayerConstants.MaxPlayers)
                 {
-                    this.GameState = Enumerations.GameStateType.SelectPawn;
-                    
+                    this.GameState = GameStateType.SelectPawn;
                 }
                 else
                 {
@@ -104,28 +69,37 @@ namespace Ludo.Models.Game
             {
                 case "btnDiceStandart":
                     {
-                        this.players[turn].StepsLeft =
-                            this.diceStandart.Throw(rnd);
+                        int val = this.diceStandart.Throw(rnd);
+
+                        this.players[turn].StepsLeft = val;
+                        this.lblStandart.Text = $"{val}";
+
                         this.GameState = GameStateType.SelectPawn;
                         break;
                     }
                 case "btnDiceNine":
                     {
-                        this.players[turn].StepsLeft =
-                            -this.diceNine.Throw(rnd);
+                        int val = this.diceNine.Throw(rnd);
+
+                        this.players[turn].StepsLeft = -1 * val;
+                        this.lblNine.Text = $"{val}";
+
                         this.GameState = GameStateType.SelectPawn;
                         break;
                     }
                 case "btnDiceMama":
                     {
-                        this.players[turn].StepsLeft =
-                            this.diceMama.Throw(rnd);
+                        int val = this.diceMama.Throw(rnd);
+
+                        this.players[turn].StepsLeft = val;
+                        this.lblMama.Text = $"{val}";
+
                         this.GameState = GameStateType.SelectPawn;
                         break;
                     }
                 case "btnDiceCatapult":
                     {
-                        // TODO: nqkvi neshta da se sluchwat tuk deiba
+                        // TODO: nqkvi neshta da se sluchwat tuk...
                         //this.players[turn].StepsLeft =
                         //    this.diceStandart.Throw(rnd);
                         //this.GameState = GameStateType.SelectPawn;
@@ -240,7 +214,6 @@ namespace Ludo.Models.Game
                         if (C.Name == $"{PawnConstants.PawnNames[(int)color]}{i}")
                         {
                             C.Hide();
-                            //C.Location = new Point(9999, 9999);
                         }
                     }
                 }
