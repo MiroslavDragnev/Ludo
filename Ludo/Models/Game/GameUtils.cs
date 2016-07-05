@@ -109,8 +109,33 @@ namespace Ludo.Models.Game
                         this.GameState = GameStateType.SelectPawn;
                         break;
                     }
+                case "btnDiceNine":
+                    {
+                        this.players[turn].StepsLeft =
+                            -this.diceNine.Throw(rnd);
+                        this.GameState = GameStateType.SelectPawn;
+                        break;
+                    }
+                case "btnDiceMama":
+                    {
+                        this.players[turn].StepsLeft =
+                            this.diceMama.Throw(rnd);
+                        this.GameState = GameStateType.SelectPawn;
+                        break;
+                    }
+                case "btnDiceCatapult":
+                    {
+                        // TODO: nqkvi neshta da se sluchwat tuk deiba
+                        //this.players[turn].StepsLeft =
+                        //    this.diceStandart.Throw(rnd);
+                        //this.GameState = GameStateType.SelectPawn;
+                        break;
+                    }
                 case "btnWheel":
                     {
+                        // TODO: sled kato koleloto se zavyrti
+                        // rezultatyt trqbwa da se pazi w pole
+                        // i ottam natatyk da se sluchwat nqkvi neshta :D
                         b.Name = "btnWheel1";
                         Wheel.Spin(b, this.rnd);
                         break;

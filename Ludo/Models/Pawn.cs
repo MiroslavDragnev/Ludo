@@ -19,6 +19,7 @@
         public bool IsAtHome { get; set; }
         public string PawnName { get; private set; }
         public int PawnPos { get; set; }
+        public bool PawnFinished { get; set; }
 
         //Experimental
         private Thread pawnThread;
@@ -28,6 +29,7 @@
             this.Color = color;
             this.PawnName = $"{PawnConstants.PawnNames[(int)color]}{number}";
             this.IsAtHome = true;
+            this.PawnFinished = false;
             this.PawnPos = PlaygroundConstants.PlayerStartPos[(int)color];
             //this.pawnThread = new Thread(new ThreadStart(Dummy));
         }
