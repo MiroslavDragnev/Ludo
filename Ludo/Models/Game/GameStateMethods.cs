@@ -49,9 +49,14 @@ namespace Ludo.Models.Game
             Pawn pawn = p.Pawns[p.SelectedPawn];
 
             bool atHome = pawn.IsAtHome;
-            
-            
-            pawn.Move(this.playground, p.StepsLeft);
+
+            var list = pawn.Color == ColorType.Red ? redFinish :
+                       pawn.Color == ColorType.Green ? greenFinish :
+                       pawn.Color == ColorType.Yellow ? yellowFinish :
+                       pawn.Color == ColorType.Blue ? blueFinish : redFinish;
+
+
+            pawn.Move(this.playground, list, p.StepsLeft);
             
             if(!atHome)
                 await Task.Delay(p.StepsLeft * PawnConstants.DisplayDelay);

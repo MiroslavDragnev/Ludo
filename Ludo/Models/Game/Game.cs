@@ -32,6 +32,10 @@ namespace Ludo.Models.Game
         private IDice diceCatapult;
         private Random rnd;
         private int curPlayerInitialThrows;
+        private IList<Field> redFinish;
+        private IList<Field> greenFinish;
+        private IList<Field> yellowFinish;
+        private IList<Field> blueFinish;
 
         public Game(Dictionary<ColorType, string> dict)
         {
@@ -50,6 +54,10 @@ namespace Ludo.Models.Game
             this.lblNine.Text = "";
             this.lblMama.Text = "";
             this.curPlayerInitialThrows = 0;
+            this.redFinish = Playground.GetFinish(ColorType.Red);
+            this.greenFinish = Playground.GetFinish(ColorType.Green);
+            this.yellowFinish = Playground.GetFinish(ColorType.Yellow);
+            this.blueFinish = Playground.GetFinish(ColorType.Blue);
 
             for (int i = 0; i < PlayerConstants.MaxPlayers; i++)
             {

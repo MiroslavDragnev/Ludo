@@ -12,10 +12,18 @@ namespace Ludo.Models
     public static class Playground
     {
         private static IList<Field> playground;
+        private static IList<Field> redFinish;
+        private static IList<Field> greenFinish;
+        private static IList<Field> yellowFinish;
+        private static IList<Field> blueFinish;
 
         static Playground()
         {
             playground = new List<Field>(PlaygroundConstants.PlaygroundSize);
+            redFinish = new List<Field>(PlaygroundConstants.FinishSize);
+            greenFinish = new List<Field>(PlaygroundConstants.FinishSize);
+            yellowFinish = new List<Field>(PlaygroundConstants.FinishSize);
+            blueFinish = new List<Field>(PlaygroundConstants.FinishSize);
 
             //hardcoded AF
             //don't touch, it might break :)
@@ -35,21 +43,62 @@ namespace Ludo.Models
                 { 44, "0 526 204" }, { 45, "1 493 204" }, { 46, "0 460 204" }, { 47, "0 426 204" },
                 { 48, "0 426 171" }, { 49, "1 393 171" }, { 50, "0 393 138" }, { 51, "0 393 104" },
                 { 52, "0 393 71" }, { 53, "1 393 38" }, { 54, "0 393 5" }, { 55, "0 360 5" },
+
+                //red finish
+                { 56, "5 360 38" }, { 57, "5 360 71" }, { 58, "5 360 105" }, { 59, "5 360 138" }, { 60, "6 360 171" },
+                //green finish
+                { 61, "5 161 238" }, { 62, "5 194 238" }, { 63, "5 227 238" }, { 64, "5 261 238" }, { 65, "6 294 238" },
+                //yellow finish
+                { 66, "5 360 437" }, { 67, "5 360 404" }, { 68, "5 360 370" }, { 69, "5 360 337" }, { 70, "6 360 304" },
+                //blue finish
+                { 71, "5 559 238" }, { 72, "5 526 238" }, { 73, "5 493 238" }, { 74, "5 460 238" }, { 75, "6 426 238" },
             };
 
             int[] fParams = new int[3];
 
-            for (int i = 0; i < PlaygroundConstants.PlaygroundSize; i++)
+            for (int i = 0; i < dict.Count; i++)
             {
                 fParams = dict[i].Split(' ').Select(int.Parse).ToArray();
 
-                playground.Add(new Field((FieldType)fParams[0], fParams[1], fParams[2]));
+                if (i >= 56 && i <= 60)
+                {
+                    redFinish.Add(new Field((FieldType)fParams[0], fParams[1], fParams[2]));
+                }
+                else if(i >= 61 && i <= 65)
+                {
+                    greenFinish.Add(new Field((FieldType)fParams[0], fParams[1], fParams[2]));
+                }
+                else if(i >= 66 && i <= 70)
+                {
+                    yellowFinish.Add(new Field((FieldType)fParams[0], fParams[1], fParams[2]));
+                }
+                else if(i >= 71 && i <= 75)
+                {
+                    blueFinish.Add(new Field((FieldType)fParams[0], fParams[1], fParams[2]));
+                }
+                else
+                {
+                    playground.Add(new Field((FieldType)fParams[0], fParams[1], fParams[2]));
+                }
             }
         }
         
         public static IList<Field> GetPlayground()
         {
             return playground;
+        }
+
+        public static IList<Field> GetFinish(ColorType color)
+        {
+            switch(color)
+            {
+                case ColorType.Red:return redFinish;
+                case ColorType.Green: return greenFinish;
+                case ColorType.Yellow: return yellowFinish;
+                case ColorType.Blue: return blueFinish;
+            }
+
+            return redFinish;
         }
     }
 }

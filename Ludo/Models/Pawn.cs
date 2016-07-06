@@ -20,6 +20,7 @@
         public string PawnName { get; private set; }
         public int PawnPos { get; set; }
         public bool PawnFinished { get; set; }
+        public bool PawnIsInFinish { get; set; }
 
         public Pawn(ColorType color, int number)
         {
@@ -27,6 +28,7 @@
             this.PawnName = $"{PawnConstants.PawnNames[(int)color]}{number}";
             this.IsAtHome = true;
             this.PawnFinished = false;
+            this.PawnIsInFinish = false;
             this.PawnPos = PlaygroundConstants.PlayerStartPos[(int)color];
         }
 
@@ -51,7 +53,7 @@
             }
         }
 
-        public async void Move(IList<Field> playground, int steps)
+        public async void Move(IList<Field> playground, IList<Field> finish, int steps)
         {
             if (this.IsAtHome)
             {
@@ -66,14 +68,27 @@
 
             for(int i = 0; i < steps; i++)
             {
-                this.PawnPos++;
-
-                if (this.PawnPos >= PlaygroundConstants.PlaygroundSize)
+                if(this.PawnPos == PlaygroundConstants.PlayerEntryToFinish[(int)this.Color])
                 {
-                    this.PawnPos = 0;
+                    this.PawnIsInFinish = true;
+                    this.PawnPos = -1;
                 }
 
-                this.CurrentField = playground[this.PawnPos];
+                this.PawnPos++;
+
+                if (this.PawnIsInFinish)
+                {
+                    this.CurrentField = finish[this.PawnPos];
+                }
+                else
+                {
+                    if (this.PawnPos >= PlaygroundConstants.PlaygroundSize && this.Color != ColorType.Red)
+                    {
+                        this.PawnPos = 0;
+                    }
+
+                    this.CurrentField = playground[this.PawnPos];
+                }
 
                 await Task.Delay(PawnConstants.DisplayDelay);
             }
