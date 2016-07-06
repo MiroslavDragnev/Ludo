@@ -71,6 +71,7 @@
     <Compile Include="Constants\WheelConstants.cs" />
     <Compile Include="Contracts\IDice.cs" />
     <Compile Include="Contracts\IPawn.cs" />
+    <Compile Include="Contracts\IToken.cs" />
     <Compile Include="Enumerations\ColorType.cs" />
     <Compile Include="Enumerations\FieldType.cs" />
     <Compile Include="Enumerations\GameStateType.cs" />
@@ -112,6 +113,8 @@
     <Compile Include="Models\Pawn.cs" />
     <Compile Include="Models\Player.cs" />
     <Compile Include="Models\Playground.cs" />
+    <Compile Include="Abstract\Token.cs" />
+    <Compile Include="Models\Tokens\BombToken.cs" />
     <Compile Include="Models\Wheel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
