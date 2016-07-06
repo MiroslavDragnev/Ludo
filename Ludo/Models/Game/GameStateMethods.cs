@@ -16,14 +16,21 @@ namespace Ludo.Models.Game
         private void DoInitPlayerTurn()
         {
             this.currentPlayer = this.players[turn];
+            if (this.currentPlayer.IsSleeping)
+            {
+                this.currentPlayer.IsSleeping = false;
+                this.gameState = GameStateType.ChangePlayerTurn;
+            }
+            else
+            {
+                this.lblTurn.Text = this.currentPlayer.Name;
+                this.lblTurn.BackColor = ColorConstants.Colors[(int)this.currentPlayer.Color];
 
-            this.lblTurn.Text = this.currentPlayer.Name;
-            this.lblTurn.BackColor = ColorConstants.Colors[(int)this.currentPlayer.Color];
+                this.UpdateControls(false, false, false, false, false);
+                this.UpdatePawns(false);
 
-            this.UpdateControls(false, false, false, false, false);
-            this.UpdatePawns(false);
-
-            this.GameState = GameStateType.ThrowNormal;
+                this.GameState = GameStateType.ThrowNormal;
+            }
         }
 
         private void DoChangePlayerTurn()
