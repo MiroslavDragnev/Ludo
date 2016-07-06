@@ -52,7 +52,9 @@ namespace Ludo.Models.Game
                 }
                 else
                 {
+                    this.players[turn].PawnsAtHome--;
                     this.GameState = GameStateType.MovePawn;
+                    
                 }
 
             }
@@ -71,8 +73,16 @@ namespace Ludo.Models.Game
                     {
                         int val = this.diceStandart.Throw(rnd);
 
-                        this.players[turn].StepsLeft = val;
                         this.lblStandart.Text = $"{val}";
+
+                        if (val < DiceConstants.MaxStandart && currentPlayer.PawnsAtHome == 4)
+                        {                           
+                            this.GameState = GameStateType.ChangePlayerTurn;
+                            break;
+                        }        
+
+                        this.players[turn].StepsLeft = val;
+                        
 
                         this.GameState = GameStateType.SelectPawn;
                         break;
