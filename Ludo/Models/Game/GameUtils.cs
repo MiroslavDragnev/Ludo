@@ -77,11 +77,25 @@ namespace Ludo.Models.Game
 
                         if (val < DiceConstants.MaxStandart && currentPlayer.PawnsAtHome == PlayerConstants.PawnsPerPlayer)
                         {
-                            this.GameState = this.curPlayerInitialThrows > 1 ?
-                                GameStateType.ThrowNormal :
-                                GameStateType.ChangePlayerTurn;
 
-                            this.curPlayerInitialThrows--;
+                            if (this.curPlayerInitialThrows > 1)
+                            {
+                                this.curPlayerInitialThrows--;
+                                this.GameState = GameStateType.ThrowNormal;
+
+                            }
+                            else
+                            {
+                                this.curPlayerInitialThrows--;
+                                this.GameState = GameStateType.ChangePlayerTurn;
+                            }
+
+                            //this.GameState = this.curPlayerInitialThrows > 1 ?       //after the first turn players throw the dice only twice a turn until 
+                            //   GameStateType.ThrowNormal :                           // a pawn exits home
+                            //   GameStateType.ChangePlayerTurn;
+
+                            //this.curPlayerInitialThrows--;
+
 
                             break;
                         }        
@@ -237,6 +251,14 @@ namespace Ludo.Models.Game
                     }
                 }
             }
+        }
+
+        public IList<Field> GetFinishFromColor(ColorType col)
+        {
+            return col == ColorType.Red ? redFinish :
+                   col == ColorType.Green ? greenFinish :
+                   col == ColorType.Yellow ? yellowFinish :
+                   col == ColorType.Blue ? blueFinish : redFinish;
         }
     }
 }

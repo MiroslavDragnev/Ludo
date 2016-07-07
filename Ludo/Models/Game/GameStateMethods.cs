@@ -73,18 +73,21 @@ namespace Ludo.Models.Game
 
             bool atHome = pawn.IsAtHome;
 
-            var list = pawn.Color == ColorType.Red ? redFinish :
-                       pawn.Color == ColorType.Green ? greenFinish :
-                       pawn.Color == ColorType.Yellow ? yellowFinish :
-                       pawn.Color == ColorType.Blue ? blueFinish : redFinish;
+            pawn.Move(this.playground, GetFinishFromColor(pawn.Color), Math.Abs(p.StepsLeft), p.StepsLeft < 0);
 
-            pawn.Move(this.playground, list, p.StepsLeft);
-            
-            if(!atHome)
-                await Task.Delay(p.StepsLeft * PawnConstants.DisplayDelay);
+            if (!atHome)
+                await Task.Delay((p.StepsLeft * PawnConstants.DisplayDelay) + 1000);
+
+            if (pawn.CurrentField.Type == FieldType.Nine)
+            {
+                this.gameState = GameStateType.ThrowNine;
+            }
+            else
+            {
+                this.GameState = GameStateType.ChangePlayerTurn;
+            }
 
             p.StepsLeft = 0;
-            this.GameState = GameStateType.ChangePlayerTurn;
         }
 
         private void DoThrowNormal()

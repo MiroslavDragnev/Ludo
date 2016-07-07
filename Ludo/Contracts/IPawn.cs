@@ -9,6 +9,6 @@ namespace Ludo.Contracts
 {
     interface IPawn
     {
-        void Move(IList<Field> playground, IList<Field> finish, int steps);
+        void Move(IList<Field> playground, IList<Field> finish, int steps, bool moveBack);
     }
 }
