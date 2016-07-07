@@ -62,6 +62,11 @@ namespace Ludo.Models.Game
                         this.DoThrowMama();
                         break;
                     }
+                case GameStateType.ThrowNine:
+                    {
+                        this.DoThrowNine();
+                        break;
+                    }
                 case GameStateType.SelectPawn:
                     {
                         this.DoSelectPawn(this.players[turn]);

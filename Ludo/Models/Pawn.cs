@@ -53,7 +53,7 @@
             }
         }
 
-        public async void Move(IList<Field> playground, IList<Field> finish, int steps)
+        public async void Move(IList<Field> playground, IList<Field> finish, int steps, bool moveBack)
         {
             if (this.IsAtHome)
             {
@@ -62,35 +62,84 @@
                     this.IsAtHome = false;
                     this.CurrentField = playground[this.PawnPos];
                 }              
-                
+
                 return;
             }
 
-            for(int i = 0; i < steps; i++)
+            if (moveBack)
             {
-                if(this.PawnPos == PlaygroundConstants.PlayerEntryToFinish[(int)this.Color])
+                #region MoveBack
+                for (int i = 0; i < steps; i++)
                 {
-                    this.PawnIsInFinish = true;
-                    this.PawnPos = -1;
-                }
-
-                this.PawnPos++;
-
-                if (this.PawnIsInFinish)
-                {
-                    this.CurrentField = finish[this.PawnPos];
-                }
-                else
-                {
-                    if (this.PawnPos >= PlaygroundConstants.PlaygroundSize && this.Color != ColorType.Red)
+                    if (this.PawnIsInFinish)
                     {
-                        this.PawnPos = 0;
+                        if (this.PawnPos == 0)
+                        {
+                            this.PawnIsInFinish = false;
+                            this.PawnPos = PlaygroundConstants.PlayerEntryToFinish[(int)this.Color];
+                            this.CurrentField = playground[this.PawnPos];
+
+                            await Task.Delay(PawnConstants.DisplayDelay);
+                            continue;
+                        }
+
+                        this.PawnPos--;
+                        this.CurrentField = finish[this.PawnPos];
+
+                        await Task.Delay(PawnConstants.DisplayDelay);
+                        continue;
                     }
 
+                    if (this.PawnPos == PlaygroundConstants.PlayerStartPos[(int)this.Color])
+                    {
+                        //this will need additional work
+                        //since we don't want to have a delay before turn change
+                        //when the total steps back > steps to start position
+                        await Task.Delay(PawnConstants.DisplayDelay);
+                        continue;
+                    }
+
+                    this.PawnPos--;
                     this.CurrentField = playground[this.PawnPos];
+                    await Task.Delay(PawnConstants.DisplayDelay);
                 }
 
-                await Task.Delay(PawnConstants.DisplayDelay);
+                #endregion
+            }
+            else
+            {
+                #region MoveForward
+                for (int i = 0; i < steps; i++)
+                {
+                    if (this.PawnPos == PlaygroundConstants.PlayerEntryToFinish[(int)this.Color])
+                    {
+                        this.PawnIsInFinish = true;
+                        this.PawnPos = 0;
+                        this.CurrentField = finish[this.PawnPos];
+
+                        await Task.Delay(PawnConstants.DisplayDelay);
+                        continue;
+                    }
+
+                    this.PawnPos++;
+
+                    if (this.PawnIsInFinish)
+                    {
+                        this.CurrentField = finish[this.PawnPos];
+                    }
+                    else
+                    {
+                        if (this.PawnPos >= PlaygroundConstants.PlaygroundSize && this.Color != ColorType.Red)
+                        {
+                            this.PawnPos = 0;
+                        }
+
+                        this.CurrentField = playground[this.PawnPos];
+                    }
+
+                    await Task.Delay(PawnConstants.DisplayDelay);
+                }
+                #endregion
             }
         }
     }

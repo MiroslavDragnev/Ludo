@@ -247,5 +247,13 @@ namespace Ludo.Models.Game
                 }
             }
         }
+
+        public IList<Field> GetFinishFromColor(ColorType col)
+        {
+            return col == ColorType.Red ? redFinish :
+                   col == ColorType.Green ? greenFinish :
+                   col == ColorType.Yellow ? yellowFinish :
+                   col == ColorType.Blue ? blueFinish : redFinish;
+        }
     }
 }
