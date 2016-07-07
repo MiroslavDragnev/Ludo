@@ -209,7 +209,7 @@ namespace Ludo.Models.Game
             this.btnDiceCatapult.Enabled = catapult;
             this.btnDiceMama.Enabled = mama;
             this.btnDiceStandart.Enabled = standart;
-            this.btnWheel.Enabled = true;
+            this.btnWheel.Enabled = wheel;
         }
 
         public void UpdatePawns(bool curPlayerPawnsEnabled)
