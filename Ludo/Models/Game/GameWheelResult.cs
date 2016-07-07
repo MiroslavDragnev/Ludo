@@ -14,34 +14,41 @@ namespace Ludo.Models.Game
     {
         public void GetResultFromWheel()
         {
-        //    // Gets the number of the button from the wheel and does stuff through methods
-        //    switch ((int)spinResult)
-        //    {
-        //        case 1: // Placing a bomb on a field
-        //            {
-
-        //            }
-        //        case 2:
-        //            {
-
-        //            }
-        //        case 3: // catapult
-        //            {
-
-        //            }
-        //        case 4:
-        //            {
-
-        //            }
-        //        case 5: // sleep
-        //            {
-
-        //            }
-        //        case 6:
-        //            {
-
-        //            }
-        //    }
+            // Gets the number of the button from the wheel and does stuff through methods
+            switch ((int)spinResult)
+            {
+                case 1: // Placing a bomb on a field
+                    {
+                        // HandlePawnClick
+                        break;
+                    }
+                case 2: //Big mama
+                    {
+                        //HandleDiceClick
+                        //DiceEnabledChanged
+                        break;
+                    }
+                case 3: // catapult
+                    {
+                        // HandlePawnClick
+                        break;
+                    }
+                case 4: //switch
+                    {
+                        //DisplayNewPawnPos
+                        break;
+                    }
+                case 5: // sleep
+                    {
+                        // HandlePawnClick
+                        break;
+                    }
+                case 6: //miss
+                    {
+                        
+                        break;
+                    }
+            }
         }
     }
 }
