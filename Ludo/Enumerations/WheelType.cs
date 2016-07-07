@@ -2,11 +2,11 @@
 {
     public enum WheelType
     {
-        BigMama = 0,
-        Switch = 1,
-        Miss = 2,
-        Bomb = 3,
-        Sleep = 4,
-        Catapult = 5
+        Bomb = 1,
+        BigMama = 2,
+        Catapult = 3,
+        Switch = 4,
+        Sleep = 5,
+        Miss = 6
     }
 }

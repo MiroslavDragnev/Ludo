@@ -60,8 +60,7 @@ namespace Ludo.Models
                             break;
 
                         }
-                }
-
+                } 
                 await Task.Delay(100 - i);
             }
         }

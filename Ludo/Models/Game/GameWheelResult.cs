@@ -14,10 +14,34 @@ namespace Ludo.Models.Game
     {
         public void GetResultFromWheel()
         {
-            //switch (this.spinResult)
-            //{
-               // to be fixed  
-            //}
+        //    // Gets the number of the button from the wheel and does stuff through methods
+        //    switch ((int)spinResult)
+        //    {
+        //        case 1: // Placing a bomb on a field
+        //            {
+
+        //            }
+        //        case 2:
+        //            {
+
+        //            }
+        //        case 3: // catapult
+        //            {
+
+        //            }
+        //        case 4:
+        //            {
+
+        //            }
+        //        case 5: // sleep
+        //            {
+
+        //            }
+        //        case 6:
+        //            {
+
+        //            }
+        //    }
         }
     }
 }

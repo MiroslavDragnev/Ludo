@@ -17,9 +17,10 @@ namespace Ludo.Enumerations
         RotateWheel,
         WheelPlaceBomb,
         WheelPlaceSleep,
+        WheelPlaceCatapult,
         WheelSwitchPawns,
         InitPlayerTurn,
-        ChangePlayerTurn
+        ChangePlayerTurn,
         //more to come
     }
 }
