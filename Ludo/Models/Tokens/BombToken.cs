@@ -1,4 +1,5 @@
 ﻿using Ludo.Abstract;
+using Ludo.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,7 @@ namespace Ludo.Models.Tokens
     {
         public override void DoAction(Player player, Pawn pawn)
         {
-            //TODO
+            pawn.CurrentField = player.Home.FindEmptyHomeField();
         }
     }
     
