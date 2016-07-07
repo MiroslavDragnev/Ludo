@@ -41,7 +41,7 @@
             set
             {
                 this.currentField = value;
-                this.currentField.HasPawn = true;
+                
                 this.TriggerChange();
             }
         }
@@ -66,6 +66,13 @@
 
                 return;
             }
+            if (!this.IsAtHome)
+            {
+                while (playground[this.PawnPos + steps].HasPawn)
+                {
+                    steps--;
+                }
+            }                  
             this.currentField.HasPawn = false;
             if (moveBack)
             {
@@ -142,6 +149,7 @@
                 }
                 #endregion
             }
+            this.currentField.HasPawn = true;
         }
     }
 }
