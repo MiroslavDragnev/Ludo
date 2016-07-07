@@ -1,4 +1,5 @@
 ﻿using Ludo.Contracts;
+using Ludo.Models.Game;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,7 @@ namespace Ludo.Abstract
 {
     public abstract class Token : IToken
     {
-        public abstract void DoAction(Player player, Pawn pawn);
+        public abstract void DoAction(Player player, Pawn pawn, Game game);
        
     }
 }

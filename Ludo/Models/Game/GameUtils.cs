@@ -89,14 +89,7 @@ namespace Ludo.Models.Game
                                 this.curPlayerInitialThrows--;
                                 this.GameState = GameStateType.ChangePlayerTurn;
                             }
-
-                            //this.GameState = this.curPlayerInitialThrows > 1 ?       //after the first turn players throw the dice only twice a turn until 
-                            //   GameStateType.ThrowNormal :                           // a pawn exits home
-                            //   GameStateType.ChangePlayerTurn;
-
-                            //this.curPlayerInitialThrows--;
-
-
+                            
                             break;
                         }        
 
@@ -127,10 +120,10 @@ namespace Ludo.Models.Game
                     }
                 case "btnDiceCatapult":
                     {
-                        // TODO: nqkvi neshta da se sluchwat tuk...
-                        //this.players[turn].StepsLeft =
-                        //    this.diceStandart.Throw(rnd);
-                        //this.GameState = GameStateType.SelectPawn;
+                        int val = this.diceCatapult.Throw(rnd);
+                        this.players[turn].StepsLeft = -1 * val;
+                        this.lblCatapult.Text = $"{val}";
+                        this.GameState = GameStateType.MovePawn;
                         break;
                     }
                 case "btnWheel":

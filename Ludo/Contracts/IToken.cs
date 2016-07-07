@@ -8,6 +8,6 @@ namespace Ludo.Contracts
 {
     interface IToken
     {
-        void DoAction(Models.Player player, Models.Pawn pawn);
+        void DoAction(Models.Player player, Models.Pawn pawn, Models.Game.Game game);
     }
 }

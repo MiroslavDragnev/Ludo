@@ -10,7 +10,7 @@ namespace Ludo.Models.Tokens
 {
     public class BombToken : Token
     {
-        public override void DoAction(Player player, Pawn pawn)
+        public override void DoAction(Player player, Pawn pawn, Game.Game game)
         {
             pawn.CurrentField = player.Home.FindEmptyHomeField();
         }
