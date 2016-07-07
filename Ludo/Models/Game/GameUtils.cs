@@ -60,7 +60,7 @@ namespace Ludo.Models.Game
             }
         }
 
-        private void HandleDiceClick(object sender, EventArgs e)
+        private async void HandleDiceClick(object sender, EventArgs e)
         {
             Button b = sender as Button;
 
@@ -138,8 +138,13 @@ namespace Ludo.Models.Game
                         // TODO: sled kato koleloto se zavyrti
                         // rezultatyt trqbwa da se pazi w pole
                         // i ottam natatyk da se sluchwat nqkvi neshta :D
-                        b.Name = "btnWheel1";
+
                         Wheel.Spin(b, this.rnd);
+                        // TODO: TO BE FIXED
+                        await Task.Delay(10000);
+                        this.spinResult = (WheelType)int.Parse(b.Name[b.Name.Length - 1].ToString());
+                        b.Name = "btnWheel";
+                        GetResultFromWheel();
                         break;
                     }
             }

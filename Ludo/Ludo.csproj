@@ -109,12 +109,17 @@
     <Compile Include="Models\Game\GameUtils.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Models\Game\GameWheelResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Models\Home.cs" />
     <Compile Include="Models\Pawn.cs" />
     <Compile Include="Models\Player.cs" />
     <Compile Include="Models\Playground.cs" />
     <Compile Include="Abstract\Token.cs" />
     <Compile Include="Models\Tokens\BombToken.cs" />
+    <Compile Include="Models\Tokens\CatapultToken.cs" />
+    <Compile Include="Models\Tokens\SleepToken.cs" />
     <Compile Include="Models\Wheel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

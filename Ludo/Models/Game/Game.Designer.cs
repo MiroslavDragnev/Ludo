@@ -539,6 +539,7 @@ namespace Ludo.Models.Game
             this.pbEscapedPawn.Size = new System.Drawing.Size(25, 25);
             this.pbEscapedPawn.TabIndex = 38;
             this.pbEscapedPawn.TabStop = false;
+            this.pbEscapedPawn.Click += new System.EventHandler(this.pbEscapedPawn_Click);
             // 
             // lblEscapedCount
             // 

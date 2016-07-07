@@ -13,6 +13,7 @@ namespace Ludo.Models
     {
         public static async void Spin(Button b, Random rnd)
         {
+            b.Name = "btnWheel1";
             for (int i = 100, rVal = rnd.Next(1, 6); i >= 0; i -= rVal)
             {
                 rVal = rnd.Next(WheelConstants.WheelMin, WheelConstants.WheelMax + 1);
@@ -64,7 +65,7 @@ namespace Ludo.Models
                 await Task.Delay(100 - i);
             }
         }
-
+        
         //public static WheelType Spin(Random rnd)
         //{
         //    return (WheelType)rnd.Next(WheelConstants.WheelMin, WheelConstants.WheelMax + 1);

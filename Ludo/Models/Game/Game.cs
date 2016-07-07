@@ -36,6 +36,7 @@ namespace Ludo.Models.Game
         private IList<Field> greenFinish;
         private IList<Field> yellowFinish;
         private IList<Field> blueFinish;
+        private WheelType spinResult;
 
         public Game(Dictionary<ColorType, string> dict)
         {
@@ -82,6 +83,11 @@ namespace Ludo.Models.Game
             this.players.ForEach(x => x.Pawns.ForEach(f => f.CurrentField = x.Home.FindEmptyHomeField()));
 
             this.GameState = GameStateType.InitPlayerTurn;
+        }
+
+        private void pbEscapedPawn_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
