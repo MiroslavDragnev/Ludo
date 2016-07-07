@@ -16,7 +16,7 @@ namespace Ludo.Models.Game
         {
             //switch (this.spinResult)
             //{
-               // Miro i kolektiv, ne pipaite, Zori & Hris shte go muchat :D  
+               // to be fixed  
             //}
         }
     }
