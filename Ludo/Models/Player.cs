@@ -13,7 +13,7 @@
         public Home Home { get; set; }
         public ColorType Color { get; set; }
         public int SelectedPawn { get; set; }
-
+        public bool IsSleeping { get; set; }
         public Player(string name, ColorType color)
         {
             this.Name = name;
