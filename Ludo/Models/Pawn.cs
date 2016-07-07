@@ -41,6 +41,7 @@
             set
             {
                 this.currentField = value;
+                this.currentField.HasPawn = true;
                 this.TriggerChange();
             }
         }
@@ -65,7 +66,7 @@
 
                 return;
             }
-
+            this.currentField.HasPawn = false;
             if (moveBack)
             {
                 #region MoveBack
