@@ -65,8 +65,12 @@ namespace Ludo.Models.Game
             this.lblMama = new System.Windows.Forms.Label();
             this.lblCatapult = new System.Windows.Forms.Label();
             this.lblNine = new System.Windows.Forms.Label();
+            this.lblEscaped = new System.Windows.Forms.Label();
+            this.pbEscapedPawn = new System.Windows.Forms.PictureBox();
+            this.lblEscapedCount = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbEscapedPawn)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTurn
@@ -86,7 +90,7 @@ namespace Ludo.Models.Game
             this.lblStandartName.AutoSize = true;
             this.lblStandartName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblStandartName.ForeColor = System.Drawing.Color.White;
-            this.lblStandartName.Location = new System.Drawing.Point(4, 79);
+            this.lblStandartName.Location = new System.Drawing.Point(4, 89);
             this.lblStandartName.Name = "lblStandartName";
             this.lblStandartName.Size = new System.Drawing.Size(58, 13);
             this.lblStandartName.TabIndex = 27;
@@ -97,7 +101,7 @@ namespace Ludo.Models.Game
             this.lblMamaName.AutoSize = true;
             this.lblMamaName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblMamaName.ForeColor = System.Drawing.Color.White;
-            this.lblMamaName.Location = new System.Drawing.Point(61, 79);
+            this.lblMamaName.Location = new System.Drawing.Point(61, 89);
             this.lblMamaName.Name = "lblMamaName";
             this.lblMamaName.Size = new System.Drawing.Size(62, 13);
             this.lblMamaName.TabIndex = 28;
@@ -108,7 +112,7 @@ namespace Ludo.Models.Game
             this.lblCatapultName.AutoSize = true;
             this.lblCatapultName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblCatapultName.ForeColor = System.Drawing.Color.White;
-            this.lblCatapultName.Location = new System.Drawing.Point(6, 174);
+            this.lblCatapultName.Location = new System.Drawing.Point(6, 184);
             this.lblCatapultName.Name = "lblCatapultName";
             this.lblCatapultName.Size = new System.Drawing.Size(54, 13);
             this.lblCatapultName.TabIndex = 29;
@@ -119,7 +123,7 @@ namespace Ludo.Models.Game
             this.lblNineName.AutoSize = true;
             this.lblNineName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblNineName.ForeColor = System.Drawing.Color.White;
-            this.lblNineName.Location = new System.Drawing.Point(75, 174);
+            this.lblNineName.Location = new System.Drawing.Point(75, 184);
             this.lblNineName.Name = "lblNineName";
             this.lblNineName.Size = new System.Drawing.Size(33, 13);
             this.lblNineName.TabIndex = 30;
@@ -130,7 +134,7 @@ namespace Ludo.Models.Game
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(40, 271);
+            this.label5.Location = new System.Drawing.Point(40, 281);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(43, 13);
             this.label5.TabIndex = 31;
@@ -142,7 +146,7 @@ namespace Ludo.Models.Game
             this.btnWheel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnWheel.FlatAppearance.BorderSize = 0;
             this.btnWheel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnWheel.Location = new System.Drawing.Point(12, 289);
+            this.btnWheel.Location = new System.Drawing.Point(12, 299);
             this.btnWheel.Name = "btnWheel";
             this.btnWheel.Size = new System.Drawing.Size(100, 100);
             this.btnWheel.TabIndex = 24;
@@ -156,7 +160,7 @@ namespace Ludo.Models.Game
             this.btnDiceNine.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnDiceNine.FlatAppearance.BorderSize = 0;
             this.btnDiceNine.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDiceNine.Location = new System.Drawing.Point(72, 190);
+            this.btnDiceNine.Location = new System.Drawing.Point(72, 200);
             this.btnDiceNine.Name = "btnDiceNine";
             this.btnDiceNine.Size = new System.Drawing.Size(40, 40);
             this.btnDiceNine.TabIndex = 23;
@@ -170,7 +174,7 @@ namespace Ludo.Models.Game
             this.btnDiceCatapult.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnDiceCatapult.FlatAppearance.BorderSize = 0;
             this.btnDiceCatapult.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDiceCatapult.Location = new System.Drawing.Point(12, 190);
+            this.btnDiceCatapult.Location = new System.Drawing.Point(12, 200);
             this.btnDiceCatapult.Name = "btnDiceCatapult";
             this.btnDiceCatapult.Size = new System.Drawing.Size(40, 40);
             this.btnDiceCatapult.TabIndex = 22;
@@ -184,7 +188,7 @@ namespace Ludo.Models.Game
             this.btnDiceMama.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnDiceMama.FlatAppearance.BorderSize = 0;
             this.btnDiceMama.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDiceMama.Location = new System.Drawing.Point(72, 95);
+            this.btnDiceMama.Location = new System.Drawing.Point(72, 105);
             this.btnDiceMama.Name = "btnDiceMama";
             this.btnDiceMama.Size = new System.Drawing.Size(40, 40);
             this.btnDiceMama.TabIndex = 21;
@@ -198,7 +202,7 @@ namespace Ludo.Models.Game
             this.btnDiceStandart.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnDiceStandart.FlatAppearance.BorderSize = 0;
             this.btnDiceStandart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDiceStandart.Location = new System.Drawing.Point(12, 95);
+            this.btnDiceStandart.Location = new System.Drawing.Point(12, 105);
             this.btnDiceStandart.Name = "btnDiceStandart";
             this.btnDiceStandart.Size = new System.Drawing.Size(40, 40);
             this.btnDiceStandart.TabIndex = 20;
@@ -472,7 +476,7 @@ namespace Ludo.Models.Game
             this.lblStandart.AutoSize = true;
             this.lblStandart.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblStandart.ForeColor = System.Drawing.Color.White;
-            this.lblStandart.Location = new System.Drawing.Point(25, 138);
+            this.lblStandart.Location = new System.Drawing.Point(25, 148);
             this.lblStandart.Name = "lblStandart";
             this.lblStandart.Size = new System.Drawing.Size(14, 13);
             this.lblStandart.TabIndex = 33;
@@ -484,7 +488,7 @@ namespace Ludo.Models.Game
             this.lblMama.AutoSize = true;
             this.lblMama.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblMama.ForeColor = System.Drawing.Color.White;
-            this.lblMama.Location = new System.Drawing.Point(84, 138);
+            this.lblMama.Location = new System.Drawing.Point(84, 148);
             this.lblMama.Name = "lblMama";
             this.lblMama.Size = new System.Drawing.Size(14, 13);
             this.lblMama.TabIndex = 34;
@@ -496,7 +500,7 @@ namespace Ludo.Models.Game
             this.lblCatapult.AutoSize = true;
             this.lblCatapult.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblCatapult.ForeColor = System.Drawing.Color.White;
-            this.lblCatapult.Location = new System.Drawing.Point(25, 233);
+            this.lblCatapult.Location = new System.Drawing.Point(25, 243);
             this.lblCatapult.Name = "lblCatapult";
             this.lblCatapult.Size = new System.Drawing.Size(14, 13);
             this.lblCatapult.TabIndex = 35;
@@ -508,12 +512,44 @@ namespace Ludo.Models.Game
             this.lblNine.AutoSize = true;
             this.lblNine.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblNine.ForeColor = System.Drawing.Color.White;
-            this.lblNine.Location = new System.Drawing.Point(84, 233);
+            this.lblNine.Location = new System.Drawing.Point(84, 243);
             this.lblNine.Name = "lblNine";
             this.lblNine.Size = new System.Drawing.Size(14, 13);
             this.lblNine.TabIndex = 36;
             this.lblNine.Text = "0";
             this.lblNine.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblEscaped
+            // 
+            this.lblEscaped.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblEscaped.ForeColor = System.Drawing.Color.White;
+            this.lblEscaped.Location = new System.Drawing.Point(1, 36);
+            this.lblEscaped.Name = "lblEscaped";
+            this.lblEscaped.Size = new System.Drawing.Size(61, 48);
+            this.lblEscaped.TabIndex = 37;
+            this.lblEscaped.Text = "Escaped pawns:";
+            this.lblEscaped.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // pbEscapedPawn
+            // 
+            this.pbEscapedPawn.BackgroundImage = global::Ludo.Properties.Resources.PawnRed;
+            this.pbEscapedPawn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pbEscapedPawn.Location = new System.Drawing.Point(66, 47);
+            this.pbEscapedPawn.Name = "pbEscapedPawn";
+            this.pbEscapedPawn.Size = new System.Drawing.Size(25, 25);
+            this.pbEscapedPawn.TabIndex = 38;
+            this.pbEscapedPawn.TabStop = false;
+            // 
+            // lblEscapedCount
+            // 
+            this.lblEscapedCount.AutoSize = true;
+            this.lblEscapedCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblEscapedCount.ForeColor = System.Drawing.Color.White;
+            this.lblEscapedCount.Location = new System.Drawing.Point(95, 60);
+            this.lblEscapedCount.Name = "lblEscapedCount";
+            this.lblEscapedCount.Size = new System.Drawing.Size(20, 13);
+            this.lblEscapedCount.TabIndex = 39;
+            this.lblEscapedCount.Text = "x0";
             // 
             // Game
             // 
@@ -521,6 +557,9 @@ namespace Ludo.Models.Game
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(622, 500);
+            this.Controls.Add(this.lblEscapedCount);
+            this.Controls.Add(this.pbEscapedPawn);
+            this.Controls.Add(this.lblEscaped);
             this.Controls.Add(this.lblNine);
             this.Controls.Add(this.lblCatapult);
             this.Controls.Add(this.lblMama);
@@ -559,6 +598,7 @@ namespace Ludo.Models.Game
             this.Text = "Ludo";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbEscapedPawn)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -599,5 +639,8 @@ namespace Ludo.Models.Game
         private System.Windows.Forms.Label lblMama;
         private System.Windows.Forms.Label lblCatapult;
         private System.Windows.Forms.Label lblNine;
+        private System.Windows.Forms.Label lblEscaped;
+        private System.Windows.Forms.PictureBox pbEscapedPawn;
+        private System.Windows.Forms.Label lblEscapedCount;
     }
 }

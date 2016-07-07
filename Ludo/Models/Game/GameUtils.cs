@@ -46,7 +46,7 @@ namespace Ludo.Models.Game
 
                 if (this.currentPlayer.Pawns[this.currentPlayer.SelectedPawn].IsAtHome 
                     && this.currentPlayer.StepsLeft < DiceConstants.MaxStandart 
-                    && this.currentPlayer.PawnsAtHome < PlayerConstants.MaxPlayers)
+                    && this.currentPlayer.PawnsAtHome < PlayerConstants.PawnsPerPlayer)
                 {
                     this.GameState = GameStateType.SelectPawn;
                 }
@@ -75,15 +75,19 @@ namespace Ludo.Models.Game
 
                         this.lblStandart.Text = $"{val}";
 
-                        if (val < DiceConstants.MaxStandart && currentPlayer.PawnsAtHome == 4)
-                        {                           
-                            this.GameState = GameStateType.ChangePlayerTurn;
+                        if (val < DiceConstants.MaxStandart && currentPlayer.PawnsAtHome == PlayerConstants.PawnsPerPlayer)
+                        {
+                            this.GameState = this.curPlayerInitialThrows > 1 ?
+                                GameStateType.ThrowNormal :
+                                GameStateType.ChangePlayerTurn;
+
+                            this.curPlayerInitialThrows--;
+
                             break;
                         }        
 
                         this.players[turn].StepsLeft = val;
                         
-
                         this.GameState = GameStateType.SelectPawn;
                         break;
                     }

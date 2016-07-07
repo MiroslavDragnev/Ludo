@@ -26,8 +26,24 @@ namespace Ludo.Models.Game
                 this.lblTurn.Text = this.currentPlayer.Name;
                 this.lblTurn.BackColor = ColorConstants.Colors[(int)this.currentPlayer.Color];
 
+                //we may need this, depending on what is less ugly
+                //this.lblStandart.Text = "";
+
+                this.lblEscapedCount.Text = $"x{this.currentPlayer.PawnsEscaped}";
+                this.pbEscapedPawn.BackgroundImage =
+                    this.currentPlayer.Color == ColorType.Red ? Ludo.Properties.Resources.PawnRed :
+                    this.currentPlayer.Color == ColorType.Green ? Ludo.Properties.Resources.PawnGreen :
+                    this.currentPlayer.Color == ColorType.Yellow ? Ludo.Properties.Resources.PawnYellow :
+                    this.currentPlayer.Color == ColorType.Blue ? Ludo.Properties.Resources.PawnBlue :
+                        Ludo.Properties.Resources.PawnRed;
+
                 this.UpdateControls(false, false, false, false, false);
                 this.UpdatePawns(false);
+
+                if(this.currentPlayer.PawnsAtHome == PlayerConstants.PawnsPerPlayer)
+                {
+                    this.curPlayerInitialThrows = DiceConstants.ThrowsIfAllAtHome;
+                }
 
                 this.GameState = GameStateType.ThrowNormal;
             }
@@ -61,7 +77,6 @@ namespace Ludo.Models.Game
                        pawn.Color == ColorType.Green ? greenFinish :
                        pawn.Color == ColorType.Yellow ? yellowFinish :
                        pawn.Color == ColorType.Blue ? blueFinish : redFinish;
-
 
             pawn.Move(this.playground, list, p.StepsLeft);
             

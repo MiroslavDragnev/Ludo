@@ -19,5 +19,7 @@ namespace Ludo.Constants
 
         public const int MinCatapult = 1;
         public const int MaxCatapult = 6;
+
+        public const int ThrowsIfAllAtHome = 3;
     }
 }
