@@ -19,7 +19,7 @@ namespace Ludo.Models.Game
             if (this.currentPlayer.IsSleeping)
             {
                 this.currentPlayer.IsSleeping = false;
-                this.gameState = GameStateType.ChangePlayerTurn;
+                this.DoChangePlayerTurn();
             }
             else
             {
@@ -84,6 +84,7 @@ namespace Ludo.Models.Game
             } else if (pawn.CurrentField.Type == FieldType.Special)
             {
                 this.UpdateControls(false, false, false, false, true);
+                this.GameState = GameStateType.RotateWheel;
             }
             else
             {

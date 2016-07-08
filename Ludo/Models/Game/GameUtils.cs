@@ -139,6 +139,7 @@ namespace Ludo.Models.Game
                         b.Name = "btnWheel";
                         GetResultFromWheel();
                         this.UpdateControls(false, false, false, false, false);
+                        this.GameState = GameStateType.ChangePlayerTurn;
                         break;
                     }
             }
