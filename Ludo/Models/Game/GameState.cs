@@ -83,7 +83,6 @@ namespace Ludo.Models.Game
                         this.DoRotateWheel();
                         break;
                     }
-
             }
         }
     }

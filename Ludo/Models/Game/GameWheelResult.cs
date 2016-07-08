@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Ludo.Enumerations;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,35 +17,35 @@ namespace Ludo.Models.Game
         {
 
             // Gets the number of the button from the wheel and does stuff through methods
-             switch ((int)spinResult)
+             switch (spinResult)
              {
-                 case 1: // Placing a bomb on a field
+                 case WheelType.Bomb: // Placing a bomb on a field
                      {
                          // HandlePawnClick
                          break;
                      }
-                 case 2: //Big mama
+                 case WheelType.BigMama: //Big mama
                      {
                          //HandleDiceClick
                          //DiceEnabledChanged
                          break;
                      }
-                 case 3: // catapult
+                 case WheelType.Catapult: // catapult
                      {
                          // HandlePawnClick
                          break;
                      }
-                 case 4: //switch
+                 case WheelType.Switch: //switch
                      {
                          //DisplayNewPawnPos
                          break;
                      }
-                 case 5: // sleep
+                 case WheelType.Sleep: // sleep
                      {
                          // HandlePawnClick
                          break;
                      }
-                 case 6: //miss
+                 case WheelType.Miss: //miss
                      {
                          this.currentPlayer.IsSleeping = true;
                          break;
