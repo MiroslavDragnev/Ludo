@@ -83,6 +83,26 @@ namespace Ludo.Models.Game
                         this.DoRotateWheel();
                         break;
                     }
+                case GameStateType.WheelPlaceBomb:
+                    {
+                        break;
+                    }
+                case GameStateType.WheelPlaceSleep:
+                    {
+                        break;
+                    }
+                case GameStateType.WheelPlaceCatapult:
+                    {
+                        break;
+                    }
+                case GameStateType.WheelSwitchPawns:
+                    {
+                        break;
+                    }
+                case GameStateType.WheelMissTurn:
+                    {
+                        break;
+                    }
             }
         }
     }

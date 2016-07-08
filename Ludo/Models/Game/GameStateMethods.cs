@@ -115,7 +115,7 @@ namespace Ludo.Models.Game
         private void DoThrowNine()
         {
             this.UpdateControls(false, false, true, false, false);
-            this.UpdatePawns(true);
+            this.UpdatePawns(false);
         }
         private void DoRotateWheel()
         {
@@ -123,6 +123,32 @@ namespace Ludo.Models.Game
             
             // TODO: something more to come here dependting on what will happen after the wheel spins;
         }
+        /*
+            WheelPlaceBomb,
+            WheelPlaceSleep,
+            WheelPlaceCatapult,
+            WheelSwitchPawns,
+            WheelMissTurn,
+        */
+        private void DoWheelPlaceBomb()
+        {
 
+        }
+        private void DoWheelPlaceSleep()
+        {
+
+        }
+        private void DoWheelPlaceCatapult()
+        {
+
+        }
+        private void DoWheelSwitchPawns()
+        {
+
+        }
+        private void DoMissTurn()
+        {
+
+        }
     }
 }
