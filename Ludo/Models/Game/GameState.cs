@@ -77,6 +77,13 @@ namespace Ludo.Models.Game
                         this.DoSelectPawn(this.players[turn]);
                         break;
                     }
+                case GameStateType.RotateWheel:
+                    {
+                        //this state appears when a pawn is on the special field
+                        this.DoRotateWheel();
+                        break;
+                    }
+
             }
         }
     }

@@ -138,7 +138,8 @@ namespace Ludo.Models.Game
                         this.spinResult = (WheelType)int.Parse(b.Name[b.Name.Length - 1].ToString());
                         b.Name = "btnWheel";
                         GetResultFromWheel();
-                        this.UpdateControls(false, false, false, false, false);
+                        this.GameState = GameStateType.RotateWheel;
+                       // this.UpdateControls(false, false, false, false, false);
                         this.GameState = GameStateType.ChangePlayerTurn;
                         break;
                     }

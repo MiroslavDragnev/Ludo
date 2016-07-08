@@ -117,6 +117,12 @@ namespace Ludo.Models.Game
             this.UpdateControls(false, false, true, false, false);
             this.UpdatePawns(true);
         }
+        private void DoRotateWheel()
+        {
+            this.UpdateControls(false, false, false, false, true);
+            
+            // TODO: something more to come here dependting on what will happen after the wheel spins;
+        }
 
     }
 }
