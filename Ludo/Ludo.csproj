@@ -76,6 +76,8 @@
     <Compile Include="Enumerations\FieldType.cs" />
     <Compile Include="Enumerations\GameStateType.cs" />
     <Compile Include="Enumerations\WheelType.cs" />
+    <Compile Include="Exceptions\InvalidNameException.cs" />
+    <Compile Include="Exceptions\InvalidPlayerCountException.cs" />
     <Compile Include="Extensions\HomeExtensions.cs" />
     <Compile Include="Models\About\About.cs">
       <SubType>Form</SubType>

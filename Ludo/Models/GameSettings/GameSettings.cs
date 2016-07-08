@@ -1,4 +1,5 @@
 ﻿using Ludo.Enumerations;
+using Ludo.Exceptions;
 using Ludo.Models;
 using Ludo.Models.About;
 using Ludo.Models.Game;
@@ -93,14 +94,30 @@ namespace Ludo
 
             if(players < 2)
             {
-                lblWarning.Text = "At least two players have to be checked.";
-                lblWarning.ForeColor = Color.Red;
+                try
+                {
+                    throw new InvalidPlayerCountException("At least two players have to be checked.");
+                }
+                catch (InvalidPlayerCountException ex)
+                {
+                    lblWarning.Text = ex.Message;
+                    lblWarning.ForeColor = Color.Red;
+                }
+                
                 return;
             }
 
             if(emptyName)
             {
-                lblWarning.Text = "Please, don't leave empty name spaces.";
+                try
+                {
+                    throw new InvalidNameException("Please, don't leave empty name spaces.");
+                }
+                catch (InvalidNameException ex)
+                {
+                    lblWarning.Text = ex.Message;                   
+                }
+                
                 return;
             }
 

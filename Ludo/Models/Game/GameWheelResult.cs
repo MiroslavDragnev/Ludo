@@ -14,6 +14,7 @@ namespace Ludo.Models.Game
     {
         public void GetResultFromWheel()
         {
+
             // Gets the number of the button from the wheel and does stuff through methods
              switch ((int)spinResult)
              {
