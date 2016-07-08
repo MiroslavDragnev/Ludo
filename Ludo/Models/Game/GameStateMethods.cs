@@ -81,6 +81,9 @@ namespace Ludo.Models.Game
             if (pawn.CurrentField.Type == FieldType.Nine)
             {
                 this.gameState = GameStateType.ThrowNine;
+            } else if (pawn.CurrentField.Type == FieldType.Special)
+            {
+                this.UpdateControls(false, false, false, false, true);
             }
             else
             {

@@ -45,7 +45,7 @@ namespace Ludo.Models.Game
                     }
                 case 6: //miss
                     {
-                        
+                        this.currentPlayer.IsSleeping = true;
                         break;
                     }
             }

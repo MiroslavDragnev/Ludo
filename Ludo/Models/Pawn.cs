@@ -150,6 +150,7 @@
                 #endregion
             }
             this.currentField.HasPawn = true;
+            
         }
     }
 }
