@@ -37,6 +37,7 @@ namespace Ludo.Models.Game
                     this.currentPlayer.Color == ColorType.Blue ? Ludo.Properties.Resources.PawnBlue :
                         Ludo.Properties.Resources.PawnRed;
 
+                this.btnWheel.Name = "btnWheel";
                 this.UpdateControls(false, false, false, false, false);
                 this.UpdatePawns(false);
 
@@ -120,7 +121,7 @@ namespace Ludo.Models.Game
         private void DoRotateWheel()
         {
             this.UpdateControls(false, false, false, false, true);
-            
+            this.UpdatePawns(false);
             // TODO: something more to come here dependting on what will happen after the wheel spins;
         }
         /*

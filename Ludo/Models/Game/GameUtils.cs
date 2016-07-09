@@ -60,7 +60,7 @@ namespace Ludo.Models.Game
             }
         }
 
-        private async void HandleDiceClick(object sender, EventArgs e)
+        private void HandleDiceClick(object sender, EventArgs e)
         {
             Button b = sender as Button;
 
@@ -134,13 +134,13 @@ namespace Ludo.Models.Game
 
                         Wheel.Spin(b, this.rnd);
                         // TODO: TO BE FIXED
-                        await Task.Delay(10000);
-                        this.spinResult = (WheelType)int.Parse(b.Name[b.Name.Length - 1].ToString());
-                        b.Name = "btnWheel";
-                        GetResultFromWheel();
-                        this.GameState = GameStateType.RotateWheel;
+                        //await Task.Delay(10000);
+                        //this.spinResult = (WheelType)int.Parse(b.Name[b.Name.Length - 1].ToString());
+                        //b.Name = "btnWheel";
+                        //GetResultFromWheel();
+                        //this.GameState = GameStateType.RotateWheel;
                         // this.UpdateControls(false, false, false, false, false);
-                        this.GameState = GameStateType.ChangePlayerTurn;
+                        //this.GameState = GameStateType.ChangePlayerTurn;
                         break;
                     }
             }
@@ -278,6 +278,8 @@ namespace Ludo.Models.Game
                 this.playground[tokenIndex].Type = FieldType.Catapult;
                 this.tokens[tokenIndex].BackgroundImage = global::Ludo.Properties.Resources.TokenCatapult;
                 this.tokens[tokenIndex].BringToFront();
+
+                this.GameState = GameStateType.ChangePlayerTurn;
             }
             else if (this.GameState == GameStateType.WheelPlaceSleep)
             {
@@ -287,6 +289,8 @@ namespace Ludo.Models.Game
                 this.playground[tokenIndex].Type = FieldType.Sleep;
                 this.tokens[tokenIndex].BackgroundImage = global::Ludo.Properties.Resources.TokenSleep;
                 this.tokens[tokenIndex].BringToFront();
+
+                this.GameState = GameStateType.ChangePlayerTurn;
             }
         }
 
@@ -321,7 +325,8 @@ namespace Ludo.Models.Game
 
             for (int i = 0; i < PlaygroundConstants.PlaygroundSize; i++)
             {
-                if (this.playground[i].Type != FieldType.Normal || IsFieldStartPosition(i))
+                if (this.playground[i].Type != FieldType.Normal || IsFieldStartPosition(i)
+                    || this.playground[i].HasPawn)
                     continue;
 
                 var cX = cursorPos.X;
@@ -353,5 +358,9 @@ namespace Ludo.Models.Game
 
             return false;
         }
+
+        public void WheelSpinEnded()
+        { 
+}
     }
 }

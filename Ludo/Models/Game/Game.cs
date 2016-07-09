@@ -61,7 +61,8 @@ namespace Ludo.Models.Game
             this.greenFinish = Playground.GetFinish(ColorType.Green);
             this.yellowFinish = Playground.GetFinish(ColorType.Yellow);
             this.blueFinish = Playground.GetFinish(ColorType.Blue);
-
+            Wheel.SpinResult += GetResultFromWheel;
+                
             for (int i = 0; i < PlayerConstants.MaxPlayers; i++)
             {
                 if (dict.ContainsKey((ColorType)i))
