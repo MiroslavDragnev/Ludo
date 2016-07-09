@@ -22,6 +22,7 @@ namespace Ludo.Models.Game
         private List<Player> players;
         private Player currentPlayer;
         private IList<Field> playground;
+        private IList<PictureBox> tokens;
         private int turn;
         private int playerCount;
         public event GameStateChanged OnStateChanged;
@@ -44,6 +45,7 @@ namespace Ludo.Models.Game
             
             this.players = new List<Player>();
             this.playground = Playground.GetPlayground();
+            this.tokens = this.InitTokenPictureboxes();
             this.OnStateChanged += GameStateHub;
             this.diceStandart = new DiceStandart();
             this.diceMama = new DiceMama();
@@ -83,11 +85,33 @@ namespace Ludo.Models.Game
             this.players.ForEach(x => x.Pawns.ForEach(f => f.CurrentField = x.Home.FindEmptyHomeField()));
 
             this.GameState = GameStateType.InitPlayerTurn;
+
+            Thread.Sleep(500);
+            this.tokens[0].BringToFront();
         }
 
-        private void pbEscapedPawn_Click(object sender, EventArgs e)
+        private IList<PictureBox> InitTokenPictureboxes()
         {
+            var result = new PictureBox[PlaygroundConstants.PlaygroundSize];
 
+            for(int i = 0; i < PlaygroundConstants.PlaygroundSize; i++)
+            {
+                var x = this.playground[i].XPos - 3;
+                var y = this.playground[i].YPos - 3;
+
+                result[i] = new PictureBox();
+                //doesn't matter which resource we use initially, we're going to change it later
+                result[i].BackgroundImage = global::Ludo.Properties.Resources.TokenBomb;
+                result[i].BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+                result[i].Location = new Point(x, y);
+                result[i].Name = $"token{i}";
+                result[i].Size = new System.Drawing.Size(31, 31);
+                this.Controls.Add(result[i]);
+                //we will use this when we place the token
+                //result[i].BringToFront();
+            }
+
+            return result.ToList();
         }
     }
 }
