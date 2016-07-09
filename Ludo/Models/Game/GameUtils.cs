@@ -448,6 +448,8 @@ namespace Ludo.Models.Game
                     {
                         pawn.CurrentField = this.players[i].Home.FindEmptyHomeField();
                         pawn.IsAtHome = true;
+                        var plr = GetPawnOwner(pawn);
+                        plr.PawnsAtHome++;
                     }
                 }
             }
