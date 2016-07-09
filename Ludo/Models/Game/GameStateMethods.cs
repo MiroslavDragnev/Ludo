@@ -40,6 +40,7 @@ namespace Ludo.Models.Game
                 this.btnWheel.Name = "btnWheel";
                 this.UpdateControls(false, false, false, false, false);
                 this.UpdatePawns(false, false);
+                this.BringPawnsToFront();
 
                 if(this.currentPlayer.PawnsAtHome == PlayerConstants.PawnsPerPlayer)
                 {
@@ -153,7 +154,7 @@ namespace Ludo.Models.Game
             this.UpdateControls(false, false, false, false, false);
             this.UpdatePawns(false, false);
             this.currentPlayer.IsSleeping = true;
-            //await Task.Delay(1000);
+            Thread.Sleep(1000);
             this.GameState = GameStateType.ChangePlayerTurn;
         }
     }

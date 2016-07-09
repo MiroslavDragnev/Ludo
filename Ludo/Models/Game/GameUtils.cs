@@ -399,5 +399,16 @@ namespace Ludo.Models.Game
 
             return null;
         }
+
+        private void BringPawnsToFront()
+        {
+            foreach (Control C in this.Controls)
+            {
+                if (C is Button && C.Name.Contains("Pawn"))
+                {
+                    C.BringToFront();
+                }
+            }
+        }
     }
 }

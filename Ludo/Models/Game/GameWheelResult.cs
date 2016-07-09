@@ -22,7 +22,7 @@ namespace Ludo.Models.Game
 
             res -= 1;
 
-            if (res < 0)
+            if (res <= 0)
                 res = WheelConstants.WheelMax;
 
             this.spinResult = (WheelType)res;//int.Parse(this.btnWheel.Name[this.btnWheel.Name.Length - 1].ToString());
