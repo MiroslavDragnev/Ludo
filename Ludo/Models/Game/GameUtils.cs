@@ -34,6 +34,28 @@ namespace Ludo.Models.Game
 
             if (b != null)
             {
+                if(this.GameState == GameStateType.WheelSwitchPawns)
+                {
+                    Pawn enemyPawn = FindPawnFromControl(b);
+                    Pawn myPawn = this.currentPlayer.Pawns[this.currentPlayer.SelectedPawn];
+
+                    if (enemyPawn.Color == this.currentPlayer.Color || enemyPawn.IsAtHome || enemyPawn.PawnIsInFinish)
+                    {
+                        return;
+                    }
+
+                    Field f = myPawn.CurrentField;
+                    myPawn.CurrentField = enemyPawn.CurrentField;
+                    enemyPawn.CurrentField = f;
+
+                    var pos = myPawn.PawnPos;
+                    myPawn.PawnPos = enemyPawn.PawnPos;
+                    enemyPawn.PawnPos = pos;
+
+                    this.GameState = GameStateType.ChangePlayerTurn;
+                    return;
+                }
+
                 this.currentPlayer.SelectedPawn =
                     this.currentPlayer.Pawns.IndexOf(
                     (from pawn in this.currentPlayer.Pawns
@@ -208,7 +230,7 @@ namespace Ludo.Models.Game
             this.btnWheel.Enabled = wheel;
         }
 
-        public void UpdatePawns(bool curPlayerPawnsEnabled)
+        public void UpdatePawns(bool curPlayerPawns, bool enemyPawns)
         {
             bool enable = false;
 
@@ -218,7 +240,10 @@ namespace Ludo.Models.Game
                 {
                     foreach (var plr in this.players)
                     {
-                        enable = (plr == currentPlayer && curPlayerPawnsEnabled);
+                        enable = (plr == this.currentPlayer && curPlayerPawns)
+                            || (plr != this.currentPlayer && enemyPawns);
+
+                        //enable = (plr == currentPlayer && curPlayerPawnsEnabled);
 
                         foreach (var p in plr.Pawns)
                         {
@@ -359,8 +384,20 @@ namespace Ludo.Models.Game
             return false;
         }
 
-        public void WheelSpinEnded()
-        { 
-}
+        private Pawn FindPawnFromControl(Button b)
+        {
+            for(int i = 0; i < this.playerCount; i++)
+            {
+                for(int j = 0; j < PlayerConstants.PawnsPerPlayer; j++)
+                {
+                    if(this.players[i].Pawns[j].PawnName == b.Name)
+                    {
+                        return this.players[i].Pawns[j];
+                    }
+                }
+            }
+
+            return null;
+        }
     }
 }

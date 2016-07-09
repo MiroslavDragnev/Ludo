@@ -39,7 +39,7 @@ namespace Ludo.Models.Game
 
                 this.btnWheel.Name = "btnWheel";
                 this.UpdateControls(false, false, false, false, false);
-                this.UpdatePawns(false);
+                this.UpdatePawns(false, false);
 
                 if(this.currentPlayer.PawnsAtHome == PlayerConstants.PawnsPerPlayer)
                 {
@@ -65,7 +65,7 @@ namespace Ludo.Models.Game
         private void DoSelectPawn(Player p)
         {
             this.UpdateControls(false, false, false, false, false);
-            this.UpdatePawns(true);
+            this.UpdatePawns(true, false);
         }
 
         private async void DoMovePawn(Player p)
@@ -98,58 +98,63 @@ namespace Ludo.Models.Game
         private void DoThrowNormal()
         {
             this.UpdateControls(true, false, false, false, false);
-            this.UpdatePawns(false);
+            this.UpdatePawns(false, false);
         }
 
         private void DoThrowMama()
         {
             this.UpdateControls(false, true, false, false, false);
-            this.UpdatePawns(false);
+            this.UpdatePawns(false, false);
         }
 
         private void DoThrowCatapult()
         {
             this.UpdateControls(false, false, false, true, false);
-            this.UpdatePawns(false);
+            this.UpdatePawns(false, false);
         }
 
         private void DoThrowNine()
         {
             this.UpdateControls(false, false, true, false, false);
-            this.UpdatePawns(false);
+            this.UpdatePawns(false, false);
         }
+
         private void DoRotateWheel()
         {
             this.UpdateControls(false, false, false, false, true);
-            this.UpdatePawns(false);
-            // TODO: something more to come here dependting on what will happen after the wheel spins;
+            this.UpdatePawns(false, false);
         }
-        /*
-            WheelPlaceBomb,
-            WheelPlaceSleep,
-            WheelPlaceCatapult,
-            WheelSwitchPawns,
-            WheelMissTurn,
-        */
+
         private void DoWheelPlaceBomb()
         {
-
+            this.UpdateControls(false, false, false, false, false);
+            this.UpdatePawns(false, false);
         }
         private void DoWheelPlaceSleep()
         {
-
+            this.UpdateControls(false, false, false, false, false);
+            this.UpdatePawns(false, false);
         }
+
         private void DoWheelPlaceCatapult()
         {
-
+            this.UpdateControls(false, false, false, false, false);
+            this.UpdatePawns(false, false);
         }
+
         private void DoWheelSwitchPawns()
         {
-
+            this.UpdateControls(false, false, false, false, false);
+            this.UpdatePawns(false, true);
         }
+
         private void DoMissTurn()
         {
-
+            this.UpdateControls(false, false, false, false, false);
+            this.UpdatePawns(false, false);
+            this.currentPlayer.IsSleeping = true;
+            //await Task.Delay(1000);
+            this.GameState = GameStateType.ChangePlayerTurn;
         }
     }
 }

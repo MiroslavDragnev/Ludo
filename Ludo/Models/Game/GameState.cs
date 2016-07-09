@@ -49,7 +49,7 @@ namespace Ludo.Models.Game
                     }
                 case GameStateType.MovePawn:
                     {
-                        this.DoMovePawn(this.players[turn]);
+                        this.DoMovePawn(this.currentPlayer);
                         break;
                     }
                 case GameStateType.ThrowNormal:
@@ -74,7 +74,7 @@ namespace Ludo.Models.Game
                     }
                 case GameStateType.SelectPawn:
                     {
-                        this.DoSelectPawn(this.players[turn]);
+                        this.DoSelectPawn(this.currentPlayer);
                         break;
                     }
                 case GameStateType.RotateWheel:
@@ -85,22 +85,27 @@ namespace Ludo.Models.Game
                     }
                 case GameStateType.WheelPlaceBomb:
                     {
+                        this.DoWheelPlaceBomb();
                         break;
                     }
                 case GameStateType.WheelPlaceSleep:
                     {
+                        this.DoWheelPlaceSleep();
                         break;
                     }
                 case GameStateType.WheelPlaceCatapult:
                     {
+                        this.DoWheelPlaceCatapult();
                         break;
                     }
                 case GameStateType.WheelSwitchPawns:
                     {
+                        this.DoWheelSwitchPawns();
                         break;
                     }
                 case GameStateType.WheelMissTurn:
                     {
+                        this.DoMissTurn();
                         break;
                     }
             }

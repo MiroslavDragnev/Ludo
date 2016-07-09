@@ -61,9 +61,7 @@ namespace Ludo.Models.Game
                     }
                 case WheelType.Miss: //miss
                     {
-                        Thread.Sleep(500);
-                        this.currentPlayer.IsSleeping = true;
-                        this.GameState = GameStateType.ChangePlayerTurn;
+                        this.GameState = GameStateType.WheelMissTurn;
                         break;
                     }
             }
