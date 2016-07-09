@@ -67,10 +67,10 @@ namespace Ludo.Models.Game
             this.lblEscaped = new System.Windows.Forms.Label();
             this.pbEscapedPawn = new System.Windows.Forms.PictureBox();
             this.lblEscapedCount = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pbPlayground = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbEscapedPawn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPlayground)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTurn
@@ -540,16 +540,17 @@ namespace Ludo.Models.Game
             this.lblEscapedCount.TabIndex = 39;
             this.lblEscapedCount.Text = "x0";
             // 
-            // pictureBox1
+            // pbPlayground
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.BackgroundImage = global::Ludo.Properties.Resources.PlayGround;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(123, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(500, 500);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.pbPlayground.BackColor = System.Drawing.Color.Transparent;
+            this.pbPlayground.BackgroundImage = global::Ludo.Properties.Resources.PlayGround;
+            this.pbPlayground.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pbPlayground.Location = new System.Drawing.Point(123, 0);
+            this.pbPlayground.Name = "pbPlayground";
+            this.pbPlayground.Size = new System.Drawing.Size(500, 500);
+            this.pbPlayground.TabIndex = 0;
+            this.pbPlayground.TabStop = false;
+            this.pbPlayground.Click += new System.EventHandler(this.pbPlayground_Click);
             // 
             // Game
             // 
@@ -592,13 +593,13 @@ namespace Ludo.Models.Game
             this.Controls.Add(this.redPawn2);
             this.Controls.Add(this.redPawn1);
             this.Controls.Add(this.redPawn0);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pbPlayground);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Game";
             this.Text = "Ludo";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbEscapedPawn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPlayground)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -640,6 +641,6 @@ namespace Ludo.Models.Game
         private System.Windows.Forms.Label lblEscaped;
         private System.Windows.Forms.PictureBox pbEscapedPawn;
         private System.Windows.Forms.Label lblEscapedCount;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pbPlayground;
     }
 }

@@ -40,12 +40,12 @@ namespace Ludo.Models.Game
                      where pawn.PawnName == b.Name
                      select pawn).First());
 
-                this.currentPlayer.PawnsAtHome = 
+                this.currentPlayer.PawnsAtHome =
                     this.currentPlayer.Pawns.Where(x => x.IsAtHome)
                     .Select(x => x).ToList().Count;
 
-                if (this.currentPlayer.Pawns[this.currentPlayer.SelectedPawn].IsAtHome 
-                    && this.currentPlayer.StepsLeft < DiceConstants.MaxStandart 
+                if (this.currentPlayer.Pawns[this.currentPlayer.SelectedPawn].IsAtHome
+                    && this.currentPlayer.StepsLeft < DiceConstants.MaxStandart
                     && this.currentPlayer.PawnsAtHome < PlayerConstants.PawnsPerPlayer)
                 {
                     this.GameState = GameStateType.SelectPawn;
@@ -54,7 +54,7 @@ namespace Ludo.Models.Game
                 {
                     this.players[turn].PawnsAtHome--;
                     this.GameState = GameStateType.MovePawn;
-                    
+
                 }
 
             }
@@ -89,12 +89,12 @@ namespace Ludo.Models.Game
                                 this.curPlayerInitialThrows--;
                                 this.GameState = GameStateType.ChangePlayerTurn;
                             }
-                            
+
                             break;
-                        }        
+                        }
 
                         this.players[turn].StepsLeft = val;
-                        
+
                         this.GameState = GameStateType.SelectPawn;
                         break;
                     }
@@ -139,7 +139,7 @@ namespace Ludo.Models.Game
                         b.Name = "btnWheel";
                         GetResultFromWheel();
                         this.GameState = GameStateType.RotateWheel;
-                       // this.UpdateControls(false, false, false, false, false);
+                        // this.UpdateControls(false, false, false, false, false);
                         this.GameState = GameStateType.ChangePlayerTurn;
                         break;
                     }
@@ -255,6 +255,101 @@ namespace Ludo.Models.Game
                    col == ColorType.Green ? greenFinish :
                    col == ColorType.Yellow ? yellowFinish :
                    col == ColorType.Blue ? blueFinish : redFinish;
+        }
+
+        private void pbPlayground_Click(object sender, EventArgs e)
+        {
+            if (this.GameState == GameStateType.WheelPlaceBomb)
+            {
+                var cursorPos = GetCursorPosition(); 
+                var tokenIndex = FindClosestEmptyFieldIndex(cursorPos);
+
+                this.playground[tokenIndex].Type = FieldType.Bomb;
+                this.tokens[tokenIndex].BackgroundImage = global::Ludo.Properties.Resources.TokenBomb;
+                this.tokens[tokenIndex].BringToFront();
+            }
+            else if (this.GameState == GameStateType.WheelPlaceCatapult)
+            {
+                var cursorPos = GetCursorPosition();
+                var tokenIndex = FindClosestEmptyFieldIndex(cursorPos);
+
+                this.playground[tokenIndex].Type = FieldType.Catapult;
+                this.tokens[tokenIndex].BackgroundImage = global::Ludo.Properties.Resources.TokenCatapult;
+                this.tokens[tokenIndex].BringToFront();
+            }
+            else if (this.GameState == GameStateType.WheelPlaceSleep)
+            {
+                var cursorPos = GetCursorPosition();
+                var tokenIndex = FindClosestEmptyFieldIndex(cursorPos);
+
+                this.playground[tokenIndex].Type = FieldType.Sleep;
+                this.tokens[tokenIndex].BackgroundImage = global::Ludo.Properties.Resources.TokenSleep;
+                this.tokens[tokenIndex].BringToFront();
+            }
+        }
+
+        private Point GetCursorPosition()
+        {
+            var cursorX = Cursor.Position.X;
+            var cursorY = Cursor.Position.Y;
+
+            //amount for the form location on the screen
+            cursorX -= this.Location.X;
+            cursorY -= this.Location.Y;
+
+            //amount for the form 'bezels'
+            Rectangle screenRectangle = RectangleToScreen(this.ClientRectangle);
+            int topBezel = screenRectangle.Top - this.Top;
+            int leftBezel = screenRectangle.Left - this.Left;
+
+            cursorX -= leftBezel;
+            cursorY -= topBezel;
+
+            //amount for the offset of the field location to the center of the playground field image
+            cursorX -= HomeConstants.OffsetFromOrigin / 2 - 3;
+            cursorY -= HomeConstants.OffsetFromOrigin / 2 - 3;
+
+            return new Point(cursorX, cursorY);
+        }
+
+        private int FindClosestEmptyFieldIndex(Point cursorPos)
+        {
+            var minDistance = 999999D;
+            var minDistanceIndex = 0;
+
+            for (int i = 0; i < PlaygroundConstants.PlaygroundSize; i++)
+            {
+                if (this.playground[i].Type != FieldType.Normal || IsFieldStartPosition(i))
+                    continue;
+
+                var cX = cursorPos.X;
+                var cY = cursorPos.Y;
+                var fX = this.playground[i].XPos;
+                var fY = this.playground[i].YPos;
+
+                var d = (cX - fX) * (cX - fX) + (cY - fY) * (cY - fY);
+
+                if (d < minDistance)
+                {
+                    minDistance = d;
+                    minDistanceIndex = i;
+                }
+            }
+
+            return minDistanceIndex;
+        }
+        
+        private bool IsFieldStartPosition(int index)
+        {
+            for (int i = 0; i < PlaygroundConstants.PlayerStartPos.Length; i++)
+            {
+                if (PlaygroundConstants.PlayerStartPos[i] == index)
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
     }
 }
