@@ -35,6 +35,7 @@ namespace Ludo
         private void btnStart_MouseEnter(object sender, EventArgs e)
         {
             this.btnStart.BackgroundImage = Properties.Resources.BtnStartGlow;
+            AudioPlayer.PlayHoverSound();
         }
 
         private void btnExit_MouseLeave(object sender, EventArgs e)
@@ -44,6 +45,7 @@ namespace Ludo
         private void btnExit_MouseEnter(object sender, EventArgs e)
         {
             this.btnExit.BackgroundImage = Properties.Resources.BtnExitGlow;
+            AudioPlayer.PlayHoverSound();
         }
 
         private void btnAbout_MouseLeave(object sender, EventArgs e)
@@ -53,6 +55,7 @@ namespace Ludo
         private void btnAbout_MouseEnter(object sender, EventArgs e)
         {
             this.btnAbout.BackgroundImage = Properties.Resources.BtnAboutGlow;
+            AudioPlayer.PlayHoverSound();
         }
 
 
@@ -62,6 +65,7 @@ namespace Ludo
             bool emptyName = false;
             var list = new List<Player>();
             var dict = new Dictionary<ColorType, string>();
+            AudioPlayer.PlayClickSound();
 
             if (plrOneCheck.Checked)
             {
@@ -165,6 +169,7 @@ namespace Ludo
 
         private void btnExit_Click(object sender, EventArgs e)
         {
+            AudioPlayer.PlayClickSound();
             Application.Exit();
         }
 
@@ -173,6 +178,7 @@ namespace Ludo
             var about = new About();
             about.FormBorderStyle = FormBorderStyle.FixedSingle;
             about.Show();
+            AudioPlayer.PlayClickSound();
         }
 
         private void plrOneCheck_CheckedChanged(object sender, EventArgs e)

@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\Dice.cs" />
+    <Compile Include="AudioPlayer.cs" />
     <Compile Include="Constants\ColorConstants.cs" />
     <Compile Include="Constants\DiceConstants.cs" />
     <Compile Include="Constants\HomeConstants.cs" />
