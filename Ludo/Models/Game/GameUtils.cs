@@ -104,7 +104,7 @@ namespace Ludo.Models.Game
 
                         this.lblStandart.Text = $"{val}";
 
-                        if (val < DiceConstants.MaxStandart && currentPlayer.PawnsAtHome == PlayerConstants.PawnsPerPlayer)
+                        if (val < DiceConstants.MaxStandart && currentPlayer.PawnsAtHome + currentPlayer.PawnsEscaped == PlayerConstants.PawnsPerPlayer)
                         {
 
                             if (this.curPlayerInitialThrows > 1)
@@ -447,6 +447,7 @@ namespace Ludo.Models.Game
                         && pawn.Color != p.Color)
                     {
                         pawn.CurrentField = this.players[i].Home.FindEmptyHomeField();
+                        pawn.IsAtHome = true;
                     }
                 }
             }
@@ -463,6 +464,19 @@ namespace Ludo.Models.Game
                 plr.PawnsEscaped++;
                 var btn = FindControlFromPawn(p);
                 btn.Hide();
+
+                if(plr.PawnsEscaped == PlayerConstants.PawnsPerPlayer)
+                {
+                    foreach(Control C in this.Controls)
+                    {
+                        C.Hide();
+                    }
+
+                    this.lblWinner.Text = $"{plr.Name} wins!";
+                    this.lblWinner.ForeColor = ColorConstants.Colors[(int)plr.Color];
+                    this.lblWinner.Show();
+                    return;
+                }
 
                 this.GameState = GameStateType.ChangePlayerTurn;
                 return;

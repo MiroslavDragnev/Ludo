@@ -61,6 +61,7 @@
                 if (steps == DiceConstants.MaxStandart)
                 {
                     this.IsAtHome = false;
+                    this.PawnPos = PlaygroundConstants.PlayerStartPos[(int)this.Color];
                     this.CurrentField = playground[this.PawnPos];
                 }              
 

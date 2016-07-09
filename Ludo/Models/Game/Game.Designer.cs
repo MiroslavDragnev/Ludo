@@ -68,6 +68,7 @@ namespace Ludo.Models.Game
             this.pbEscapedPawn = new System.Windows.Forms.PictureBox();
             this.lblEscapedCount = new System.Windows.Forms.Label();
             this.pbPlayground = new System.Windows.Forms.PictureBox();
+            this.lblWinner = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbEscapedPawn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPlayground)).BeginInit();
@@ -552,12 +553,24 @@ namespace Ludo.Models.Game
             this.pbPlayground.TabStop = false;
             this.pbPlayground.Click += new System.EventHandler(this.pbPlayground_Click);
             // 
+            // lblWinner
+            // 
+            this.lblWinner.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblWinner.ForeColor = System.Drawing.Color.White;
+            this.lblWinner.Location = new System.Drawing.Point(132, 200);
+            this.lblWinner.Name = "lblWinner";
+            this.lblWinner.Size = new System.Drawing.Size(374, 60);
+            this.lblWinner.TabIndex = 40;
+            this.lblWinner.Text = "Player X wins";
+            this.lblWinner.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(622, 500);
+            this.Controls.Add(this.lblWinner);
             this.Controls.Add(this.lblEscapedCount);
             this.Controls.Add(this.pbEscapedPawn);
             this.Controls.Add(this.lblEscaped);
@@ -642,5 +655,6 @@ namespace Ludo.Models.Game
         private System.Windows.Forms.PictureBox pbEscapedPawn;
         private System.Windows.Forms.Label lblEscapedCount;
         private System.Windows.Forms.PictureBox pbPlayground;
+        private System.Windows.Forms.Label lblWinner;
     }
 }

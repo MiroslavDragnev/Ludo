@@ -42,7 +42,7 @@ namespace Ludo.Models.Game
                 this.UpdatePawns(false, false);
                 this.BringPawnsToFront();
 
-                if(this.currentPlayer.PawnsAtHome == PlayerConstants.PawnsPerPlayer)
+                if(this.currentPlayer.PawnsAtHome + this.currentPlayer.PawnsEscaped == PlayerConstants.PawnsPerPlayer)
                 {
                     this.curPlayerInitialThrows = DiceConstants.ThrowsIfAllAtHome;
                 }

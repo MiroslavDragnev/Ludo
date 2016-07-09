@@ -42,7 +42,8 @@ namespace Ludo.Models.Game
         public Game(Dictionary<ColorType, string> dict)
         {
             InitializeComponent();
-            
+
+            this.lblWinner.Hide();
             this.players = new List<Player>();
             this.playground = Playground.GetPlayground();
             this.tokens = this.InitTokenPictureboxes();
