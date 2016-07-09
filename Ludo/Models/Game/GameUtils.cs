@@ -433,7 +433,7 @@ namespace Ludo.Models.Game
             }
         }
 
-        private void BringPawnToHome(Field f, Pawn p)
+        private void RemovePawnsFromField(Field f, Pawn exceptPawn)
         {
             var indexOfField = this.playground.IndexOf(f);
 
@@ -443,17 +443,43 @@ namespace Ludo.Models.Game
                 {
                     var pawn = this.players[i].Pawns[j];
 
-                    if(pawn.PawnPos == indexOfField && !pawn.Equals(p) && !pawn.PawnIsInFinish
-                        && pawn.Color != p.Color)
+                    if(pawn.PawnPos == indexOfField && !pawn.Equals(exceptPawn) && !pawn.PawnIsInFinish
+                        && pawn.Color != exceptPawn.Color)
                     {
-                        pawn.CurrentField = this.players[i].Home.FindEmptyHomeField();
-                        pawn.IsAtHome = true;
-                        var plr = GetPawnOwner(pawn);
-                        plr.PawnsAtHome++;
-                        AudioPlayer.PlayLaughSound();
+                        this.BringPawnToHome(pawn);
                     }
                 }
             }
+        }
+
+        private void BringPawnToHome(Pawn p)
+        {
+            var pOwner = this.GetPawnOwner(p);
+
+            p.CurrentField = pOwner.Home.FindEmptyHomeField();
+            p.IsAtHome = true;
+            pOwner.PawnsAtHome++;
+            AudioPlayer.PlayLaughSound();
+        }
+
+        private bool IsFieldStillPopulated(Field f)
+        {
+            var fieldIndex = this.playground.IndexOf(f);
+
+            var count = 0;
+
+            for(int i = 0; i < this.playerCount; i++)
+            {
+                for(int j = 0; j < PlayerConstants.PawnsPerPlayer; j++)
+                {
+                    if(this.players[i].Pawns[j].PawnPos == fieldIndex)
+                    {
+                        count++;
+                    }
+                }
+            }
+
+            return count > 1;
         }
 
         private void HandleNewPawnPosition(Pawn p)
@@ -487,7 +513,7 @@ namespace Ludo.Models.Game
 
             if(curField.HasPawn)
             {
-                this.BringPawnToHome(curField, p);
+                this.RemovePawnsFromField(curField, p);
             }
 
             curField.HasPawn = true;
@@ -506,7 +532,7 @@ namespace Ludo.Models.Game
             {
                 curField.Type = FieldType.Normal;
                 this.DestroyToken(curField);
-                p.CurrentField = currentPlayer.Home.FindEmptyHomeField();
+                this.BringPawnToHome(p);
             }
             else if(fType == FieldType.Catapult)
             {

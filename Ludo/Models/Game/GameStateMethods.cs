@@ -74,7 +74,7 @@ namespace Ludo.Models.Game
 
             bool atHome = pawn.IsAtHome;
 
-            pawn.CurrentField.HasPawn = false;
+            pawn.CurrentField.HasPawn = this.IsFieldStillPopulated(pawn.CurrentField);
 
             pawn.Move(this.playground, GetFinishFromColor(pawn.Color), Math.Abs(p.StepsLeft), p.StepsLeft < 0);
 

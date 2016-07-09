@@ -99,16 +99,21 @@
                         continue;
                     }
 
-                    if (this.PawnPos == PlaygroundConstants.PlayerStartPos[(int)this.Color])
-                    {
-                        //this will need additional work
-                        //since we don't want to have a delay before turn change
-                        //when the total steps back > steps to start position
-                        await Task.Delay(PawnConstants.DisplayDelay);
-                        continue;
-                    }
+                    //without this, we could have more fun :P
+                    //if (this.PawnPos == PlaygroundConstants.PlayerStartPos[(int)this.Color])
+                    //{
+                    //    //this will need additional work
+                    //    //since we don't want to have a delay before turn change
+                    //    //when the total steps back > steps to start position
+                    //    await Task.Delay(PawnConstants.DisplayDelay);
+                    //    continue;
+                    //}
 
                     this.PawnPos--;
+
+                    if (this.PawnPos < 0)
+                        this.PawnPos = PlaygroundConstants.PlaygroundSize - 1;
+
                     this.CurrentField = playground[this.PawnPos];
                     await Task.Delay(PawnConstants.DisplayDelay);
                 }
