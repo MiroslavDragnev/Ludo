@@ -15,7 +15,7 @@ namespace Ludo.Models.Game
 {
     public partial class Game : Form
     {
-        public void GetResultFromWheel(object sender, EventArgs e)
+        public async void GetResultFromWheel(object sender, EventArgs e)
         {
             //quick & dirty fix
             var res = int.Parse(this.btnWheel.Name[this.btnWheel.Name.Length - 1].ToString());
@@ -26,11 +26,29 @@ namespace Ludo.Models.Game
                 res = WheelConstants.WheelMax;
 
             this.spinResult = (WheelType)res;//int.Parse(this.btnWheel.Name[this.btnWheel.Name.Length - 1].ToString());
+
+            var resultImage = btnWheel.BackgroundImage;
+            var flickerImage = global::Ludo.Properties.Resources.WheelFlicker;
             
+            for(int i = 0; i < 6; i++)
+            {
+                if(i % 2 == 0)
+                {
+                    this.btnWheel.BackgroundImage = flickerImage;
+                }
+                else
+                {
+                    this.btnWheel.BackgroundImage = resultImage;
+                }
+
+                await Task.Delay(100);
+            }
+
+            this.btnWheel.Name = "btnWheel";
             //the update of the name happens on DoInitPlayerTurn now
             //so that we can see the result of the spin while it's still our turn
             //this.btnWheel.Name = "btnWheel";
-            
+
             // Gets the number of the button from the wheel and does stuff through methods
             switch (spinResult)
             {

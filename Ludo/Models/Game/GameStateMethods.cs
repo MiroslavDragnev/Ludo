@@ -37,7 +37,6 @@ namespace Ludo.Models.Game
                     this.currentPlayer.Color == ColorType.Blue ? Ludo.Properties.Resources.PawnBlue :
                         Ludo.Properties.Resources.PawnRed;
 
-                this.btnWheel.Name = "btnWheel";
                 this.UpdateControls(false, false, false, false, false);
                 this.UpdatePawns(false, false);
                 this.BringPawnsToFront();

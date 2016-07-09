@@ -61,7 +61,6 @@ namespace Ludo.Models
                             b.BackgroundImage = global::Ludo.Properties.Resources.WheelMiss;
                             b.Name = "btnWheel1";
                             break;
-
                         }
                 }
                 AudioPlayer.PlayWheelSound();

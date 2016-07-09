@@ -353,6 +353,16 @@ namespace Ludo.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap WheelFlicker {
+            get {
+                object obj = ResourceManager.GetObject("WheelFlicker", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap WheelMama {
             get {
                 object obj = ResourceManager.GetObject("WheelMama", resourceCulture);
