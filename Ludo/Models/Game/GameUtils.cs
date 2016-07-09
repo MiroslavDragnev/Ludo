@@ -39,6 +39,13 @@ namespace Ludo.Models.Game
                     Pawn enemyPawn = FindPawnFromControl(b);
                     Pawn myPawn = this.currentPlayer.Pawns[this.currentPlayer.SelectedPawn];
 
+                    if(enemyPawn.Equals(myPawn) || enemyPawn.Color == myPawn.Color)
+                    {
+                        this.lblCatapult.Text = "equal";
+                        this.GameState = GameStateType.ChangePlayerTurn;
+                        return;
+                    }
+
                     if (enemyPawn.Color == this.currentPlayer.Color || enemyPawn.IsAtHome || enemyPawn.PawnIsInFinish)
                     {
                         return;
@@ -400,6 +407,21 @@ namespace Ludo.Models.Game
             return null;
         }
 
+        private Button FindControlFromPawn(Pawn p)
+        {
+            foreach (Control C in this.Controls)
+            {
+                Button b = C as Button;
+
+                if(b != null && b.Name == p.PawnName)
+                {
+                    return b;
+                }
+            }
+
+            return null;
+        }
+
         private void BringPawnsToFront()
         {
             foreach (Control C in this.Controls)
@@ -409,6 +431,101 @@ namespace Ludo.Models.Game
                     C.BringToFront();
                 }
             }
+        }
+
+        private void BringPawnToHome(Field f, Pawn p)
+        {
+            var indexOfField = this.playground.IndexOf(f);
+
+            for(int i = 0; i < this.playerCount; i++)
+            {
+                for(int j = 0; j < PlayerConstants.PawnsPerPlayer; j++)
+                {
+                    var pawn = this.players[i].Pawns[j];
+
+                    if(pawn.PawnPos == indexOfField && !pawn.Equals(p) && !pawn.PawnIsInFinish
+                        && pawn.Color != p.Color)
+                    {
+                        pawn.CurrentField = this.players[i].Home.FindEmptyHomeField();
+                    }
+                }
+            }
+        }
+
+        private void HandleNewPawnPosition(Pawn p)
+        {
+            Field curField = p.CurrentField;
+            FieldType fType = curField.Type;
+
+            if(p.PawnFinished)
+            {
+                var plr = GetPawnOwner(p);
+                plr.PawnsEscaped++;
+                var btn = FindControlFromPawn(p);
+                btn.Hide();
+
+                this.GameState = GameStateType.ChangePlayerTurn;
+                return;
+            }
+
+            if(curField.HasPawn)
+            {
+                this.BringPawnToHome(curField, p);
+            }
+
+            curField.HasPawn = true;
+
+            if(fType == FieldType.Nine)
+            {
+                this.GameState = GameStateType.ThrowNine;
+                return;
+            }
+            else if(fType == FieldType.Special)
+            {
+                this.GameState = GameStateType.RotateWheel;
+                return;
+            }
+            else if(fType == FieldType.Bomb)
+            {
+                curField.Type = FieldType.Normal;
+                this.DestroyToken(curField);
+                p.CurrentField = currentPlayer.Home.FindEmptyHomeField();
+            }
+            else if(fType == FieldType.Catapult)
+            {
+                curField.Type = FieldType.Normal;
+                this.DestroyToken(curField);
+                this.GameState = GameStateType.ThrowCatapult;
+                return;
+            }
+            else if(fType == FieldType.Sleep)
+            {
+                this.currentPlayer.IsSleeping = true;
+                curField.Type = FieldType.Normal;
+                this.DestroyToken(curField);
+            }
+
+            this.GameState = GameStateType.ChangePlayerTurn;
+        }
+
+        private void DestroyToken(Field f)
+        {
+            var tokenIndex = this.playground.IndexOf(f);
+            this.tokens[tokenIndex].SendToBack();
+        }
+
+        private Player GetPawnOwner(Pawn p)
+        {
+            for(int i = 0; i < this.playerCount; i++)
+            {
+                for(int j = 0; j < PlayerConstants.PawnsPerPlayer; j++)
+                {
+                    if (this.players[i].Pawns[j].Equals(p))
+                        return this.players[i];
+                }
+            }
+
+            return null;
         }
     }
 }

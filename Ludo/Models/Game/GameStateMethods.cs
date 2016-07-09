@@ -75,25 +75,29 @@ namespace Ludo.Models.Game
 
             bool atHome = pawn.IsAtHome;
 
+            pawn.CurrentField.HasPawn = false;
+
             pawn.Move(this.playground, GetFinishFromColor(pawn.Color), Math.Abs(p.StepsLeft), p.StepsLeft < 0);
 
             if (!atHome)
-                await Task.Delay((p.StepsLeft * PawnConstants.DisplayDelay));
-
-            if (pawn.CurrentField.Type == FieldType.Nine)
-            {
-                this.gameState = GameStateType.ThrowNine;
-            } else if (pawn.CurrentField.Type == FieldType.Special)
-            {
-                this.UpdateControls(false, false, false, false, true);
-                this.GameState = GameStateType.RotateWheel;
-            }
-            else
-            {
-                this.GameState = GameStateType.ChangePlayerTurn;
-            }
+                await Task.Delay((Math.Abs(p.StepsLeft) * PawnConstants.DisplayDelay));
 
             p.StepsLeft = 0;
+
+            this.HandleNewPawnPosition(pawn);
+
+            //if (pawn.CurrentField.Type == FieldType.Nine)
+            //{
+            //    this.gameState = GameStateType.ThrowNine;
+            //} else if (pawn.CurrentField.Type == FieldType.Special)
+            //{
+            //    this.UpdateControls(false, false, false, false, true);
+            //    this.GameState = GameStateType.RotateWheel;
+            //}
+            //else
+            //{
+            //    this.GameState = GameStateType.ChangePlayerTurn;
+            //}
         }
 
         private void DoThrowNormal()
@@ -146,7 +150,7 @@ namespace Ludo.Models.Game
         private void DoWheelSwitchPawns()
         {
             this.UpdateControls(false, false, false, false, false);
-            this.UpdatePawns(false, true);
+            this.UpdatePawns(true, true);
         }
 
         private void DoMissTurn()

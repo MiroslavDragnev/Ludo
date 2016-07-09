@@ -73,7 +73,7 @@
             //        steps--;
             //    }
             //}                  
-            this.currentField.HasPawn = false;
+            //this.currentField.HasPawn = false;
             if (moveBack)
             {
                 #region MoveBack
@@ -133,6 +133,12 @@
 
                     if (this.PawnIsInFinish)
                     {
+                        if(this.PawnPos >= PlaygroundConstants.FinishSize)
+                        {
+                            this.PawnFinished = true;
+                            return;
+                        }
+
                         this.CurrentField = finish[this.PawnPos];
                     }
                     else
@@ -149,7 +155,7 @@
                 }
                 #endregion
             }
-            this.currentField.HasPawn = true;
+            //this.currentField.HasPawn = true;
             
         }
     }
