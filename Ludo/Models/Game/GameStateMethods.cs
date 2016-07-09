@@ -76,7 +76,7 @@ namespace Ludo.Models.Game
             pawn.Move(this.playground, GetFinishFromColor(pawn.Color), Math.Abs(p.StepsLeft), p.StepsLeft < 0);
 
             if (!atHome)
-                await Task.Delay((p.StepsLeft * PawnConstants.DisplayDelay) + 1000);
+                await Task.Delay((p.StepsLeft * PawnConstants.DisplayDelay));
 
             if (pawn.CurrentField.Type == FieldType.Nine)
             {

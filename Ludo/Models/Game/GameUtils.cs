@@ -267,6 +267,8 @@ namespace Ludo.Models.Game
                 this.playground[tokenIndex].Type = FieldType.Bomb;
                 this.tokens[tokenIndex].BackgroundImage = global::Ludo.Properties.Resources.TokenBomb;
                 this.tokens[tokenIndex].BringToFront();
+
+                this.GameState = GameStateType.ChangePlayerTurn;
             }
             else if (this.GameState == GameStateType.WheelPlaceCatapult)
             {
@@ -306,8 +308,8 @@ namespace Ludo.Models.Game
             cursorY -= topBezel;
 
             //amount for the offset of the field location to the center of the playground field image
-            cursorX -= HomeConstants.OffsetFromOrigin / 2 - 3;
-            cursorY -= HomeConstants.OffsetFromOrigin / 2 - 3;
+            cursorX -= HomeConstants.OffsetFromOrigin / 2 - TokenConstants.TokenOffsetFromPawn;
+            cursorY -= HomeConstants.OffsetFromOrigin / 2 - TokenConstants.TokenOffsetFromPawn;
 
             return new Point(cursorX, cursorY);
         }

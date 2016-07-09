@@ -66,13 +66,13 @@
 
                 return;
             }
-            if (!this.IsAtHome)
-            {
-                while (playground[this.PawnPos + steps].HasPawn)
-                {
-                    steps--;
-                }
-            }                  
+            //if (!this.IsAtHome)
+            //{
+            //    while (playground[this.PawnPos + steps].HasPawn)
+            //    {
+            //        steps--;
+            //    }
+            //}                  
             this.currentField.HasPawn = false;
             if (moveBack)
             {

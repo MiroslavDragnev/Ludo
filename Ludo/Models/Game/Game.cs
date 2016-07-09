@@ -85,9 +85,6 @@ namespace Ludo.Models.Game
             this.players.ForEach(x => x.Pawns.ForEach(f => f.CurrentField = x.Home.FindEmptyHomeField()));
 
             this.GameState = GameStateType.InitPlayerTurn;
-
-            Thread.Sleep(500);
-            this.tokens[0].BringToFront();
         }
 
         private IList<PictureBox> InitTokenPictureboxes()
@@ -96,8 +93,8 @@ namespace Ludo.Models.Game
 
             for(int i = 0; i < PlaygroundConstants.PlaygroundSize; i++)
             {
-                var x = this.playground[i].XPos - 3;
-                var y = this.playground[i].YPos - 3;
+                var x = this.playground[i].XPos - TokenConstants.TokenOffsetFromPawn;
+                var y = this.playground[i].YPos - TokenConstants.TokenOffsetFromPawn;
 
                 result[i] = new PictureBox();
                 //doesn't matter which resource we use initially, we're going to change it later
@@ -105,7 +102,7 @@ namespace Ludo.Models.Game
                 result[i].BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
                 result[i].Location = new Point(x, y);
                 result[i].Name = $"token{i}";
-                result[i].Size = new System.Drawing.Size(31, 31);
+                result[i].Size = new System.Drawing.Size(TokenConstants.TokenSize, TokenConstants.TokenSize);
                 this.Controls.Add(result[i]);
                 //we will use this when we place the token
                 //result[i].BringToFront();
