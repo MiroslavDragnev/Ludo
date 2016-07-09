@@ -63,7 +63,8 @@ namespace Ludo.Models
                             break;
 
                         }
-                } 
+                }
+                AudioPlayer.PlayWheelSound();
                 await Task.Delay(100 - i);
             }
 

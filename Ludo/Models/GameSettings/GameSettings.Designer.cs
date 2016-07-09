@@ -75,6 +75,7 @@ namespace Ludo
             this.plrTwoCheck.TabIndex = 2;
             this.plrTwoCheck.Text = "Player 2";
             this.plrTwoCheck.UseVisualStyleBackColor = true;
+            this.plrTwoCheck.CheckedChanged += new System.EventHandler(this.plrTwoCheck_CheckedChanged);
             // 
             // plrThreeCheck
             // 
@@ -86,6 +87,7 @@ namespace Ludo
             this.plrThreeCheck.TabIndex = 3;
             this.plrThreeCheck.Text = "Player 3";
             this.plrThreeCheck.UseVisualStyleBackColor = true;
+            this.plrThreeCheck.CheckedChanged += new System.EventHandler(this.plrThreeCheck_CheckedChanged);
             // 
             // plrFourCheck
             // 
@@ -97,6 +99,7 @@ namespace Ludo
             this.plrFourCheck.TabIndex = 4;
             this.plrFourCheck.Text = "Player 4";
             this.plrFourCheck.UseVisualStyleBackColor = true;
+            this.plrFourCheck.CheckedChanged += new System.EventHandler(this.plrFourCheck_CheckedChanged);
             // 
             // plrOneText
             // 

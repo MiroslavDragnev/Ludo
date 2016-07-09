@@ -450,6 +450,7 @@ namespace Ludo.Models.Game
                         pawn.IsAtHome = true;
                         var plr = GetPawnOwner(pawn);
                         plr.PawnsAtHome++;
+                        AudioPlayer.PlayLaughSound();
                     }
                 }
             }

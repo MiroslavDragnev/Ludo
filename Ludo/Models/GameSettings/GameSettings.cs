@@ -183,7 +183,19 @@ namespace Ludo
 
         private void plrOneCheck_CheckedChanged(object sender, EventArgs e)
         {
-
+            AudioPlayer.PlayCheckSound();
+        }
+        private void plrTwoCheck_CheckedChanged(object sender, EventArgs e)
+        {
+            AudioPlayer.PlayCheckSound();
+        }
+        private void plrThreeCheck_CheckedChanged(object sender, EventArgs e)
+        {
+            AudioPlayer.PlayCheckSound();
+        }
+        private void plrFourCheck_CheckedChanged(object sender, EventArgs e)
+        {
+            AudioPlayer.PlayCheckSound();
         }
     }
 }
