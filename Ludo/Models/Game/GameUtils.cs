@@ -399,7 +399,7 @@ namespace Ludo.Models.Game
 
             return false;
         }
-        h
+        
         private Pawn FindPawnFromControl(Button b)
         {
             for(int i = 0; i < this.playerCount; i++)
@@ -452,8 +452,9 @@ namespace Ludo.Models.Game
                 {
                     var pawn = this.players[i].Pawns[j];
 
-                    if(pawn.PawnPos == indexOfField && !pawn.PawnIsInFinish
-                        && pawn.Color != exceptPawn.Color)
+                    if(exceptPawn == null ||
+                        (pawn.PawnPos == indexOfField && !pawn.PawnIsInFinish
+                        && pawn.Color != exceptPawn.Color))
                     {
                         this.BringPawnToHome(pawn);
                         AudioPlayer.PlayLaughSound();
