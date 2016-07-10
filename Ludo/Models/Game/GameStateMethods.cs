@@ -41,7 +41,7 @@ namespace Ludo.Models.Game
                 this.UpdatePawns(false, false);
                 this.BringPawnsToFront();
 
-                if(this.currentPlayer.PawnsAtHome + this.currentPlayer.PawnsEscaped == PlayerConstants.PawnsPerPlayer)
+                if (this.currentPlayer.PawnsAtHome + this.currentPlayer.PawnsEscaped == PlayerConstants.PawnsPerPlayer)
                 {
                     this.curPlayerInitialThrows = DiceConstants.ThrowsIfAllAtHome;
                 }
@@ -54,7 +54,7 @@ namespace Ludo.Models.Game
         {
             this.turn++;
 
-            if(this.turn >= this.playerCount)
+            if (this.turn >= this.playerCount)
             {
                 this.turn = 0;
             }
@@ -74,7 +74,15 @@ namespace Ludo.Models.Game
 
             bool atHome = pawn.IsAtHome;
 
-            pawn.CurrentField.HasPawn = this.IsFieldStillPopulated(pawn.CurrentField);
+            if (atHome)
+            {
+                pawn.CurrentField.HasPawn = false;
+                p.PawnsAtHome--;
+            }
+            else
+            {
+                pawn.CurrentField.HasPawn = this.IsFieldStillPopulated(pawn.CurrentField);
+            }
 
             pawn.Move(this.playground, GetFinishFromColor(pawn.Color), Math.Abs(p.StepsLeft), p.StepsLeft < 0);
 

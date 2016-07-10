@@ -41,7 +41,6 @@ namespace Ludo.Models.Game
 
                     if(enemyPawn.Equals(myPawn) || enemyPawn.Color == myPawn.Color)
                     {
-                        this.lblCatapult.Text = "equal";
                         this.GameState = GameStateType.ChangePlayerTurn;
                         return;
                     }
@@ -63,28 +62,35 @@ namespace Ludo.Models.Game
                     return;
                 }
 
-                this.currentPlayer.SelectedPawn =
-                    this.currentPlayer.Pawns.IndexOf(
-                    (from pawn in this.currentPlayer.Pawns
-                     where pawn.PawnName == b.Name
-                     select pawn).First());
+                this.currentPlayer.SelectedPawn = this.currentPlayer.Pawns.IndexOf(FindPawnFromControl(b));
+                //this.currentPlayer.Pawns.IndexOf(
+                //(from pawn in this.currentPlayer.Pawns
+                // where pawn.PawnName == b.Name
+                // select pawn).First());
 
-                this.currentPlayer.PawnsAtHome =
-                    this.currentPlayer.Pawns.Where(x => x.IsAtHome)
-                    .Select(x => x).ToList().Count;
+                //this.currentPlayer.PawnsAtHome =
+                //    this.currentPlayer.Pawns.Where(x => x.IsAtHome)
+                //    .Select(x => x).ToList().Count;
 
-                if (this.currentPlayer.Pawns[this.currentPlayer.SelectedPawn].IsAtHome
-                    && this.currentPlayer.StepsLeft < DiceConstants.MaxStandart
-                    && this.currentPlayer.PawnsAtHome < PlayerConstants.PawnsPerPlayer)
-                {
-                    this.GameState = GameStateType.SelectPawn;
-                }
-                else
-                {
-                    this.players[turn].PawnsAtHome--;
-                    this.GameState = GameStateType.MovePawn;
+                //for debugging purposes
+                //this.lblStandart.Text = $"{this.currentPlayer.PawnsAtHome}";
+                //this.lblMama.Text = $"{this.currentPlayer.PawnsEscaped}";
 
-                }
+
+                this.GameState = GameStateType.MovePawn;
+
+                //if (this.currentPlayer.Pawns[this.currentPlayer.SelectedPawn].IsAtHome
+                //    && this.currentPlayer.StepsLeft < DiceConstants.MaxStandart
+                //    && this.currentPlayer.PawnsAtHome < PlayerConstants.PawnsPerPlayer)
+                //{
+                //    this.GameState = GameStateType.SelectPawn;
+                //}
+                //else
+                //{
+                //    //this.players[turn].PawnsAtHome--;
+                //    this.GameState = GameStateType.MovePawn;
+
+                //}
 
             }
         }
@@ -134,7 +140,7 @@ namespace Ludo.Models.Game
                         this.players[turn].StepsLeft = -1 * val;
                         this.lblNine.Text = $"{val}";
 
-                        this.GameState = GameStateType.SelectPawn;
+                        this.GameState = GameStateType.MovePawn;
                         break;
                     }
                 case "btnDiceMama":
@@ -446,7 +452,7 @@ namespace Ludo.Models.Game
                 {
                     var pawn = this.players[i].Pawns[j];
 
-                    if(pawn.PawnPos == indexOfField && !pawn.Equals(exceptPawn) && !pawn.PawnIsInFinish
+                    if(pawn.PawnPos == indexOfField && !pawn.PawnIsInFinish
                         && pawn.Color != exceptPawn.Color)
                     {
                         this.BringPawnToHome(pawn);
@@ -476,7 +482,10 @@ namespace Ludo.Models.Game
             {
                 for(int j = 0; j < PlayerConstants.PawnsPerPlayer; j++)
                 {
-                    if(this.players[i].Pawns[j].PawnPos == fieldIndex)
+                    Pawn p = this.players[i].Pawns[j];
+
+                    if (p.PawnPos == fieldIndex
+                        && !p.PawnIsInFinish && !p.IsAtHome)
                     {
                         count++;
                     }
@@ -536,7 +545,8 @@ namespace Ludo.Models.Game
             {
                 curField.Type = FieldType.Normal;
                 this.DestroyToken(curField);
-                this.BringPawnToHome(p);
+                //this.BringPawnToHome(p);
+                this.RemovePawnsFromField(curField, null);
             }
             else if(fType == FieldType.Catapult)
             {
