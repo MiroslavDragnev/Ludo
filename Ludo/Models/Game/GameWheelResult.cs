@@ -18,9 +18,19 @@ namespace Ludo.Models.Game
         public async void GetResultFromWheel(object sender, EventArgs e)
         {
             //quick & dirty fix
-            var res = int.Parse(this.btnWheel.Name[this.btnWheel.Name.Length - 1].ToString());
+            var res = -1;
+            try
+            {
+                res= int.Parse(this.btnWheel.Name[this.btnWheel.Name.Length - 1].ToString());
+                res -= 1;
+            }
+            catch (Exception)
+            {
+                
+            }
+           
 
-            res -= 1;
+           
 
             if (res <= 0)
                 res = WheelConstants.WheelMax;
