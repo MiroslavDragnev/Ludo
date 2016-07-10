@@ -99,18 +99,7 @@ namespace Ludo.Models.Game
 
             this.HandleNewPawnPosition(pawn);
 
-            //if (pawn.CurrentField.Type == FieldType.Nine)
-            //{
-            //    this.gameState = GameStateType.ThrowNine;
-            //} else if (pawn.CurrentField.Type == FieldType.Special)
-            //{
-            //    this.UpdateControls(false, false, false, false, true);
-            //    this.GameState = GameStateType.RotateWheel;
-            //}
-            //else
-            //{
-            //    this.GameState = GameStateType.ChangePlayerTurn;
-            //}
+            
         }
 
         private void DoThrowNormal()
