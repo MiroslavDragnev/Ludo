@@ -63,6 +63,15 @@ namespace Ludo.Models.Game
                 }
 
                 this.currentPlayer.SelectedPawn = this.currentPlayer.Pawns.IndexOf(FindPawnFromControl(b));
+
+                Pawn selected = this.currentPlayer.Pawns[this.currentPlayer.SelectedPawn];
+
+                if(selected.IsAtHome && this.currentPlayer.StepsLeft < DiceConstants.MaxStandart
+                    && this.currentPlayer.PawnsAtHome + this.currentPlayer.PawnsEscaped < PlayerConstants.PawnsPerPlayer)
+                {
+                    return;
+                }
+
                 //this.currentPlayer.Pawns.IndexOf(
                 //(from pawn in this.currentPlayer.Pawns
                 // where pawn.PawnName == b.Name
@@ -75,7 +84,6 @@ namespace Ludo.Models.Game
                 //for debugging purposes
                 //this.lblStandart.Text = $"{this.currentPlayer.PawnsAtHome}";
                 //this.lblMama.Text = $"{this.currentPlayer.PawnsEscaped}";
-
 
                 this.GameState = GameStateType.MovePawn;
 

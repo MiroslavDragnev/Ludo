@@ -26,7 +26,7 @@ namespace Ludo.Models.Game
                 res = WheelConstants.WheelMax;
 
             this.spinResult = (WheelType)res;//int.Parse(this.btnWheel.Name[this.btnWheel.Name.Length - 1].ToString());
-
+            //this.spinResult = WheelType.Bomb;
             var resultImage = btnWheel.BackgroundImage;
             var flickerImage = global::Ludo.Properties.Resources.WheelFlicker;
             
