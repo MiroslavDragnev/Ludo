@@ -457,7 +457,7 @@ namespace Ludo.Models.Game
                         && pawn.Color != exceptPawn.Color && !pawn.IsAtHome))
                     {
                         this.BringPawnToHome(pawn);
-                        AudioPlayer.PlayLaughSound();
+                       
                     }
                 }
             }
@@ -470,7 +470,7 @@ namespace Ludo.Models.Game
             p.CurrentField = pOwner.Home.FindEmptyHomeField();
             p.IsAtHome = true;
             pOwner.PawnsAtHome++;
-            
+            AudioPlayer.PlayLaughSound();
         }
 
         private bool IsFieldStillPopulated(Field f)
@@ -546,8 +546,7 @@ namespace Ludo.Models.Game
             {
                 curField.Type = FieldType.Normal;
                 this.DestroyToken(curField);
-                //this.BringPawnToHome(p);
-                this.RemovePawnsFromField(curField, null);
+                this.BringPawnToHome(p);
             }
             else if(fType == FieldType.Catapult)
             {
