@@ -57,5 +57,20 @@
             player.SoundLocation = @"../../Sounds/StartGame.wav";
             player.Play();
         }
+        public static void PlaceBombSound()
+        {
+            player.SoundLocation = @"../../Sounds/PlaceBomb.wav";
+            player.Play();
+        }
+        public static void PlacePillowSound()
+        {
+            player.SoundLocation = @"../../Sounds/PlacePillow.wav";
+            player.Play();
+        }
+        public static void PlaceCatapultSound()
+        {
+            player.SoundLocation = @"../../Sounds/PlaceCatapult.wav";
+            player.Play();
+        }
     }
 }

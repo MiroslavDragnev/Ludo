@@ -295,6 +295,7 @@ namespace Ludo.Models.Game
             {
                 var cursorPos = GetCursorPosition(); 
                 var tokenIndex = FindClosestEmptyFieldIndex(cursorPos);
+                AudioPlayer.PlaceBombSound();
 
                 this.playground[tokenIndex].Type = FieldType.Bomb;
                 this.tokens[tokenIndex].BackgroundImage = global::Ludo.Properties.Resources.TokenBomb;
@@ -306,6 +307,7 @@ namespace Ludo.Models.Game
             {
                 var cursorPos = GetCursorPosition();
                 var tokenIndex = FindClosestEmptyFieldIndex(cursorPos);
+                AudioPlayer.PlaceCatapultSound();
 
                 this.playground[tokenIndex].Type = FieldType.Catapult;
                 this.tokens[tokenIndex].BackgroundImage = global::Ludo.Properties.Resources.TokenCatapult;
@@ -317,6 +319,7 @@ namespace Ludo.Models.Game
             {
                 var cursorPos = GetCursorPosition();
                 var tokenIndex = FindClosestEmptyFieldIndex(cursorPos);
+                AudioPlayer.PlacePillowSound();
 
                 this.playground[tokenIndex].Type = FieldType.Sleep;
                 this.tokens[tokenIndex].BackgroundImage = global::Ludo.Properties.Resources.TokenSleep;
