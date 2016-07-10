@@ -393,7 +393,7 @@ namespace Ludo.Models.Game
 
             return false;
         }
-
+        h
         private Pawn FindPawnFromControl(Button b)
         {
             for(int i = 0; i < this.playerCount; i++)
@@ -450,6 +450,7 @@ namespace Ludo.Models.Game
                         && pawn.Color != exceptPawn.Color)
                     {
                         this.BringPawnToHome(pawn);
+                        AudioPlayer.PlayLaughSound();
                     }
                 }
             }
@@ -462,7 +463,7 @@ namespace Ludo.Models.Game
             p.CurrentField = pOwner.Home.FindEmptyHomeField();
             p.IsAtHome = true;
             pOwner.PawnsAtHome++;
-            AudioPlayer.PlayLaughSound();
+            
         }
 
         private bool IsFieldStillPopulated(Field f)
