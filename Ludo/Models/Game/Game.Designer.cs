@@ -69,7 +69,6 @@ namespace Ludo.Models.Game
             this.lblEscapedCount = new System.Windows.Forms.Label();
             this.pbPlayground = new System.Windows.Forms.PictureBox();
             this.lblWinner = new System.Windows.Forms.Label();
-            this.lblDebug = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbEscapedPawn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPlayground)).BeginInit();
@@ -565,23 +564,14 @@ namespace Ludo.Models.Game
             this.lblWinner.Text = "Player X wins";
             this.lblWinner.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lblDebug
-            // 
-            this.lblDebug.AutoSize = true;
-            this.lblDebug.BackColor = System.Drawing.Color.White;
-            this.lblDebug.Location = new System.Drawing.Point(7, 407);
-            this.lblDebug.Name = "lblDebug";
-            this.lblDebug.Size = new System.Drawing.Size(35, 13);
-            this.lblDebug.TabIndex = 41;
-            this.lblDebug.Text = "label1";
-            // 
+           
             // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(622, 500);
-            this.Controls.Add(this.lblDebug);
+           
             this.Controls.Add(this.lblWinner);
             this.Controls.Add(this.lblEscapedCount);
             this.Controls.Add(this.pbEscapedPawn);
@@ -668,6 +658,5 @@ namespace Ludo.Models.Game
         private System.Windows.Forms.Label lblEscapedCount;
         private System.Windows.Forms.PictureBox pbPlayground;
         private System.Windows.Forms.Label lblWinner;
-        private System.Windows.Forms.Label lblDebug;
     }
 }

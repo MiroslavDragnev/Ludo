@@ -117,9 +117,7 @@ namespace Ludo.Models.Game
                         int val = this.diceStandart.Throw(rnd);
 
                         this.lblStandart.Text = $"{val}";
-
-                        this.lblDebug.Text = $"{this.currentPlayer.PawnsAtHome} {this.currentPlayer.PawnsEscaped}";
-
+                        
                         if (val < DiceConstants.MaxStandart && currentPlayer.PawnsAtHome + currentPlayer.PawnsEscaped == PlayerConstants.PawnsPerPlayer)
                         {
 
