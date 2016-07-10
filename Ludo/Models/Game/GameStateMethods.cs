@@ -23,9 +23,15 @@ namespace Ludo.Models.Game
             }
             else
             {
+                Thread.Sleep(300);
+
                 this.lblTurn.Text = this.currentPlayer.Name;
                 this.lblTurn.BackColor = ColorConstants.Colors[(int)this.currentPlayer.Color];
-
+                this.lblStandart.Text = "";
+                this.lblNine.Text = "";
+                this.lblMama.Text = "";
+                this.lblCatapult.Text = "";
+ 
                 //we may need this, depending on what is less ugly
                 //this.lblStandart.Text = "";
 
@@ -165,7 +171,7 @@ namespace Ludo.Models.Game
             this.UpdateControls(false, false, false, false, false);
             this.UpdatePawns(false, false);
             this.currentPlayer.IsSleeping = true;
-            Thread.Sleep(1000);
+            //Thread.Sleep(1000);
             this.GameState = GameStateType.ChangePlayerTurn;
         }
     }
