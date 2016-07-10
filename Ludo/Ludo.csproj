@@ -273,6 +273,45 @@
   <ItemGroup>
     <None Include="Resources\WheelFlicker.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Sounds\Check.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sounds\Click.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sounds\Hover.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sounds\Laugh1.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sounds\Laugh2.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sounds\Laugh3.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sounds\Laugh4.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sounds\Laugh5.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sounds\PlaceBomb.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sounds\PlaceCatapult.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sounds\PlacePillow.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sounds\StartGame.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sounds\WheelClick.wav" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
