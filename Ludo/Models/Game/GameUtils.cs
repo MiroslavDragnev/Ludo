@@ -454,7 +454,7 @@ namespace Ludo.Models.Game
 
                     if(exceptPawn == null ||
                         (pawn.PawnPos == indexOfField && !pawn.PawnIsInFinish
-                        && pawn.Color != exceptPawn.Color))
+                        && pawn.Color != exceptPawn.Color && !pawn.IsAtHome))
                     {
                         this.BringPawnToHome(pawn);
                         AudioPlayer.PlayLaughSound();
