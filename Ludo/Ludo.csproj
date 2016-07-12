@@ -307,6 +307,66 @@
   <ItemGroup>
     <None Include="Sounds\WheelClick.wav" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Sounds\TurnOn.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sounds\Explode.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sounds\Military.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sounds\Snore.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sounds\Yeah.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sounds\CatapultEject.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sounds\Sleep.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sounds\Switch.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sounds\Catapult.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sounds\PowerDown.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sounds\CatapultLoad.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sounds\PawnClick.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sounds\Step1.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sounds\Step2.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sounds\Step3.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sounds\Step4.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sounds\Step5.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sounds\Step6.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sounds\Step7.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sounds\Step8wav.wav" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

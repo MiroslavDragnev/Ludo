@@ -64,31 +64,37 @@ namespace Ludo.Models.Game
             {
                 case WheelType.Bomb: // Placing a bomb on a field
                     {
+                        AudioPlayer.PlayMilitarySound();
                         this.GameState = GameStateType.WheelPlaceBomb;
                         break;
                     }
                 case WheelType.BigMama: //Big mama
                     {
+                        AudioPlayer.PlayYeahSound();
                         this.GameState = GameStateType.ThrowMama;
                         break;
                     }
                 case WheelType.Catapult: // catapult
                     {
+                        AudioPlayer.PlayCatapultSound();
                         this.GameState = GameStateType.WheelPlaceCatapult;
                         break;
                     }
                 case WheelType.Switch: //switch
                     {
+                        AudioPlayer.PlaySwitchSound();
                         this.GameState = GameStateType.WheelSwitchPawns;
                         break;
                     }
                 case WheelType.Sleep: // sleep
                     {
+                        AudioPlayer.PlaySleepSound();
                         this.GameState = GameStateType.WheelPlaceSleep;
                         break;
                     }
                 case WheelType.Miss: //miss
                     {
+                        AudioPlayer.PlayMissSound();
                         this.GameState = GameStateType.WheelMissTurn;
                         break;
                     }

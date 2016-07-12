@@ -31,7 +31,7 @@ namespace Ludo.Models.Game
         private void HandlePawnClick(object sender, EventArgs e)
         {
             Button b = sender as Button;
-
+            
             if (b != null)
             {
                 if(this.GameState == GameStateType.WheelSwitchPawns)
@@ -97,9 +97,7 @@ namespace Ludo.Models.Game
                 //{
                 //    //this.players[turn].PawnsAtHome--;
                 //    this.GameState = GameStateType.MovePawn;
-
                 //}
-
             }
         }
 
@@ -115,7 +113,7 @@ namespace Ludo.Models.Game
                 case "btnDiceStandart":
                     {
                         int val = this.diceStandart.Throw(rnd);
-
+                        AudioPlayer.PlayClickSound();
                         this.lblStandart.Text = $"{val}";
                         
                         if (val < DiceConstants.MaxStandart && currentPlayer.PawnsAtHome + currentPlayer.PawnsEscaped == PlayerConstants.PawnsPerPlayer)
@@ -147,7 +145,7 @@ namespace Ludo.Models.Game
 
                         this.players[turn].StepsLeft = -1 * val;
                         this.lblNine.Text = $"{val}";
-
+                        AudioPlayer.PlayClickSound();
                         this.GameState = GameStateType.MovePawn;
                         break;
                     }
@@ -157,7 +155,7 @@ namespace Ludo.Models.Game
 
                         this.players[turn].StepsLeft = val;
                         this.lblMama.Text = $"{val}";
-
+                        AudioPlayer.PlayClickSound();
                         this.GameState = GameStateType.SelectPawn;
                         break;
                     }
@@ -167,6 +165,7 @@ namespace Ludo.Models.Game
                         this.players[turn].StepsLeft = -1 * val;
                         this.lblCatapult.Text = $"{val}";
                         this.GameState = GameStateType.MovePawn;
+                        AudioPlayer.PlayCatapultEjectSound();
                         break;
                     }
                 case "btnWheel":
@@ -465,7 +464,7 @@ namespace Ludo.Models.Game
                         && pawn.Color != exceptPawn.Color && !pawn.IsAtHome))
                     {
                         this.BringPawnToHome(pawn);
-                       
+                        AudioPlayer.PlayLaughSound();
                     }
                 }
             }
@@ -478,7 +477,7 @@ namespace Ludo.Models.Game
             p.CurrentField = pOwner.Home.FindEmptyHomeField();
             p.IsAtHome = true;
             pOwner.PawnsAtHome++;
-            AudioPlayer.PlayLaughSound();
+            
         }
 
         private bool IsFieldStillPopulated(Field f)
@@ -547,17 +546,20 @@ namespace Ludo.Models.Game
             }
             else if(fType == FieldType.Special)
             {
+                AudioPlayer.PlayTurnOnWheelSound();
                 this.GameState = GameStateType.RotateWheel;
                 return;
             }
             else if(fType == FieldType.Bomb)
             {
+                AudioPlayer.PlayExplodeSound();
                 curField.Type = FieldType.Normal;
                 this.DestroyToken(curField);
                 this.BringPawnToHome(p);
             }
             else if(fType == FieldType.Catapult)
             {
+                AudioPlayer.PlayCatapultLoadSound();
                 curField.Type = FieldType.Normal;
                 this.DestroyToken(curField);
                 this.GameState = GameStateType.ThrowCatapult;
@@ -565,6 +567,7 @@ namespace Ludo.Models.Game
             }
             else if(fType == FieldType.Sleep)
             {
+                AudioPlayer.PlaySnoreSound();
                 this.currentPlayer.IsSleeping = true;
                 curField.Type = FieldType.Normal;
                 this.DestroyToken(curField);

@@ -259,4 +259,67 @@
   <data name="WheelClick" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Sounds\WheelClick.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="Catapult1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Sounds\Catapult.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="CatapultEject" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Sounds\CatapultEject.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="CatapultEject1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Sounds\CatapultEject.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="CatapultLoad" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Sounds\CatapultLoad.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Explode" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Sounds\Explode.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Military" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Sounds\Military.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="PawnClick" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Sounds\PawnClick.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="PowerDown" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Sounds\PowerDown.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Sleep" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Sounds\Sleep.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Snore" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Sounds\Snore.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Step1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Sounds\Step1.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Step2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Sounds\Step2.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Step3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Sounds\Step3.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Step4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Sounds\Step4.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Step5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Sounds\Step5.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Step6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Sounds\Step6.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Step7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Sounds\Step7.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Step8wav" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Sounds\Step8wav.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Switch" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Sounds\Switch.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="TurnOn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Sounds\TurnOn.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Yeah" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Sounds\Yeah.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>
