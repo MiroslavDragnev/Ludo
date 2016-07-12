@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Ludo.Models.Dice" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAIAAAAAg=</HashCode>
+      <FileName>Abstract\Dice.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Ludo.Models.Dices.DiceCatapult" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Dices\DiceCatapult.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ludo.Models.Dices.DiceMama" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Dices\DiceMama.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ludo.Models.Dices.DiceNine" Collapsed="true">
+    <Position X="0.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Dices\DiceNine.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ludo.Models.Dices.DiceStandart" Collapsed="true">
+    <Position X="0.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Dices\DiceStandart.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ludo.Models.Pawn" Collapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAwAAABEAAAAIAAAIAgAAgACAEAA=</HashCode>
+      <FileName>Models\Pawn.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Ludo.Models.Home" Collapsed="true">
+    <Position X="2.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMgAA=</HashCode>
+      <FileName>Models\Home.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ludo.Extensions.HomeExtensions" Collapsed="true">
+    <Position X="2.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Extensions\HomeExtensions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ludo.Models.Field" Collapsed="true">
+    <Position X="2.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAgAAAEAABAQAAAAAAAAA=</HashCode>
+      <FileName>Models\Field.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ludo.Models.Player" Collapsed="true">
+    <Position X="0.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAAAQAAAIAAAQgAAYAAAAAAAAAgBAAAAA=</HashCode>
+      <FileName>Models\Player.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ludo.Models.Playground" Collapsed="true">
+    <Position X="0.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAAAAAAAAAAAAAABAEAAABAAAQABACAAAA=</HashCode>
+      <FileName>Models\Playground.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ludo.Models.Wheel" Collapsed="true">
+    <Position X="2.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>Models\Wheel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ludo.Models.Game.Game" Collapsed="true">
+    <Position X="4" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>wjEGAAALhjCaAJIggoCcARBCDneDIeDHoKamfSgAMIA=</HashCode>
+      <FileName>Models\Game\Game.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ludo.GameSettings" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAEAhAQFCAAUAAAQQCCQAACGDACAABABAAAAEBkAAE=</HashCode>
+      <FileName>Models\GameSettings\GameSettings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ludo.Models.About.About" Collapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAABAAAACAAAACAAAAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>Models\About\About.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="Ludo.Contracts.IDice" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAIAAAAAg=</HashCode>
+      <FileName>Contracts\IDice.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Ludo.Contracts.IPawn" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Contracts\IPawn.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Delegate Name="Ludo.Models.PawnChangedPos" Collapsed="true">
+    <Position X="2.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAACAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Pawn.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
