@@ -63,6 +63,7 @@
                     this.IsAtHome = false;
                     this.PawnPos = PlaygroundConstants.PlayerStartPos[(int)this.Color];
                     this.CurrentField = playground[this.PawnPos];
+                    AudioPlayer.PlayStepSound();
                 }              
 
                 return;
@@ -80,6 +81,8 @@
                 #region MoveBack
                 for (int i = 0; i < steps; i++)
                 {
+                    AudioPlayer.PlayStepSound();
+
                     if (this.PawnIsInFinish)
                     {
                         if (this.PawnPos == 0)
@@ -116,7 +119,6 @@
 
                     this.CurrentField = playground[this.PawnPos];
                     await Task.Delay(PawnConstants.DisplayDelay);
-                    AudioPlayer.PlayStepSound();
                 }
 
                 #endregion
@@ -126,6 +128,8 @@
                 #region MoveForward
                 for (int i = 0; i < steps; i++)
                 {
+                    AudioPlayer.PlayStepSound();
+
                     if (this.PawnPos == PlaygroundConstants.PlayerEntryToFinish[(int)this.Color])
                     {
                         this.PawnIsInFinish = true;
@@ -157,7 +161,7 @@
 
                         this.CurrentField = playground[this.PawnPos];
                     }
-                    AudioPlayer.PlayStepSound();
+                    
                     await Task.Delay(PawnConstants.DisplayDelay);
                 }
                 #endregion
