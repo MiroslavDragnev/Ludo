@@ -181,5 +181,10 @@
             }
             player.Play();
         }
+        public static void PlayaEvilLaughSound()
+        {
+            player.Stream = Ludo.Properties.Resources.EvilLaugh;
+            player.Play();
+        }
     }
 }

@@ -541,6 +541,7 @@ namespace Ludo.Models.Game
 
             if(fType == FieldType.Nine)
             {
+                AudioPlayer.PlayaEvilLaughSound();
                 this.GameState = GameStateType.ThrowNine;
                 return;
             }

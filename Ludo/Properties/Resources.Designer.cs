@@ -237,6 +237,15 @@ namespace Ludo.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
+        internal static System.IO.UnmanagedMemoryStream EvilLaugh {
+            get {
+                return ResourceManager.GetStream("EvilLaugh", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
         internal static System.IO.UnmanagedMemoryStream Explode {
             get {
                 return ResourceManager.GetStream("Explode", resourceCulture);
