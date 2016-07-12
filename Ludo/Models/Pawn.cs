@@ -116,6 +116,7 @@
 
                     this.CurrentField = playground[this.PawnPos];
                     await Task.Delay(PawnConstants.DisplayDelay);
+                    AudioPlayer.PlayStepSound();
                 }
 
                 #endregion
@@ -156,7 +157,7 @@
 
                         this.CurrentField = playground[this.PawnPos];
                     }
-
+                    AudioPlayer.PlayStepSound();
                     await Task.Delay(PawnConstants.DisplayDelay);
                 }
                 #endregion
